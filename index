@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KRAMO AMINE | IT Technician</title>
+<meta name="description" content="Portfolio professionnel de KRAMO AMINE, Technicien Informatique spécialisé en systèmes et réseaux.">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #080f1e;
+  color: #f1f5f9;
+  line-height: 1.7;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 9%;
+  background: #0c1729;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+.hero {
+  min-height: 580px;
+  padding: 120px 9%;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(120deg,#101e35,#080f1e);
+}
+
+.hero-content {
+  max-width: 750px;
+}
+
+.tag {
+  color: #38bdf8;
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(38px,6vw,65px);
+  line-height: 1.2;
+  margin: 22px 0;
+}
+
+h1 span {
+  color: #38bdf8;
+}
+
+.hero h2 {
+  color: #cbd5e1;
+  font-size: 23px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #aab8cc;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 13px 25px;
+  background: #0284c7;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #0369a1;
+}
+
+section {
+  padding: 85px 9%;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 35px;
+  color: #38bdf8;
+}
+
+.about-box, .card {
+  background: #111e32;
+  border: 1px solid #26364d;
+  padding: 28px;
+  border-radius: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+  gap: 20px;
+}
+
+.card h3 {
+  color: #38bdf8;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 15px;
+}
+
+.contact {
+  text-align: center;
+  background: #101d32;
+}
+
+.contact p {
+  margin: 12px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #8292a8;
+  border-top: 1px solid #26364d;
+}
+
+@media(max-width:650px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav a {
+    margin: 0 7px;
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 85px 7%;
+  }
+
+  section {
+    padding: 65px 7%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">KRAMO AMINE.</div>
+  <nav>
+    <a href="#home">Accueil</a>
+    <a href="#about">Profil</a>
+    <a href="#skills">Compétences</a>
+    <a href="#education">Formation</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">PORTFOLIO PROFESSIONNEL</div>
+
+    <h1>Bonjour, je suis <span>KRAMO AMINE</span></h1>
+
+    <h2>Technicien Informatique | Systèmes & Réseaux</h2>
+
+    <p>
+      Passionné par les technologies informatiques,
+      l'administration des systèmes et les infrastructures réseau.
+      Je suis motivé à mettre mes compétences techniques
+      au service d'une équipe informatique.
+    </p>
+
+    <a href="#about" class="btn">Découvrir mon profil</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">À propos de moi</h2>
+
+  <div class="about-box">
+    <p>
+      Technicien Informatique spécialisé en Administration
+      Avancée des Systèmes et Réseaux.
+
+      Je possède des compétences en support informatique,
+      administration Windows/Linux, déploiement des infrastructures
+      réseau et installation des systèmes de vidéosurveillance.
+
+      Sérieux, motivé et passionné par les nouvelles technologies,
+      je souhaite évoluer dans un environnement professionnel
+      stimulant.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2 class="section-title">Mes compétences techniques</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Support Informatique</h3>
+      <p>Diagnostic, maintenance et résolution des incidents matériels et logiciels.</p>
+    </div>
+
+    <div class="card">
+      <h3>Windows & Linux</h3>
+      <p>Installation, configuration et administration des systèmes.</p>
+    </div>
+
+    <div class="card">
+      <h3>Réseaux Informatiques</h3>
+      <p>TCP/IP, DHCP, DNS, VLAN, Wi-Fi et équipements réseau.</p>
+    </div>
+
+    <div class="card">
+      <h3>Infrastructure IT</h3>
+      <p>Déploiement, maintenance et gestion du matériel informatique.</p>
+    </div>
+
+    <div class="card">
+      <h3>Vidéosurveillance</h3>
+      <p>Installation et configuration des systèmes CCTV.</p>
+    </div>
+
+    <div class="card">
+      <h3>Maintenance</h3>
+      <p>Diagnostic, entretien et optimisation des postes informatiques.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="education">
+  <h2 class="section-title">Formation</h2>
+
+  <div class="card">
+    <h3>Licence Professionnelle</h3>
+    <p>Administration Avancée des Systèmes et Réseaux</p>
+    <p>2025 – 2026</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2 class="section-title">Contact</h2>
+
+  <p><strong>Nom :</strong> KRAMO AMINE</p>
+  <p><strong>Localisation :</strong> Casablanca, Maroc</p>
+  <p><strong>Spécialité :</strong> IT Support | Systèmes & Réseaux</p>
+
+  <a class="btn"
+     href="https://www.linkedin.com/"
+     target="_blank">
+     Mon LinkedIn
+  </a>
+</section>
+
+</main>
+
+<footer>
+  © 2026 KRAMO AMINE — Portfolio Professionnel
+</footer>
+
+</body>
+</html>
