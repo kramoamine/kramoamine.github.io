@@ -111,6 +111,7 @@ header{
 
 nav{
   display:flex;
+  align-items:center;
   gap:20px;
 }
 
@@ -123,6 +124,31 @@ nav a{
 
 nav a:hover{
   color:var(--cyan);
+}
+
+/* =====================================================
+   FR / EN
+===================================================== */
+
+#langButton{
+  flex-shrink:0;
+  min-width:44px;
+  padding:7px 12px;
+  border-radius:9px;
+  border:1px solid rgba(34,211,238,.35);
+  background:rgba(34,211,238,.08);
+  color:var(--cyan);
+  font-family:inherit;
+  font-size:.82rem;
+  font-weight:800;
+  cursor:pointer;
+  transition:.25s;
+}
+
+#langButton:hover{
+  background:var(--cyan);
+  color:#04101d;
+  transform:translateY(-2px);
 }
 
 /* =====================================================
@@ -283,6 +309,7 @@ nav a:hover{
   width:170px;
   height:170px;
   object-fit:cover;
+  object-position:center;
   border-radius:50%;
   border:5px solid #09182a;
   display:block;
@@ -391,6 +418,10 @@ section:not(.hero){
   margin-bottom:16px;
 }
 
+.about-card p:last-child{
+  margin-bottom:0;
+}
+
 .about-card strong{
   color:#dcecff;
 }
@@ -422,7 +453,7 @@ section:not(.hero){
 }
 
 /* =====================================================
-   COMPÉTENCES
+   COMPETENCES
 ===================================================== */
 
 .skills-grid{
@@ -501,7 +532,7 @@ section:not(.hero){
 }
 
 /* =====================================================
-   RÉALISATIONS
+   REALISATIONS
 ===================================================== */
 
 .projects-grid{
@@ -580,7 +611,7 @@ section:not(.hero){
 }
 
 /* =====================================================
-   EXPÉRIENCE
+   EXPERIENCE
 ===================================================== */
 
 .experience-timeline{
@@ -820,6 +851,11 @@ section:not(.hero){
   color:#04101d;
   text-decoration:none;
   font-weight:750;
+  transition:.25s;
+}
+
+.contact-cv:hover{
+  transform:translateY(-3px);
 }
 
 .contact-list{
@@ -935,7 +971,6 @@ footer{
   .formation-card h4{
     min-height:auto;
   }
-
 }
 
 @media(max-width:850px){
@@ -947,7 +982,6 @@ footer{
   .project-card:nth-child(3){
     grid-column:auto;
   }
-
 }
 
 @media(max-width:700px){
@@ -962,6 +996,7 @@ footer{
     width:100%;
     overflow-x:auto;
     padding-bottom:6px;
+    align-items:center;
   }
 
   nav a{
@@ -998,7 +1033,6 @@ footer{
     flex-direction:column;
     align-items:flex-start;
   }
-
 }
 
 </style>
@@ -1011,24 +1045,26 @@ footer{
 ===================================================== -->
 
 <header>
+
 <div class="container navbar">
 
 <a href="#accueil" class="brand">
-<span class="logo">AK</span>
-<span class="brand-name">Amine <span>Kramo</span></span>
+  <span class="logo">AK</span>
+  <span class="brand-name">Amine <span>Kramo</span></span>
 </a>
 
 <nav>
-<a href="#accueil">Accueil</a>
-<a href="#apropos">À propos</a>
-<a href="#competences">Compétences</a>
-<a href="#realisations">Réalisations</a>
-<a href="#experience">Expérience</a>
-<a href="#formation">Formation</a>
-<a href="#contact">Contact</a>
+  <a href="#accueil">Accueil</a>
+  <a href="#apropos">À propos</a>
+  <a href="#competences">Compétences</a>
+  <a href="#realisations">Réalisations</a>
+  <a href="#experience">Expérience</a>
+  <a href="#formation">Formation</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 </div>
+
 </header>
 
 <main>
@@ -1042,47 +1078,49 @@ footer{
 <div>
 
 <div class="badge">
-<span class="badge-dot"></span>
-Profil Systèmes & Réseaux
+  <span class="badge-dot"></span>
+  Profil Systèmes & Réseaux
 </div>
 
 <h1>
-Bonjour, je suis<br>
-<span>Amine Kramo</span>
+  Bonjour, je suis<br>
+  <span>Amine Kramo</span>
 </h1>
 
 <p class="job-title">
-Technicien Systèmes & Réseaux
+  Technicien Systèmes & Réseaux
 </p>
 
 <p class="degree">
-Diplômé d'une Licence Professionnelle en Administration Avancée des Systèmes et Réseaux
+  Diplômé d'une Licence Professionnelle en Administration Avancée des Systèmes et Réseaux
 </p>
 
 <p class="description">
-Je possède une expérience pratique en support IT, administration systèmes,
-réseaux et infrastructures informatiques. J'interviens sur l'installation,
-la configuration, la maintenance et le dépannage des équipements et services informatiques.
+  Je possède une expérience pratique en support IT, administration systèmes,
+  réseaux et infrastructures informatiques. J'interviens sur l'installation,
+  la configuration, la maintenance et le dépannage des équipements et services informatiques.
 </p>
 
 <div class="buttons">
 
-<a class="btn btn-primary"
-href="CV-KRAMO-AMINE.pdf"
-download>
-Télécharger mon CV ↓
+<a
+  class="btn btn-primary"
+  href="CV-KRAMO-AMINE.pdf"
+  download>
+  Télécharger mon CV ↓
 </a>
 
-<a class="btn btn-secondary"
-href="#contact">
-Me contacter
+<a
+  class="btn btn-secondary"
+  href="#contact">
+  Me contacter
 </a>
 
 </div>
 
 <div class="information">
-<span>📍 Casablanca, Maroc</span>
-<span>🚗 Permis B</span>
+  <span>📍 Casablanca, Maroc</span>
+  <span>🚗 Permis B</span>
 </div>
 
 </div>
@@ -1090,24 +1128,41 @@ Me contacter
 <aside class="profile-card">
 
 <div class="photo-wrapper">
+
 <img
-src="profile.jpg"
-alt="Photo professionnelle d'Amine Kramo"
-class="profile-photo">
+  src="profile.jpg"
+  alt="Photo professionnelle d'Amine Kramo"
+  class="profile-photo">
+
 </div>
 
 <h2>Amine Kramo</h2>
 
 <p class="profile-role">
-Technicien Systèmes & Réseaux
+  Technicien Systèmes & Réseaux
 </p>
 
 <div class="profile-info">
 
-<div><span class="icon">📍</span>Casablanca, Maroc</div>
-<div><span class="icon">🎓</span>Licence Professionnelle</div>
-<div><span class="icon">💻</span>Systèmes & Réseaux</div>
-<div><span class="icon">🚗</span>Permis B</div>
+<div>
+  <span class="icon">📍</span>
+  Casablanca, Maroc
+</div>
+
+<div>
+  <span class="icon">🎓</span>
+  Licence Professionnelle
+</div>
+
+<div>
+  <span class="icon">💻</span>
+  Systèmes & Réseaux
+</div>
+
+<div>
+  <span class="icon">🚗</span>
+  Permis B
+</div>
 
 </div>
 
@@ -1116,7 +1171,7 @@ Technicien Systèmes & Réseaux
 </section>
 
 <!-- =====================================================
-     À PROPOS
+     A PROPOS
 ===================================================== -->
 
 <section class="about-section" id="apropos">
@@ -1124,9 +1179,9 @@ Technicien Systèmes & Réseaux
 <div class="container">
 
 <div class="section-header">
-<span class="section-label">PRÉSENTATION</span>
-<h2>À propos de moi</h2>
-<p>Un profil technique orienté systèmes, réseaux et infrastructures informatiques.</p>
+  <span class="section-label">PRÉSENTATION</span>
+  <h2>À propos de moi</h2>
+  <p>Un profil technique orienté systèmes, réseaux et infrastructures informatiques.</p>
 </div>
 
 <div class="about-grid">
@@ -1136,26 +1191,28 @@ Technicien Systèmes & Réseaux
 <h3>Technicien Systèmes & Réseaux</h3>
 
 <p>
-Diplômé d'une <strong>Licence Professionnelle en Administration Avancée des Systèmes et Réseaux</strong>,
-ainsi que d'un <strong>Diplôme de Technicien Spécialisé en Infrastructure Digitale,
-option Systèmes et Réseaux</strong>, j'ai développé un profil technique orienté infrastructure et support IT.
+  Diplômé d'une
+  <strong>Licence Professionnelle en Administration Avancée des Systèmes et Réseaux</strong>,
+  ainsi que d'un
+  <strong>Diplôme de Technicien Spécialisé en Infrastructure Digitale, option Systèmes et Réseaux</strong>,
+  j'ai développé un profil technique orienté infrastructure et support IT.
 </p>
 
 <p>
-Mon expérience professionnelle et mes interventions sur le terrain m'ont permis
-de renforcer mes compétences en administration Windows et Linux, réseaux LAN/WAN,
-support informatique, maintenance, virtualisation, sauvegarde, sécurité réseau et vidéosurveillance.
+  Mon expérience professionnelle et mes interventions sur le terrain m'ont permis
+  de renforcer mes compétences en administration Windows et Linux, réseaux LAN/WAN,
+  support informatique, maintenance, virtualisation, sauvegarde, sécurité réseau et vidéosurveillance.
 </p>
 
 <p>
-J'interviens également sur l'installation, la configuration,
-le diagnostic et le dépannage des équipements et infrastructures informatiques.
+  J'interviens également sur l'installation, la configuration,
+  le diagnostic et le dépannage des équipements et infrastructures informatiques.
 </p>
 
 <p>
-Autonome, rigoureux et orienté résolution de problèmes,
-je souhaite continuer à développer mon expertise dans les systèmes,
-les réseaux et les infrastructures IT.
+  Autonome, rigoureux et orienté résolution de problèmes,
+  je souhaite continuer à développer mon expertise dans les systèmes,
+  les réseaux et les infrastructures IT.
 </p>
 
 </div>
@@ -1163,51 +1220,72 @@ les réseaux et les infrastructures IT.
 <div class="about-info">
 
 <div class="info-card">
-<span class="info-icon">📍</span>
-<div><small>Localisation</small><strong>Casablanca, Maroc</strong></div>
+  <span class="info-icon">📍</span>
+  <div>
+    <small>Localisation</small>
+    <strong>Casablanca, Maroc</strong>
+  </div>
 </div>
 
 <div class="info-card">
-<span class="info-icon">🎓</span>
-<div><small>Diplôme</small><strong>Licence Professionnelle</strong></div>
+  <span class="info-icon">🎓</span>
+  <div>
+    <small>Diplôme</small>
+    <strong>Licence Professionnelle</strong>
+  </div>
 </div>
 
 <div class="info-card">
-<span class="info-icon">💻</span>
-<div><small>Spécialité</small><strong>Systèmes & Réseaux</strong></div>
+  <span class="info-icon">💻</span>
+  <div>
+    <small>Spécialité</small>
+    <strong>Systèmes & Réseaux</strong>
+  </div>
 </div>
 
 <div class="info-card">
-<span class="info-icon">🛠</span>
-<div><small>Support</small><strong>Niveau 1 & 2</strong></div>
+  <span class="info-icon">🛠</span>
+  <div>
+    <small>Support</small>
+    <strong>Niveau 1 & 2</strong>
+  </div>
 </div>
 
 <div class="info-card">
-<span class="info-icon">🌐</span>
-<div><small>Orientation</small><strong>Infrastructure IT</strong></div>
+  <span class="info-icon">🌐</span>
+  <div>
+    <small>Orientation</small>
+    <strong>Infrastructure IT</strong>
+  </div>
 </div>
 
 <div class="info-card">
-<span class="info-icon">🚗</span>
-<div><small>Mobilité</small><strong>Permis B</strong></div>
+  <span class="info-icon">🚗</span>
+  <div>
+    <small>Mobilité</small>
+    <strong>Permis B</strong>
+  </div>
+</div>
+
 </div>
 
 </div>
 </div>
-</div>
+
 </section>
 
 <!-- =====================================================
-     COMPÉTENCES
+     COMPETENCES
 ===================================================== -->
 
 <section id="competences">
+
 <div class="container">
 
 <div class="section-header">
-<span class="section-label">EXPERTISE</span>
-<h2>Compétences techniques</h2>
-<p>Mes principales compétences en systèmes, réseaux, infrastructures et support IT.</p>
+  <span class="section-label">EXPERTISE</span>
+  <h2>Compétences techniques</h2>
+  <p>Mes principales compétences en systèmes, réseaux, infrastructures et support IT.</p>
 </div>
 
 <div class="skills-grid">
@@ -1217,7 +1295,10 @@ les réseaux et les infrastructures IT.
 <h3>Support informatique</h3>
 <p>Support utilisateurs N1/N2, diagnostic et résolution des incidents matériels, logiciels et réseau.</p>
 <div class="skill-tags">
-<span>GLPI</span><span>Support N1/N2</span><span>Diagnostic</span><span>Maintenance</span>
+  <span>GLPI</span>
+  <span>Support N1/N2</span>
+  <span>Diagnostic</span>
+  <span>Maintenance</span>
 </div>
 </article>
 
@@ -1226,7 +1307,9 @@ les réseaux et les infrastructures IT.
 <h3>Windows & Linux</h3>
 <p>Installation, configuration, administration et maintenance des postes et systèmes informatiques.</p>
 <div class="skill-tags">
-<span>Windows</span><span>Linux</span><span>Administration</span>
+  <span>Windows</span>
+  <span>Linux</span>
+  <span>Administration</span>
 </div>
 </article>
 
@@ -1235,7 +1318,11 @@ les réseaux et les infrastructures IT.
 <h3>Réseaux informatiques</h3>
 <p>Installation, configuration et dépannage des infrastructures réseau.</p>
 <div class="skill-tags">
-<span>TCP/IP</span><span>LAN/WAN</span><span>Wi-Fi</span><span>VLAN</span><span>Routing & Switching</span>
+  <span>TCP/IP</span>
+  <span>LAN/WAN</span>
+  <span>Wi-Fi</span>
+  <span>VLAN</span>
+  <span>Routing & Switching</span>
 </div>
 </article>
 
@@ -1244,7 +1331,9 @@ les réseaux et les infrastructures IT.
 <h3>Sécurité réseau</h3>
 <p>Configuration de solutions permettant de sécuriser les infrastructures réseau.</p>
 <div class="skill-tags">
-<span>pfSense</span><span>Firewall</span><span>Sécurité réseau</span>
+  <span>pfSense</span>
+  <span>Firewall</span>
+  <span>Sécurité réseau</span>
 </div>
 </article>
 
@@ -1253,7 +1342,9 @@ les réseaux et les infrastructures IT.
 <h3>Virtualisation</h3>
 <p>Création et utilisation d'environnements virtualisés pour systèmes et services.</p>
 <div class="skill-tags">
-<span>VMware</span><span>VMware ESXi</span><span>VirtualBox</span>
+  <span>VMware</span>
+  <span>VMware ESXi</span>
+  <span>VirtualBox</span>
 </div>
 </article>
 
@@ -1262,7 +1353,10 @@ les réseaux et les infrastructures IT.
 <h3>Sauvegarde & restauration</h3>
 <p>Solutions de sauvegarde et de restauration des données et environnements informatiques.</p>
 <div class="skill-tags">
-<span>Veeam</span><span>Backup</span><span>Restore</span><span>Cobian Backup</span>
+  <span>Veeam</span>
+  <span>Backup</span>
+  <span>Restore</span>
+  <span>Cobian Backup</span>
 </div>
 </article>
 
@@ -1271,7 +1365,9 @@ les réseaux et les infrastructures IT.
 <h3>Vidéosurveillance</h3>
 <p>Installation, configuration, diagnostic et remise en service des équipements CCTV.</p>
 <div class="skill-tags">
-<span>CCTV</span><span>Caméras IP</span><span>DVR / NVR</span>
+  <span>CCTV</span>
+  <span>Caméras IP</span>
+  <span>DVR / NVR</span>
 </div>
 </article>
 
@@ -1280,226 +1376,300 @@ les réseaux et les infrastructures IT.
 <h3>Microsoft 365</h3>
 <p>Utilisation et gestion des principaux outils collaboratifs Microsoft.</p>
 <div class="skill-tags">
-<span>Microsoft 365</span><span>Outlook</span><span>Teams</span><span>OneDrive</span>
+  <span>Microsoft 365</span>
+  <span>Outlook</span>
+  <span>Teams</span>
+  <span>OneDrive</span>
 </div>
 </article>
 
 </div>
 </div>
+
 </section>
 
 <!-- =====================================================
-     RÉALISATIONS
+     REALISATIONS
 ===================================================== -->
 
 <section id="realisations">
+
 <div class="container">
 
 <div class="section-header">
-<span class="section-label">SUR LE TERRAIN</span>
-<h2>Réalisations & interventions</h2>
-<p>Quelques projets illustrant mon expérience pratique.</p>
+  <span class="section-label">SUR LE TERRAIN</span>
+  <h2>Réalisations & interventions</h2>
+  <p>Quelques projets illustrant mon expérience pratique.</p>
 </div>
 
 <div class="projects-grid">
 
 <article class="project-card">
+
 <div class="project-number">01</div>
+
 <div class="project-header">
 <div class="project-icon">🛡️</div>
 <div>
-<span class="project-location">📍 Kénitra</span>
-<h3>Infrastructure réseau sécurisée avec pfSense</h3>
+  <span class="project-location">📍 Kénitra</span>
+  <h3>Infrastructure réseau sécurisée avec pfSense</h3>
 </div>
 </div>
+
 <p class="project-description">
-Participation à la mise en place d'une infrastructure réseau sécurisée avec pfSense.
+  Participation à la mise en place d'une infrastructure réseau sécurisée avec pfSense.
 </p>
+
 <div class="project-work">
 <h4>Intervention</h4>
 <ul>
-<li>Mise en place de l'infrastructure réseau</li>
-<li>Configuration LAN/WAN</li>
-<li>Configuration du pare-feu pfSense</li>
-<li>Connexion des équipements réseau</li>
-<li>Vérification de la connectivité</li>
-<li>Tests et dépannage</li>
+  <li>Mise en place de l'infrastructure réseau</li>
+  <li>Configuration LAN/WAN</li>
+  <li>Configuration du pare-feu pfSense</li>
+  <li>Connexion des équipements réseau</li>
+  <li>Vérification de la connectivité</li>
+  <li>Tests et dépannage</li>
 </ul>
 </div>
+
 <div class="project-tags">
-<span>pfSense</span><span>TCP/IP</span><span>LAN/WAN</span><span>Firewall</span>
+  <span>pfSense</span>
+  <span>TCP/IP</span>
+  <span>LAN/WAN</span>
+  <span>Firewall</span>
 </div>
+
 </article>
 
 <article class="project-card">
+
 <div class="project-number">02</div>
+
 <div class="project-header">
 <div class="project-icon">📹</div>
 <div>
-<span class="project-location">📍 ENCG Settat</span>
-<h3>Vidéosurveillance & Réseau</h3>
+  <span class="project-location">📍 ENCG Settat</span>
+  <h3>Vidéosurveillance & Réseau</h3>
 </div>
 </div>
+
 <p class="project-description">
-Intervention sur l'infrastructure de vidéosurveillance et le réseau informatique de l'établissement.
+  Intervention sur l'infrastructure de vidéosurveillance et le réseau informatique de l'établissement.
 </p>
+
 <div class="project-work">
 <h4>Intervention</h4>
 <ul>
-<li>Diagnostic des équipements</li>
-<li>Intervention sur les caméras</li>
-<li>Vérification du câblage</li>
-<li>Configuration des équipements</li>
-<li>Intervention réseau</li>
-<li>Tests et remise en service</li>
+  <li>Diagnostic des équipements</li>
+  <li>Intervention sur les caméras</li>
+  <li>Vérification du câblage</li>
+  <li>Configuration des équipements</li>
+  <li>Intervention réseau</li>
+  <li>Tests et remise en service</li>
 </ul>
 </div>
+
 <div class="project-tags">
-<span>CCTV</span><span>Caméras IP</span><span>TCP/IP</span><span>Câblage</span>
+  <span>CCTV</span>
+  <span>Caméras IP</span>
+  <span>TCP/IP</span>
+  <span>Câblage</span>
 </div>
+
 </article>
 
 <article class="project-card">
+
 <div class="project-number">03</div>
+
 <div class="project-header">
 <div class="project-icon">💾</div>
 <div>
-<span class="project-location">🎓 Projet de Fin d'Études</span>
-<h3>Solution de sauvegarde avec Veeam</h3>
+  <span class="project-location">🎓 Projet de Fin d'Études</span>
+  <h3>Solution de sauvegarde avec Veeam</h3>
 </div>
 </div>
+
 <p class="project-description">
-Projet consacré à l'étude et à la mise en œuvre d'une solution de sauvegarde et de restauration avec Veeam Backup & Replication.
+  Projet consacré à l'étude et à la mise en œuvre d'une solution
+  de sauvegarde et de restauration avec Veeam Backup & Replication.
 </p>
+
 <div class="project-work">
 <ul>
-<li>Étude du fonctionnement de Veeam</li>
-<li>Mise en place d'une solution de sauvegarde</li>
-<li>Configuration des tâches de sauvegarde</li>
-<li>Étude des méthodes de restauration</li>
+  <li>Étude du fonctionnement de Veeam</li>
+  <li>Mise en place d'une solution de sauvegarde</li>
+  <li>Configuration des tâches de sauvegarde</li>
+  <li>Étude des méthodes de restauration</li>
 </ul>
 </div>
+
 <div class="project-tags">
-<span>Veeam</span><span>Backup</span><span>Restore</span><span>VMware</span>
+  <span>Veeam</span>
+  <span>Backup</span>
+  <span>Restore</span>
+  <span>VMware</span>
 </div>
+
 </article>
 
 </div>
 </div>
+
 </section>
 
 <!-- =====================================================
-     EXPÉRIENCE
+     EXPERIENCE
 ===================================================== -->
 
 <section id="experience">
+
 <div class="container">
 
 <div class="section-header">
-<span class="section-label">PARCOURS</span>
-<h2>Expérience professionnelle</h2>
-<p>Mon parcours dans le support informatique, les systèmes, les réseaux et les infrastructures IT.</p>
+  <span class="section-label">PARCOURS</span>
+  <h2>Expérience professionnelle</h2>
+  <p>
+    Mon parcours dans le support informatique, les systèmes,
+    les réseaux et les infrastructures IT.
+  </p>
 </div>
 
 <div class="experience-timeline">
 
 <article class="experience-item current">
+
 <div class="timeline-dot"></div>
+
 <div class="experience-card">
 
 <div class="experience-top">
+
 <div>
-<span class="experience-status">POSTE ACTUEL</span>
-<h3>Technicien Informatique / Systèmes & Réseaux</h3>
-<p class="company">Maroges / RysaSoft</p>
+  <span class="experience-status">POSTE ACTUEL</span>
+  <h3>Technicien Informatique / Systèmes & Réseaux</h3>
+  <p class="company">Maroges / RysaSoft</p>
 </div>
-<span class="experience-date">Février 2025 – Présent</span>
+
+<span class="experience-date">
+  Février 2025 – Présent
+</span>
+
 </div>
 
 <p class="experience-description">
-Support informatique, maintenance, réseaux et interventions techniques sur site.
+  Support informatique, maintenance, réseaux et interventions techniques sur site.
 </p>
 
 <div class="missions">
 <ul>
-<li>Support aux utilisateurs</li>
-<li>Diagnostic des incidents</li>
-<li>Installation des postes</li>
-<li>Maintenance matérielle et logicielle</li>
-<li>Installation et dépannage réseau</li>
-<li>Configuration des équipements réseau</li>
-<li>Vidéosurveillance</li>
-<li>Interventions techniques sur site</li>
+  <li>Support aux utilisateurs</li>
+  <li>Diagnostic des incidents</li>
+  <li>Installation des postes</li>
+  <li>Maintenance matérielle et logicielle</li>
+  <li>Installation et dépannage réseau</li>
+  <li>Configuration des équipements réseau</li>
+  <li>Vidéosurveillance</li>
+  <li>Interventions techniques sur site</li>
 </ul>
 </div>
 
 <div class="experience-tags">
-<span>Support IT</span><span>Windows</span><span>Réseaux</span><span>CCTV</span>
+  <span>Support IT</span>
+  <span>Windows</span>
+  <span>Réseaux</span>
+  <span>CCTV</span>
 </div>
 
 </div>
+
 </article>
 
 <article class="experience-item">
+
 <div class="timeline-dot"></div>
+
 <div class="experience-card">
 
 <div class="experience-top">
+
 <div>
-<h3>Technicien Informatique Freelance</h3>
-<p class="company">Derb Chalef</p>
+  <h3>Technicien Informatique Freelance</h3>
+  <p class="company">Derb Chalef</p>
 </div>
-<span class="experience-date">Octobre 2024 – Janvier 2025</span>
+
+<span class="experience-date">
+  Octobre 2024 – Janvier 2025
+</span>
+
 </div>
 
 <p class="experience-description">
-Maintenance, diagnostic, installation des systèmes et assistance technique.
+  Maintenance, diagnostic, installation des systèmes et assistance technique.
 </p>
 
 </div>
+
 </article>
 
 <article class="experience-item">
+
 <div class="timeline-dot"></div>
+
 <div class="experience-card">
 
 <div class="experience-top">
+
 <div>
-<h3>Stagiaire PFE</h3>
-<p class="company">Maghreb Steel</p>
+  <h3>Stagiaire PFE</h3>
+  <p class="company">Maghreb Steel</p>
 </div>
-<span class="experience-date">Mars 2024</span>
+
+<span class="experience-date">
+  Mars 2024
+</span>
+
 </div>
 
 <div class="project-highlight">
-<span>PROJET PFE</span>
-<strong>Solution de sauvegarde avec Veeam Backup & Replication</strong>
+  <span>PROJET PFE</span>
+  <strong>Solution de sauvegarde avec Veeam Backup & Replication</strong>
 </div>
 
 </div>
+
 </article>
 
 <article class="experience-item">
+
 <div class="timeline-dot"></div>
+
 <div class="experience-card">
 
 <div class="experience-top">
+
 <div>
-<h3>Stagiaire Informatique</h3>
-<p class="company">SIRAIL Maroc</p>
+  <h3>Stagiaire Informatique</h3>
+  <p class="company">SIRAIL Maroc</p>
 </div>
-<span class="experience-date">Avril 2023 – Mai 2023</span>
+
+<span class="experience-date">
+  Avril 2023 – Mai 2023
+</span>
+
 </div>
 
 <p class="experience-description">
-Participation aux activités de support et de maintenance informatique.
+  Participation aux activités de support et de maintenance informatique.
 </p>
 
 </div>
+
 </article>
 
 </div>
 </div>
+
 </section>
 
 <!-- =====================================================
@@ -1507,69 +1677,129 @@ Participation aux activités de support et de maintenance informatique.
 ===================================================== -->
 
 <section id="formation">
+
 <div class="container">
 
 <div class="section-header">
-<span class="section-label">PARCOURS ACADÉMIQUE</span>
-<h2>Formation</h2>
-<p>Un parcours orienté vers les systèmes, les réseaux et les infrastructures informatiques.</p>
+  <span class="section-label">PARCOURS ACADÉMIQUE</span>
+  <h2>Formation</h2>
+  <p>
+    Un parcours orienté vers les systèmes,
+    les réseaux et les infrastructures informatiques.
+  </p>
 </div>
 
 <div class="formation-grid">
 
 <article class="formation-card formation-main">
+
 <div class="formation-top">
-<div class="formation-icon">🎓</div>
-<span class="formation-date">2025 – 2026</span>
+  <div class="formation-icon">🎓</div>
+  <span class="formation-date">2025 – 2026</span>
 </div>
-<span class="diploma-status">✓ DIPLÔME OBTENU</span>
+
+<span class="diploma-status">
+  ✓ DIPLÔME OBTENU
+</span>
+
 <h3>Licence Professionnelle</h3>
-<h4>Administration Avancée des Systèmes et Réseaux</h4>
-<p class="school">Faculté des Sciences Aïn Chock</p>
-<p class="formation-location">📍 Casablanca, Maroc</p>
-<p class="formation-description">
-Formation spécialisée dans l'administration avancée des systèmes, réseaux et infrastructures informatiques.
+
+<h4>
+  Administration Avancée des Systèmes et Réseaux
+</h4>
+
+<p class="school">
+  Faculté des Sciences Aïn Chock
 </p>
+
+<p class="formation-location">
+  📍 Casablanca, Maroc
+</p>
+
+<p class="formation-description">
+  Formation spécialisée dans l'administration avancée
+  des systèmes, réseaux et infrastructures informatiques.
+</p>
+
 <div class="formation-tags">
-<span>Systèmes</span><span>Réseaux</span><span>Administration</span>
+  <span>Systèmes</span>
+  <span>Réseaux</span>
+  <span>Administration</span>
 </div>
+
 </article>
 
 <article class="formation-card">
+
 <div class="formation-top">
-<div class="formation-icon">💻</div>
-<span class="formation-date">2022 – 2024</span>
+  <div class="formation-icon">💻</div>
+  <span class="formation-date">2022 – 2024</span>
 </div>
-<span class="diploma-status">✓ DIPLÔME OBTENU</span>
+
+<span class="diploma-status">
+  ✓ DIPLÔME OBTENU
+</span>
+
 <h3>Diplôme de Technicien Spécialisé</h3>
-<h4>Infrastructure Digitale : Systèmes et Réseaux</h4>
-<p class="school">CFP Hassania</p>
-<p class="formation-location">📍 Casablanca, Maroc</p>
-<p class="formation-description">
-Formation technique orientée systèmes, réseaux, infrastructure digitale et support informatique.
+
+<h4>
+  Infrastructure Digitale : Systèmes et Réseaux
+</h4>
+
+<p class="school">
+  CFP Hassania
 </p>
+
+<p class="formation-location">
+  📍 Casablanca, Maroc
+</p>
+
+<p class="formation-description">
+  Formation technique orientée systèmes, réseaux,
+  infrastructure digitale et support informatique.
+</p>
+
 <div class="formation-tags">
-<span>Windows</span><span>Linux</span><span>Réseaux</span>
+  <span>Windows</span>
+  <span>Linux</span>
+  <span>Réseaux</span>
 </div>
+
 </article>
 
 <article class="formation-card">
+
 <div class="formation-top">
-<div class="formation-icon">📘</div>
-<span class="formation-date">2020 – 2021</span>
+  <div class="formation-icon">📘</div>
+  <span class="formation-date">2020 – 2021</span>
 </div>
-<span class="diploma-status">✓ DIPLÔME OBTENU</span>
+
+<span class="diploma-status">
+  ✓ DIPLÔME OBTENU
+</span>
+
 <h3>Baccalauréat Scientifique</h3>
+
 <h4>Sciences Physiques</h4>
-<p class="school">Lycée Oued Eddahab</p>
-<p class="formation-location">📍 Casablanca, Maroc</p>
-<p class="formation-description">
-Formation scientifique constituant la base de mon parcours vers les technologies de l'information.
+
+<p class="school">
+  Lycée Oued Eddahab
 </p>
+
+<p class="formation-location">
+  📍 Casablanca, Maroc
+</p>
+
+<p class="formation-description">
+  Formation scientifique constituant la base de mon parcours
+  vers les technologies de l'information.
+</p>
+
 </article>
 
 </div>
 </div>
+
 </section>
 
 <!-- =====================================================
@@ -1577,12 +1807,24 @@ Formation scientifique constituant la base de mon parcours vers les technologies
 ===================================================== -->
 
 <section id="contact">
+
 <div class="container">
 
 <div class="section-header">
-<span class="section-label">CONTACT</span>
-<h2>Restons en contact</h2>
-<p>Vous souhaitez échanger au sujet d'une opportunité professionnelle ou d'un projet IT ? N'hésitez pas à me contacter.</p>
+
+<span class="section-label">
+  CONTACT
+</span>
+
+<h2>
+  Restons en contact
+</h2>
+
+<p>
+  Vous souhaitez échanger au sujet d'une opportunité professionnelle
+  ou d'un projet IT ? N'hésitez pas à me contacter.
+</p>
+
 </div>
 
 <div class="contact-box">
@@ -1590,89 +1832,138 @@ Formation scientifique constituant la base de mon parcours vers les technologies
 <div class="contact-intro">
 
 <span class="contact-badge">
-● DISPONIBLE POUR ÉCHANGER
+  ● DISPONIBLE POUR ÉCHANGER
 </span>
 
-<h3>Échangeons sur vos besoins IT</h3>
+<h3>
+  Échangeons sur vos besoins IT
+</h3>
 
 <p>
-Je suis disponible pour échanger autour d'opportunités professionnelles
-et de projets liés aux systèmes, réseaux, infrastructures IT,
-support informatique et vidéosurveillance.
+  Je suis disponible pour échanger autour d'opportunités professionnelles
+  et de projets liés aux systèmes, réseaux, infrastructures IT,
+  support informatique et vidéosurveillance.
 </p>
 
 <div class="contact-skills">
-<span>Systèmes</span>
-<span>Réseaux</span>
-<span>Support IT</span>
-<span>Infrastructure</span>
-<span>pfSense</span>
-<span>CCTV</span>
+  <span>Systèmes</span>
+  <span>Réseaux</span>
+  <span>Support IT</span>
+  <span>Infrastructure</span>
+  <span>pfSense</span>
+  <span>CCTV</span>
 </div>
 
-<a href="CV-KRAMO-AMINE.pdf"
-class="contact-cv"
-download>
-Télécharger mon CV ↓
+<a
+  href="CV-KRAMO-AMINE.pdf"
+  class="contact-cv"
+  download>
+  Télécharger mon CV ↓
 </a>
 
 </div>
 
 <div class="contact-list">
 
-<a href="mailto:aminekramo@gmail.com" class="contact-item">
-<span class="contact-icon">✉️</span>
-<span class="contact-details">
-<small>E-mail</small>
-<strong>aminekramo@gmail.com</strong>
+<a
+  href="mailto:aminekramo@gmail.com"
+  class="contact-item">
+
+<span class="contact-icon">
+  ✉️
 </span>
-<span class="contact-arrow">→</span>
+
+<span class="contact-details">
+  <small>E-mail</small>
+  <strong>aminekramo@gmail.com</strong>
+</span>
+
+<span class="contact-arrow">
+  →
+</span>
+
 </a>
 
-<a href="tel:+212648037074" class="contact-item">
-<span class="contact-icon">☎️</span>
-<span class="contact-details">
-<small>Téléphone</small>
-<strong>+212 648 037 074</strong>
+<a
+  href="tel:+212648037074"
+  class="contact-item">
+
+<span class="contact-icon">
+  ☎️
 </span>
-<span class="contact-arrow">→</span>
+
+<span class="contact-details">
+  <small>Téléphone</small>
+  <strong>+212 648 037 074</strong>
+</span>
+
+<span class="contact-arrow">
+  →
+</span>
+
 </a>
 
-<a href="https://wa.me/212648037074"
-target="_blank"
-rel="noopener noreferrer"
-class="contact-item">
-<span class="contact-icon">💬</span>
-<span class="contact-details">
-<small>WhatsApp</small>
-<strong>Envoyer un message</strong>
+<a
+  href="https://wa.me/212648037074"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="contact-item">
+
+<span class="contact-icon">
+  💬
 </span>
-<span class="contact-arrow">→</span>
+
+<span class="contact-details">
+  <small>WhatsApp</small>
+  <strong>Envoyer un message</strong>
+</span>
+
+<span class="contact-arrow">
+  →
+</span>
+
 </a>
 
-<a href="https://www.linkedin.com/in/aminekramo/"
-target="_blank"
-rel="noopener noreferrer"
-class="contact-item">
-<span class="contact-icon">in</span>
-<span class="contact-details">
-<small>LinkedIn</small>
-<strong>linkedin.com/in/aminekramo</strong>
+<a
+  href="https://www.linkedin.com/in/aminekramo/"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="contact-item">
+
+<span class="contact-icon">
+  in
 </span>
-<span class="contact-arrow">→</span>
+
+<span class="contact-details">
+  <small>LinkedIn</small>
+  <strong>linkedin.com/in/aminekramo</strong>
+</span>
+
+<span class="contact-arrow">
+  →
+</span>
+
 </a>
 
 <div class="contact-item">
-<span class="contact-icon">📍</span>
-<span class="contact-details">
-<small>Localisation</small>
-<strong>Casablanca, Maroc</strong>
+
+<span class="contact-icon">
+  📍
 </span>
+
+<span class="contact-details">
+  <small>Localisation</small>
+  <strong>Casablanca, Maroc</strong>
+</span>
+
 </div>
 
 </div>
+
 </div>
+
 </div>
+
 </section>
 
 </main>
@@ -1686,17 +1977,23 @@ class="contact-item">
 <div class="container footer-content">
 
 <div>
-<strong>Amine Kramo</strong>
-<span>Technicien Systèmes & Réseaux</span>
+  <strong>Amine Kramo</strong>
+  <span>Technicien Systèmes & Réseaux</span>
 </div>
 
 <p>
-© 2026 Amine Kramo — Portfolio professionnel
+  © 2026 Amine Kramo — Portfolio professionnel
 </p>
 
 </div>
 
 </footer>
+
+<!-- =====================================================
+     TRADUCTION FR / EN
+===================================================== -->
+
+<script src="lang.js"></script>
 
 </body>
 </html>
