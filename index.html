@@ -594,5 +594,6 @@ footer{padding:28px 0;text-align:center;color:#8ba3bb;font-size:.88rem;border-to
   const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
   document.querySelectorAll('main [id]').forEach(s=>so.observe(s));
 </script>
+  <script src="lang.js"></script>
 </body>
 </html>
