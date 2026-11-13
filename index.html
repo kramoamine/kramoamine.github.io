@@ -94,15 +94,41 @@ header{
   font-weight:800;
 }
 
-.logo{
-  width:42px;
-  height:42px;
-  display:grid;
-  place-items:center;
-  border-radius:12px;
-  background:var(--gradient);
-  color:#04101d;
-  font-weight:900;
+/* LOGO BANNER */
+
+.brand-logo{
+  width:48px;
+  height:48px;
+  display:block;
+  flex-shrink:0;
+
+  object-fit:cover;
+  object-position:center;
+
+  border-radius:50%;
+
+  border:2px solid rgba(34,211,238,.55);
+
+  box-shadow:
+    0 0 0 3px rgba(34,211,238,.06),
+    0 5px 18px rgba(0,0,0,.35);
+
+  transition:
+    transform .25s,
+    border-color .25s,
+    box-shadow .25s;
+}
+
+.brand:hover .brand-logo{
+  transform:scale(1.06);
+  border-color:var(--cyan);
+
+  box-shadow:
+    0 0 18px rgba(34,211,238,.28);
+}
+
+.brand-name{
+  white-space:nowrap;
 }
 
 .brand-name span{
@@ -134,14 +160,21 @@ nav a:hover{
   flex-shrink:0;
   min-width:44px;
   padding:7px 12px;
+
   border-radius:9px;
+
   border:1px solid rgba(34,211,238,.35);
+
   background:rgba(34,211,238,.08);
+
   color:var(--cyan);
+
   font-family:inherit;
   font-size:.82rem;
   font-weight:800;
+
   cursor:pointer;
+
   transition:.25s;
 }
 
@@ -157,22 +190,34 @@ nav a:hover{
 
 .hero{
   min-height:calc(100vh - 75px);
+
   display:grid;
+
   grid-template-columns:1.25fr .75fr;
+
   align-items:center;
+
   gap:70px;
+
   padding:80px 0;
 }
 
 .badge{
   display:inline-flex;
   align-items:center;
+
   gap:9px;
+
   padding:7px 14px;
+
   color:var(--cyan);
+
   background:rgba(34,211,238,.07);
+
   border:1px solid rgba(34,211,238,.25);
+
   border-radius:50px;
+
   font-size:.82rem;
   font-weight:700;
 }
@@ -180,75 +225,111 @@ nav a:hover{
 .badge-dot{
   width:8px;
   height:8px;
+
   border-radius:50%;
+
   background:var(--green);
-  box-shadow:0 0 12px rgba(34,197,94,.8);
+
+  box-shadow:
+    0 0 12px rgba(34,197,94,.8);
 }
 
 .hero h1{
   margin:22px 0 5px;
-  font-size:clamp(3rem,6vw,5.2rem);
+
+  font-size:
+    clamp(3rem,6vw,5.2rem);
+
   line-height:1.05;
+
   letter-spacing:-2px;
 }
 
 .hero h1 span{
   background:var(--gradient);
+
   -webkit-background-clip:text;
   background-clip:text;
+
   color:transparent;
 }
 
 .job-title{
   margin-top:15px;
-  font-size:clamp(1.25rem,2.5vw,1.7rem);
+
+  font-size:
+    clamp(1.25rem,2.5vw,1.7rem);
+
   font-weight:700;
+
   color:#d7e8f7;
 }
 
 .degree{
   margin-top:6px;
+
   color:var(--cyan);
+
   font-size:.98rem;
+
   font-weight:600;
 }
 
 .description{
   max-width:700px;
+
   margin-top:22px;
+
   color:var(--muted);
+
   font-size:1.04rem;
 }
 
 .buttons{
   margin-top:33px;
+
   display:flex;
+
   flex-wrap:wrap;
+
   gap:13px;
 }
 
 .btn{
   display:inline-flex;
+
   align-items:center;
   justify-content:center;
+
   min-height:48px;
+
   padding:11px 22px;
+
   border-radius:11px;
+
   text-decoration:none;
+
   font-weight:700;
+
   transition:.25s;
 }
 
 .btn-primary{
   background:var(--gradient);
+
   color:#04101d;
-  box-shadow:0 10px 30px rgba(34,211,238,.16);
+
+  box-shadow:
+    0 10px 30px rgba(34,211,238,.16);
 }
 
 .btn-secondary{
   border:1px solid #345370;
+
   color:#fff;
-  background:rgba(255,255,255,.03);
+
+  background:
+    rgba(255,255,255,.03);
 }
 
 .btn:hover{
@@ -257,10 +338,15 @@ nav a:hover{
 
 .information{
   display:flex;
+
   flex-wrap:wrap;
+
   gap:16px;
+
   margin-top:30px;
+
   color:var(--muted);
+
   font-size:.9rem;
 }
 
@@ -270,76 +356,118 @@ nav a:hover{
 
 .profile-card{
   position:relative;
+
   padding:35px;
+
   border-radius:25px;
+
   border:1px solid #214869;
-  background:linear-gradient(145deg,#102b48,#081525);
-  box-shadow:0 30px 80px rgba(0,0,0,.45);
+
+  background:
+    linear-gradient(145deg,#102b48,#081525);
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.45);
+
   overflow:hidden;
 }
 
 .profile-card::before{
   content:"";
+
   position:absolute;
+
   width:280px;
   height:280px;
+
   border-radius:50%;
+
   top:-170px;
   right:-100px;
-  background:radial-gradient(circle,rgba(34,211,238,.25),transparent 68%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(34,211,238,.25),
+      transparent 68%
+    );
 }
 
 .photo-wrapper{
   position:relative;
+
   width:170px;
   height:170px;
+
   margin-bottom:25px;
 }
 
 .photo-wrapper::before{
   content:"";
+
   position:absolute;
+
   inset:-6px;
+
   border-radius:50%;
+
   background:var(--gradient);
 }
 
 .profile-photo{
   position:relative;
+
   width:170px;
   height:170px;
+
   object-fit:cover;
   object-position:center;
+
   border-radius:50%;
+
   border:5px solid #09182a;
+
   display:block;
 }
 
 .profile-card h2{
   position:relative;
+
   font-size:1.55rem;
 }
 
 .profile-role{
   position:relative;
+
   color:var(--cyan);
+
   font-weight:600;
 }
 
 .profile-info{
   position:relative;
+
   margin-top:22px;
+
   padding-top:20px;
-  border-top:1px solid rgba(255,255,255,.1);
+
+  border-top:
+    1px solid rgba(255,255,255,.1);
+
   display:grid;
+
   gap:13px;
 }
 
 .profile-info div{
   display:flex;
+
   align-items:center;
+
   gap:11px;
+
   color:#cbddeb;
+
   font-size:.93rem;
 }
 
@@ -347,39 +475,56 @@ nav a:hover{
 .info-icon{
   width:40px;
   height:40px;
+
   flex-shrink:0;
+
   display:grid;
+
   place-items:center;
+
   border-radius:10px;
-  background:rgba(34,211,238,.09);
+
+  background:
+    rgba(34,211,238,.09);
 }
 
 /* =====================================================
-   COMMUN AUX SECTIONS
+   SECTIONS
 ===================================================== */
 
 section:not(.hero){
   padding:100px 0;
-  border-top:1px solid rgba(255,255,255,.06);
+
+  border-top:
+    1px solid rgba(255,255,255,.06);
 }
 
 .section-header{
   max-width:720px;
+
   margin-bottom:45px;
 }
 
 .section-label{
   display:inline-block;
+
   color:var(--cyan);
+
   font-size:.77rem;
+
   font-weight:800;
+
   letter-spacing:.18em;
+
   margin-bottom:7px;
 }
 
 .section-header h2{
-  font-size:clamp(2rem,4vw,3rem);
+  font-size:
+    clamp(2rem,4vw,3rem);
+
   line-height:1.2;
+
   margin-bottom:10px;
 }
 
@@ -388,33 +533,52 @@ section:not(.hero){
 }
 
 /* =====================================================
-   À PROPOS
+   A PROPOS
 ===================================================== */
 
 .about-section{
-  background:linear-gradient(180deg,rgba(11,27,46,.35),transparent);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(11,27,46,.35),
+      transparent
+    );
 }
 
 .about-grid{
   display:grid;
-  grid-template-columns:1.15fr .85fr;
+
+  grid-template-columns:
+    1.15fr .85fr;
+
   gap:25px;
 }
 
 .about-card{
   padding:32px;
+
   border-radius:20px;
-  background:linear-gradient(145deg,#10243b,#0a192b);
-  border:1px solid var(--border);
+
+  background:
+    linear-gradient(
+      145deg,
+      #10243b,
+      #0a192b
+    );
+
+  border:
+    1px solid var(--border);
 }
 
 .about-card h3{
   color:var(--cyan);
+
   margin-bottom:20px;
 }
 
 .about-card p{
   color:var(--muted);
+
   margin-bottom:16px;
 }
 
@@ -428,23 +592,35 @@ section:not(.hero){
 
 .about-info{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+
+  grid-template-columns:
+    repeat(2,1fr);
+
   gap:13px;
 }
 
 .info-card{
   display:flex;
+
   align-items:center;
+
   gap:13px;
+
   padding:19px;
+
   border-radius:15px;
+
   background:#081727;
-  border:1px solid var(--border);
+
+  border:
+    1px solid var(--border);
 }
 
 .info-card small{
   display:block;
+
   color:var(--muted);
+
   font-size:.75rem;
 }
 
@@ -458,7 +634,10 @@ section:not(.hero){
 
 .skills-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:18px;
 }
 
@@ -467,19 +646,35 @@ section:not(.hero){
 .experience-card,
 .formation-card{
   position:relative;
+
   padding:27px;
+
   border-radius:18px;
-  background:linear-gradient(145deg,var(--card2),#091727);
-  border:1px solid var(--border);
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--card2),
+      #091727
+    );
+
+  border:
+    1px solid var(--border);
+
   transition:.3s;
 }
 
 .skill-card:hover,
 .project-card:hover,
 .formation-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(34,211,238,.4);
-  box-shadow:0 20px 50px rgba(0,0,0,.25);
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(34,211,238,.4);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.25);
 }
 
 .skill-icon,
@@ -487,12 +682,20 @@ section:not(.hero){
 .formation-icon{
   width:50px;
   height:50px;
+
   display:grid;
+
   place-items:center;
+
   border-radius:13px;
+
   font-size:1.4rem;
-  background:rgba(34,211,238,.09);
-  border:1px solid rgba(34,211,238,.18);
+
+  background:
+    rgba(34,211,238,.09);
+
+  border:
+    1px solid rgba(34,211,238,.18);
 }
 
 .skill-icon{
@@ -505,7 +708,9 @@ section:not(.hero){
 
 .skill-card p{
   color:var(--muted);
+
   font-size:.91rem;
+
   margin-bottom:18px;
 }
 
@@ -514,7 +719,9 @@ section:not(.hero){
 .experience-tags,
 .formation-tags{
   display:flex;
+
   flex-wrap:wrap;
+
   gap:7px;
 }
 
@@ -523,11 +730,19 @@ section:not(.hero){
 .experience-tags span,
 .formation-tags span{
   padding:4px 10px;
+
   border-radius:50px;
-  background:rgba(34,211,238,.07);
-  border:1px solid rgba(34,211,238,.17);
+
+  background:
+    rgba(34,211,238,.07);
+
+  border:
+    1px solid rgba(34,211,238,.17);
+
   color:#bfeaf5;
+
   font-size:.72rem;
+
   font-weight:600;
 }
 
@@ -537,7 +752,10 @@ section:not(.hero){
 
 .projects-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+
+  grid-template-columns:
+    repeat(2,1fr);
+
   gap:20px;
 }
 
@@ -551,26 +769,39 @@ section:not(.hero){
 
 .project-number{
   position:absolute;
+
   right:25px;
   top:15px;
+
   font-size:4rem;
+
   font-weight:900;
-  color:rgba(255,255,255,.035);
+
+  color:
+    rgba(255,255,255,.035);
 }
 
 .project-header{
   display:flex;
+
   align-items:flex-start;
+
   gap:16px;
+
   margin-bottom:20px;
+
   position:relative;
 }
 
 .project-location{
   display:block;
+
   margin-bottom:4px;
+
   color:var(--cyan);
+
   font-size:.78rem;
+
   font-weight:700;
 }
 
@@ -580,17 +811,25 @@ section:not(.hero){
 
 .project-description{
   color:var(--muted);
+
   font-size:.93rem;
+
   margin-bottom:20px;
 }
 
 .project-work,
 .missions{
   margin:18px 0;
+
   padding:18px 20px;
+
   border-radius:14px;
-  background:rgba(5,13,24,.42);
-  border:1px solid rgba(255,255,255,.06);
+
+  background:
+    rgba(5,13,24,.42);
+
+  border:
+    1px solid rgba(255,255,255,.06);
 }
 
 .project-work h4,
@@ -601,7 +840,9 @@ section:not(.hero){
 .project-work ul,
 .missions ul{
   padding-left:19px;
+
   color:var(--muted);
+
   font-size:.87rem;
 }
 
@@ -616,19 +857,31 @@ section:not(.hero){
 
 .experience-timeline{
   position:relative;
+
   display:grid;
+
   gap:22px;
+
   padding-left:38px;
 }
 
 .experience-timeline::before{
   content:"";
+
   position:absolute;
+
   top:10px;
   bottom:10px;
   left:8px;
+
   width:2px;
-  background:linear-gradient(var(--cyan),var(--blue),transparent);
+
+  background:
+    linear-gradient(
+      var(--cyan),
+      var(--blue),
+      transparent
+    );
 }
 
 .experience-item{
@@ -637,18 +890,26 @@ section:not(.hero){
 
 .timeline-dot{
   position:absolute;
+
   left:-38px;
   top:30px;
+
   width:18px;
   height:18px;
+
   border-radius:50%;
+
   background:var(--bg);
-  border:3px solid var(--cyan);
+
+  border:
+    3px solid var(--cyan);
 }
 
 .experience-item.current .timeline-dot{
   background:var(--cyan);
-  box-shadow:0 0 0 6px rgba(34,211,238,.09);
+
+  box-shadow:
+    0 0 0 6px rgba(34,211,238,.09);
 }
 
 .experience-card{
@@ -657,9 +918,13 @@ section:not(.hero){
 
 .experience-top{
   display:flex;
+
   justify-content:space-between;
+
   align-items:flex-start;
+
   gap:25px;
+
   margin-bottom:17px;
 }
 
@@ -669,53 +934,82 @@ section:not(.hero){
 
 .company{
   color:var(--cyan);
+
   font-weight:700;
 }
 
 .experience-status{
   display:inline-block;
+
   padding:3px 9px;
+
   margin-bottom:5px;
+
   border-radius:50px;
+
   color:#79e6f5;
-  background:rgba(34,211,238,.08);
+
+  background:
+    rgba(34,211,238,.08);
+
   font-size:.67rem;
+
   font-weight:800;
 }
 
 .experience-date{
   flex-shrink:0;
+
   padding:6px 12px;
+
   border-radius:50px;
+
   color:#c7e9f2;
-  background:rgba(34,211,238,.07);
+
+  background:
+    rgba(34,211,238,.07);
+
   font-size:.79rem;
 }
 
 .experience-description{
   color:var(--muted);
+
   font-size:.93rem;
 }
 
 .missions ul{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+
+  grid-template-columns:
+    repeat(2,1fr);
+
   gap:5px 30px;
 }
 
 .project-highlight{
   margin:18px 0;
+
   padding:16px;
+
   border-radius:13px;
-  background:rgba(34,211,238,.055);
-  border:1px solid rgba(34,211,238,.16);
+
+  background:
+    rgba(34,211,238,.055);
+
+  border:
+    1px solid rgba(34,211,238,.16);
 }
 
 .project-highlight span{
   display:block;
+
   color:var(--cyan);
+
   font-size:.67rem;
+
   font-weight:800;
+
   margin-bottom:4px;
 }
 
@@ -725,43 +1019,66 @@ section:not(.hero){
 
 .formation-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:20px;
 }
 
 .formation-card{
   display:flex;
+
   flex-direction:column;
 }
 
 .formation-main{
-  border-color:rgba(34,211,238,.3);
+  border-color:
+    rgba(34,211,238,.3);
 }
 
 .formation-top{
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
+
   margin-bottom:20px;
 }
 
 .formation-date{
   padding:5px 11px;
+
   border-radius:50px;
-  background:rgba(34,211,238,.07);
+
+  background:
+    rgba(34,211,238,.07);
+
   color:#bdebf4;
+
   font-size:.76rem;
 }
 
 .diploma-status{
   align-self:flex-start;
+
   padding:4px 10px;
+
   margin-bottom:14px;
+
   border-radius:50px;
+
   color:#72e59a;
-  background:rgba(34,197,94,.07);
-  border:1px solid rgba(34,197,94,.2);
+
+  background:
+    rgba(34,197,94,.07);
+
+  border:
+    1px solid rgba(34,197,94,.2);
+
   font-size:.65rem;
+
   font-weight:800;
 }
 
@@ -771,25 +1088,33 @@ section:not(.hero){
 
 .formation-card h4{
   min-height:52px;
+
   margin-bottom:14px;
+
   color:var(--cyan);
+
   font-size:.93rem;
 }
 
 .school{
   color:#d6e7f5;
+
   font-weight:650;
 }
 
 .formation-location{
   color:var(--muted);
+
   font-size:.82rem;
 }
 
 .formation-description{
   color:var(--muted);
+
   font-size:.87rem;
+
   margin:18px 0;
+
   flex-grow:1;
 }
 
@@ -799,27 +1124,49 @@ section:not(.hero){
 
 .contact-box{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:45px;
+
   padding:42px;
+
   border-radius:25px;
+
   border:1px solid #214765;
-  background:linear-gradient(135deg,#102b48,#071523);
+
+  background:
+    linear-gradient(
+      135deg,
+      #102b48,
+      #071523
+    );
 }
 
 .contact-badge{
   display:inline-flex;
+
   margin-bottom:20px;
+
   padding:5px 11px;
+
   border-radius:50px;
+
   color:#73e59a;
-  background:rgba(34,197,94,.07);
+
+  background:
+    rgba(34,197,94,.07);
+
   font-size:.67rem;
+
   font-weight:800;
 }
 
 .contact-intro h3{
-  font-size:clamp(1.7rem,3vw,2.4rem);
+  font-size:
+    clamp(1.7rem,3vw,2.4rem);
+
   margin-bottom:15px;
 }
 
@@ -829,28 +1176,44 @@ section:not(.hero){
 
 .contact-skills{
   display:flex;
+
   flex-wrap:wrap;
+
   gap:7px;
+
   margin-top:23px;
 }
 
 .contact-skills span{
   padding:5px 11px;
+
   border-radius:50px;
-  background:rgba(34,211,238,.07);
+
+  background:
+    rgba(34,211,238,.07);
+
   color:#bdebf5;
+
   font-size:.73rem;
 }
 
 .contact-cv{
   display:inline-flex;
+
   margin-top:30px;
+
   padding:12px 20px;
+
   border-radius:11px;
+
   background:var(--gradient);
+
   color:#04101d;
+
   text-decoration:none;
+
   font-weight:750;
+
   transition:.25s;
 }
 
@@ -860,51 +1223,75 @@ section:not(.hero){
 
 .contact-list{
   display:grid;
+
   gap:11px;
 }
 
 .contact-item{
   display:flex;
+
   align-items:center;
+
   gap:14px;
+
   min-width:0;
+
   padding:14px 16px;
+
   border-radius:14px;
-  background:rgba(255,255,255,.035);
-  border:1px solid rgba(255,255,255,.08);
+
+  background:
+    rgba(255,255,255,.035);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
   text-decoration:none;
+
   transition:.25s;
 }
 
 a.contact-item:hover{
   transform:translateX(6px);
+
   border-color:var(--cyan);
 }
 
 .contact-icon{
   width:43px;
   height:43px;
+
   flex-shrink:0;
+
   display:grid;
+
   place-items:center;
+
   border-radius:11px;
-  background:rgba(34,211,238,.09);
+
+  background:
+    rgba(34,211,238,.09);
+
   color:var(--cyan);
 }
 
 .contact-details{
   min-width:0;
+
   flex-grow:1;
 }
 
 .contact-details small{
   display:block;
+
   color:var(--muted);
+
   font-size:.72rem;
 }
 
 .contact-details strong{
   font-size:.9rem;
+
   overflow-wrap:anywhere;
 }
 
@@ -918,29 +1305,38 @@ a.contact-item:hover{
 
 footer{
   padding:28px 0;
-  border-top:1px solid rgba(255,255,255,.07);
+
+  border-top:
+    1px solid rgba(255,255,255,.07);
+
   background:#040b14;
 }
 
 .footer-content{
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
+
   gap:20px;
 }
 
 .footer-content div{
   display:flex;
+
   flex-direction:column;
 }
 
 .footer-content span{
   color:var(--cyan);
+
   font-size:.75rem;
 }
 
 .footer-content p{
   color:var(--muted);
+
   font-size:.8rem;
 }
 
@@ -961,7 +1357,8 @@ footer{
   }
 
   .skills-grid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+      repeat(2,1fr);
   }
 
   .formation-grid{
@@ -988,14 +1385,24 @@ footer{
 
   .navbar{
     padding:15px 0;
+
     flex-direction:column;
+
     align-items:flex-start;
+  }
+
+  .brand-logo{
+    width:44px;
+    height:44px;
   }
 
   nav{
     width:100%;
+
     overflow-x:auto;
+
     padding-bottom:6px;
+
     align-items:center;
   }
 
@@ -1022,6 +1429,7 @@ footer{
 
   .experience-top{
     flex-direction:column;
+
     gap:8px;
   }
 
@@ -1031,6 +1439,7 @@ footer{
 
   .footer-content{
     flex-direction:column;
+
     align-items:flex-start;
   }
 }
@@ -1049,8 +1458,17 @@ footer{
 <div class="container navbar">
 
 <a href="#accueil" class="brand">
-  <span class="logo">AK</span>
-  <span class="brand-name">Amine <span>Kramo</span></span>
+
+  <img
+    src="banner.jpg"
+    alt="Logo du portfolio Amine Kramo"
+    class="brand-logo"
+  >
+
+  <span class="brand-name">
+    Amine <span>Kramo</span>
+  </span>
+
 </a>
 
 <nav>
@@ -1174,45 +1592,67 @@ footer{
      A PROPOS
 ===================================================== -->
 
-<section class="about-section" id="apropos">
+<section
+  class="about-section"
+  id="apropos">
 
 <div class="container">
 
 <div class="section-header">
-  <span class="section-label">PRÉSENTATION</span>
-  <h2>À propos de moi</h2>
-  <p>Un profil technique orienté systèmes, réseaux et infrastructures informatiques.</p>
+
+  <span class="section-label">
+    PRÉSENTATION
+  </span>
+
+  <h2>
+    À propos de moi
+  </h2>
+
+  <p>
+    Un profil technique orienté systèmes,
+    réseaux et infrastructures informatiques.
+  </p>
+
 </div>
 
 <div class="about-grid">
 
 <div class="about-card">
 
-<h3>Technicien Systèmes & Réseaux</h3>
+<h3>
+  Technicien Systèmes & Réseaux
+</h3>
 
 <p>
   Diplômé d'une
-  <strong>Licence Professionnelle en Administration Avancée des Systèmes et Réseaux</strong>,
+  <strong>
+    Licence Professionnelle en Administration Avancée des Systèmes et Réseaux
+  </strong>,
   ainsi que d'un
-  <strong>Diplôme de Technicien Spécialisé en Infrastructure Digitale, option Systèmes et Réseaux</strong>,
+  <strong>
+    Diplôme de Technicien Spécialisé en Infrastructure Digitale,
+    option Systèmes et Réseaux
+  </strong>,
   j'ai développé un profil technique orienté infrastructure et support IT.
 </p>
 
 <p>
-  Mon expérience professionnelle et mes interventions sur le terrain m'ont permis
-  de renforcer mes compétences en administration Windows et Linux, réseaux LAN/WAN,
-  support informatique, maintenance, virtualisation, sauvegarde, sécurité réseau et vidéosurveillance.
+  Mon expérience professionnelle et mes interventions sur le terrain
+  m'ont permis de renforcer mes compétences en administration Windows
+  et Linux, réseaux LAN/WAN, support informatique, maintenance,
+  virtualisation, sauvegarde, sécurité réseau et vidéosurveillance.
 </p>
 
 <p>
-  J'interviens également sur l'installation, la configuration,
-  le diagnostic et le dépannage des équipements et infrastructures informatiques.
+  J'interviens également sur l'installation,
+  la configuration, le diagnostic et le dépannage
+  des équipements et infrastructures informatiques.
 </p>
 
 <p>
   Autonome, rigoureux et orienté résolution de problèmes,
-  je souhaite continuer à développer mon expertise dans les systèmes,
-  les réseaux et les infrastructures IT.
+  je souhaite continuer à développer mon expertise
+  dans les systèmes, les réseaux et les infrastructures IT.
 </p>
 
 </div>
@@ -1285,105 +1725,133 @@ footer{
 <div class="section-header">
   <span class="section-label">EXPERTISE</span>
   <h2>Compétences techniques</h2>
-  <p>Mes principales compétences en systèmes, réseaux, infrastructures et support IT.</p>
+  <p>
+    Mes principales compétences en systèmes,
+    réseaux, infrastructures et support IT.
+  </p>
 </div>
 
 <div class="skills-grid">
 
 <article class="skill-card">
-<div class="skill-icon">🛠️</div>
-<h3>Support informatique</h3>
-<p>Support utilisateurs N1/N2, diagnostic et résolution des incidents matériels, logiciels et réseau.</p>
-<div class="skill-tags">
-  <span>GLPI</span>
-  <span>Support N1/N2</span>
-  <span>Diagnostic</span>
-  <span>Maintenance</span>
-</div>
+  <div class="skill-icon">🛠️</div>
+  <h3>Support informatique</h3>
+  <p>
+    Support utilisateurs N1/N2, diagnostic et résolution
+    des incidents matériels, logiciels et réseau.
+  </p>
+  <div class="skill-tags">
+    <span>GLPI</span>
+    <span>Support N1/N2</span>
+    <span>Diagnostic</span>
+    <span>Maintenance</span>
+  </div>
 </article>
 
 <article class="skill-card">
-<div class="skill-icon">🖥️</div>
-<h3>Windows & Linux</h3>
-<p>Installation, configuration, administration et maintenance des postes et systèmes informatiques.</p>
-<div class="skill-tags">
-  <span>Windows</span>
-  <span>Linux</span>
-  <span>Administration</span>
-</div>
+  <div class="skill-icon">🖥️</div>
+  <h3>Windows & Linux</h3>
+  <p>
+    Installation, configuration, administration
+    et maintenance des postes et systèmes informatiques.
+  </p>
+  <div class="skill-tags">
+    <span>Windows</span>
+    <span>Linux</span>
+    <span>Administration</span>
+  </div>
 </article>
 
 <article class="skill-card">
-<div class="skill-icon">🌐</div>
-<h3>Réseaux informatiques</h3>
-<p>Installation, configuration et dépannage des infrastructures réseau.</p>
-<div class="skill-tags">
-  <span>TCP/IP</span>
-  <span>LAN/WAN</span>
-  <span>Wi-Fi</span>
-  <span>VLAN</span>
-  <span>Routing & Switching</span>
-</div>
+  <div class="skill-icon">🌐</div>
+  <h3>Réseaux informatiques</h3>
+  <p>
+    Installation, configuration et dépannage
+    des infrastructures réseau.
+  </p>
+  <div class="skill-tags">
+    <span>TCP/IP</span>
+    <span>LAN/WAN</span>
+    <span>Wi-Fi</span>
+    <span>VLAN</span>
+    <span>Routing & Switching</span>
+  </div>
 </article>
 
 <article class="skill-card">
-<div class="skill-icon">🛡️</div>
-<h3>Sécurité réseau</h3>
-<p>Configuration de solutions permettant de sécuriser les infrastructures réseau.</p>
-<div class="skill-tags">
-  <span>pfSense</span>
-  <span>Firewall</span>
-  <span>Sécurité réseau</span>
-</div>
+  <div class="skill-icon">🛡️</div>
+  <h3>Sécurité réseau</h3>
+  <p>
+    Configuration de solutions permettant
+    de sécuriser les infrastructures réseau.
+  </p>
+  <div class="skill-tags">
+    <span>pfSense</span>
+    <span>Firewall</span>
+    <span>Sécurité réseau</span>
+  </div>
 </article>
 
 <article class="skill-card">
-<div class="skill-icon">☁️</div>
-<h3>Virtualisation</h3>
-<p>Création et utilisation d'environnements virtualisés pour systèmes et services.</p>
-<div class="skill-tags">
-  <span>VMware</span>
-  <span>VMware ESXi</span>
-  <span>VirtualBox</span>
-</div>
+  <div class="skill-icon">☁️</div>
+  <h3>Virtualisation</h3>
+  <p>
+    Création et utilisation d'environnements
+    virtualisés pour systèmes et services.
+  </p>
+  <div class="skill-tags">
+    <span>VMware</span>
+    <span>VMware ESXi</span>
+    <span>VirtualBox</span>
+  </div>
 </article>
 
 <article class="skill-card">
-<div class="skill-icon">💾</div>
-<h3>Sauvegarde & restauration</h3>
-<p>Solutions de sauvegarde et de restauration des données et environnements informatiques.</p>
-<div class="skill-tags">
-  <span>Veeam</span>
-  <span>Backup</span>
-  <span>Restore</span>
-  <span>Cobian Backup</span>
-</div>
+  <div class="skill-icon">💾</div>
+  <h3>Sauvegarde & restauration</h3>
+  <p>
+    Solutions de sauvegarde et de restauration
+    des données et environnements informatiques.
+  </p>
+  <div class="skill-tags">
+    <span>Veeam</span>
+    <span>Backup</span>
+    <span>Restore</span>
+    <span>Cobian Backup</span>
+  </div>
 </article>
 
 <article class="skill-card">
-<div class="skill-icon">📹</div>
-<h3>Vidéosurveillance</h3>
-<p>Installation, configuration, diagnostic et remise en service des équipements CCTV.</p>
-<div class="skill-tags">
-  <span>CCTV</span>
-  <span>Caméras IP</span>
-  <span>DVR / NVR</span>
-</div>
+  <div class="skill-icon">📹</div>
+  <h3>Vidéosurveillance</h3>
+  <p>
+    Installation, configuration, diagnostic
+    et remise en service des équipements CCTV.
+  </p>
+  <div class="skill-tags">
+    <span>CCTV</span>
+    <span>Caméras IP</span>
+    <span>DVR / NVR</span>
+  </div>
 </article>
 
 <article class="skill-card">
-<div class="skill-icon">📧</div>
-<h3>Microsoft 365</h3>
-<p>Utilisation et gestion des principaux outils collaboratifs Microsoft.</p>
-<div class="skill-tags">
-  <span>Microsoft 365</span>
-  <span>Outlook</span>
-  <span>Teams</span>
-  <span>OneDrive</span>
-</div>
+  <div class="skill-icon">📧</div>
+  <h3>Microsoft 365</h3>
+  <p>
+    Utilisation et gestion des principaux
+    outils collaboratifs Microsoft.
+  </p>
+  <div class="skill-tags">
+    <span>Microsoft 365</span>
+    <span>Outlook</span>
+    <span>Teams</span>
+    <span>OneDrive</span>
+  </div>
 </article>
 
 </div>
+
 </div>
 
 </section>
@@ -1397,31 +1865,56 @@ footer{
 <div class="container">
 
 <div class="section-header">
-  <span class="section-label">SUR LE TERRAIN</span>
-  <h2>Réalisations & interventions</h2>
-  <p>Quelques projets illustrant mon expérience pratique.</p>
+  <span class="section-label">
+    SUR LE TERRAIN
+  </span>
+
+  <h2>
+    Réalisations & interventions
+  </h2>
+
+  <p>
+    Quelques projets illustrant mon expérience pratique.
+  </p>
 </div>
 
 <div class="projects-grid">
 
 <article class="project-card">
 
-<div class="project-number">01</div>
+<div class="project-number">
+  01
+</div>
 
 <div class="project-header">
-<div class="project-icon">🛡️</div>
-<div>
-  <span class="project-location">📍 Kénitra</span>
-  <h3>Infrastructure réseau sécurisée avec pfSense</h3>
+
+<div class="project-icon">
+  🛡️
 </div>
+
+<div>
+  <span class="project-location">
+    📍 Kénitra
+  </span>
+
+  <h3>
+    Infrastructure réseau sécurisée avec pfSense
+  </h3>
+</div>
+
 </div>
 
 <p class="project-description">
-  Participation à la mise en place d'une infrastructure réseau sécurisée avec pfSense.
+  Participation à la mise en place
+  d'une infrastructure réseau sécurisée avec pfSense.
 </p>
 
 <div class="project-work">
-<h4>Intervention</h4>
+
+<h4>
+  Intervention
+</h4>
+
 <ul>
   <li>Mise en place de l'infrastructure réseau</li>
   <li>Configuration LAN/WAN</li>
@@ -1430,6 +1923,7 @@ footer{
   <li>Vérification de la connectivité</li>
   <li>Tests et dépannage</li>
 </ul>
+
 </div>
 
 <div class="project-tags">
@@ -1441,24 +1935,42 @@ footer{
 
 </article>
 
+
 <article class="project-card">
 
-<div class="project-number">02</div>
+<div class="project-number">
+  02
+</div>
 
 <div class="project-header">
-<div class="project-icon">📹</div>
-<div>
-  <span class="project-location">📍 ENCG Settat</span>
-  <h3>Vidéosurveillance & Réseau</h3>
+
+<div class="project-icon">
+  📹
 </div>
+
+<div>
+  <span class="project-location">
+    📍 ENCG Settat
+  </span>
+
+  <h3>
+    Vidéosurveillance & Réseau
+  </h3>
+</div>
+
 </div>
 
 <p class="project-description">
-  Intervention sur l'infrastructure de vidéosurveillance et le réseau informatique de l'établissement.
+  Intervention sur l'infrastructure de vidéosurveillance
+  et le réseau informatique de l'établissement.
 </p>
 
 <div class="project-work">
-<h4>Intervention</h4>
+
+<h4>
+  Intervention
+</h4>
+
 <ul>
   <li>Diagnostic des équipements</li>
   <li>Intervention sur les caméras</li>
@@ -1467,6 +1979,7 @@ footer{
   <li>Intervention réseau</li>
   <li>Tests et remise en service</li>
 </ul>
+
 </div>
 
 <div class="project-tags">
@@ -1478,30 +1991,46 @@ footer{
 
 </article>
 
+
 <article class="project-card">
 
-<div class="project-number">03</div>
+<div class="project-number">
+  03
+</div>
 
 <div class="project-header">
-<div class="project-icon">💾</div>
-<div>
-  <span class="project-location">🎓 Projet de Fin d'Études</span>
-  <h3>Solution de sauvegarde avec Veeam</h3>
+
+<div class="project-icon">
+  💾
 </div>
+
+<div>
+  <span class="project-location">
+    🎓 Projet de Fin d'Études
+  </span>
+
+  <h3>
+    Solution de sauvegarde avec Veeam
+  </h3>
+</div>
+
 </div>
 
 <p class="project-description">
-  Projet consacré à l'étude et à la mise en œuvre d'une solution
-  de sauvegarde et de restauration avec Veeam Backup & Replication.
+  Projet consacré à l'étude et à la mise en œuvre
+  d'une solution de sauvegarde et de restauration
+  avec Veeam Backup & Replication.
 </p>
 
 <div class="project-work">
+
 <ul>
   <li>Étude du fonctionnement de Veeam</li>
   <li>Mise en place d'une solution de sauvegarde</li>
   <li>Configuration des tâches de sauvegarde</li>
   <li>Étude des méthodes de restauration</li>
 </ul>
+
 </div>
 
 <div class="project-tags">
@@ -1514,6 +2043,7 @@ footer{
 </article>
 
 </div>
+
 </div>
 
 </section>
@@ -1527,12 +2057,20 @@ footer{
 <div class="container">
 
 <div class="section-header">
-  <span class="section-label">PARCOURS</span>
-  <h2>Expérience professionnelle</h2>
-  <p>
-    Mon parcours dans le support informatique, les systèmes,
-    les réseaux et les infrastructures IT.
-  </p>
+
+<span class="section-label">
+  PARCOURS
+</span>
+
+<h2>
+  Expérience professionnelle
+</h2>
+
+<p>
+  Mon parcours dans le support informatique,
+  les systèmes, les réseaux et les infrastructures IT.
+</p>
+
 </div>
 
 <div class="experience-timeline">
@@ -1546,9 +2084,19 @@ footer{
 <div class="experience-top">
 
 <div>
-  <span class="experience-status">POSTE ACTUEL</span>
-  <h3>Technicien Informatique / Systèmes & Réseaux</h3>
-  <p class="company">Maroges / RysaSoft</p>
+
+<span class="experience-status">
+  POSTE ACTUEL
+</span>
+
+<h3>
+  Technicien Informatique / Systèmes & Réseaux
+</h3>
+
+<p class="company">
+  Maroges / RysaSoft
+</p>
+
 </div>
 
 <span class="experience-date">
@@ -1558,7 +2106,8 @@ footer{
 </div>
 
 <p class="experience-description">
-  Support informatique, maintenance, réseaux et interventions techniques sur site.
+  Support informatique, maintenance,
+  réseaux et interventions techniques sur site.
 </p>
 
 <div class="missions">
@@ -1585,6 +2134,7 @@ footer{
 
 </article>
 
+
 <article class="experience-item">
 
 <div class="timeline-dot"></div>
@@ -1594,8 +2144,13 @@ footer{
 <div class="experience-top">
 
 <div>
-  <h3>Technicien Informatique Freelance</h3>
-  <p class="company">Derb Chalef</p>
+  <h3>
+    Technicien Informatique Freelance
+  </h3>
+
+  <p class="company">
+    Derb Chalef
+  </p>
 </div>
 
 <span class="experience-date">
@@ -1605,12 +2160,14 @@ footer{
 </div>
 
 <p class="experience-description">
-  Maintenance, diagnostic, installation des systèmes et assistance technique.
+  Maintenance, diagnostic,
+  installation des systèmes et assistance technique.
 </p>
 
 </div>
 
 </article>
+
 
 <article class="experience-item">
 
@@ -1621,8 +2178,15 @@ footer{
 <div class="experience-top">
 
 <div>
-  <h3>Stagiaire PFE</h3>
-  <p class="company">Maghreb Steel</p>
+
+<h3>
+  Stagiaire PFE
+</h3>
+
+<p class="company">
+  Maghreb Steel
+</p>
+
 </div>
 
 <span class="experience-date">
@@ -1632,13 +2196,22 @@ footer{
 </div>
 
 <div class="project-highlight">
-  <span>PROJET PFE</span>
-  <strong>Solution de sauvegarde avec Veeam Backup & Replication</strong>
+
+<span>
+  PROJET PFE
+</span>
+
+<strong>
+  Solution de sauvegarde avec
+  Veeam Backup & Replication
+</strong>
+
 </div>
 
 </div>
 
 </article>
+
 
 <article class="experience-item">
 
@@ -1649,8 +2222,15 @@ footer{
 <div class="experience-top">
 
 <div>
-  <h3>Stagiaire Informatique</h3>
-  <p class="company">SIRAIL Maroc</p>
+
+<h3>
+  Stagiaire Informatique
+</h3>
+
+<p class="company">
+  SIRAIL Maroc
+</p>
+
 </div>
 
 <span class="experience-date">
@@ -1660,7 +2240,8 @@ footer{
 </div>
 
 <p class="experience-description">
-  Participation aux activités de support et de maintenance informatique.
+  Participation aux activités
+  de support et de maintenance informatique.
 </p>
 
 </div>
@@ -1668,6 +2249,7 @@ footer{
 </article>
 
 </div>
+
 </div>
 
 </section>
@@ -1681,12 +2263,20 @@ footer{
 <div class="container">
 
 <div class="section-header">
-  <span class="section-label">PARCOURS ACADÉMIQUE</span>
-  <h2>Formation</h2>
-  <p>
-    Un parcours orienté vers les systèmes,
-    les réseaux et les infrastructures informatiques.
-  </p>
+
+<span class="section-label">
+  PARCOURS ACADÉMIQUE
+</span>
+
+<h2>
+  Formation
+</h2>
+
+<p>
+  Un parcours orienté vers les systèmes,
+  les réseaux et les infrastructures informatiques.
+</p>
+
 </div>
 
 <div class="formation-grid">
@@ -1694,15 +2284,24 @@ footer{
 <article class="formation-card formation-main">
 
 <div class="formation-top">
-  <div class="formation-icon">🎓</div>
-  <span class="formation-date">2025 – 2026</span>
+
+<div class="formation-icon">
+  🎓
+</div>
+
+<span class="formation-date">
+  2025 – 2026
+</span>
+
 </div>
 
 <span class="diploma-status">
   ✓ DIPLÔME OBTENU
 </span>
 
-<h3>Licence Professionnelle</h3>
+<h3>
+  Licence Professionnelle
+</h3>
 
 <h4>
   Administration Avancée des Systèmes et Réseaux
@@ -1729,21 +2328,32 @@ footer{
 
 </article>
 
+
 <article class="formation-card">
 
 <div class="formation-top">
-  <div class="formation-icon">💻</div>
-  <span class="formation-date">2022 – 2024</span>
+
+<div class="formation-icon">
+  💻
+</div>
+
+<span class="formation-date">
+  2022 – 2024
+</span>
+
 </div>
 
 <span class="diploma-status">
   ✓ DIPLÔME OBTENU
 </span>
 
-<h3>Diplôme de Technicien Spécialisé</h3>
+<h3>
+  Diplôme de Technicien Spécialisé
+</h3>
 
 <h4>
-  Infrastructure Digitale : Systèmes et Réseaux
+  Infrastructure Digitale :
+  Systèmes et Réseaux
 </h4>
 
 <p class="school">
@@ -1755,8 +2365,9 @@ footer{
 </p>
 
 <p class="formation-description">
-  Formation technique orientée systèmes, réseaux,
-  infrastructure digitale et support informatique.
+  Formation technique orientée systèmes,
+  réseaux, infrastructure digitale
+  et support informatique.
 </p>
 
 <div class="formation-tags">
@@ -1767,20 +2378,32 @@ footer{
 
 </article>
 
+
 <article class="formation-card">
 
 <div class="formation-top">
-  <div class="formation-icon">📘</div>
-  <span class="formation-date">2020 – 2021</span>
+
+<div class="formation-icon">
+  📘
+</div>
+
+<span class="formation-date">
+  2020 – 2021
+</span>
+
 </div>
 
 <span class="diploma-status">
   ✓ DIPLÔME OBTENU
 </span>
 
-<h3>Baccalauréat Scientifique</h3>
+<h3>
+  Baccalauréat Scientifique
+</h3>
 
-<h4>Sciences Physiques</h4>
+<h4>
+  Sciences Physiques
+</h4>
 
 <p class="school">
   Lycée Oued Eddahab
@@ -1791,13 +2414,15 @@ footer{
 </p>
 
 <p class="formation-description">
-  Formation scientifique constituant la base de mon parcours
-  vers les technologies de l'information.
+  Formation scientifique constituant
+  la base de mon parcours vers
+  les technologies de l'information.
 </p>
 
 </article>
 
 </div>
+
 </div>
 
 </section>
@@ -1821,8 +2446,9 @@ footer{
 </h2>
 
 <p>
-  Vous souhaitez échanger au sujet d'une opportunité professionnelle
-  ou d'un projet IT ? N'hésitez pas à me contacter.
+  Vous souhaitez échanger au sujet
+  d'une opportunité professionnelle ou d'un projet IT ?
+  N'hésitez pas à me contacter.
 </p>
 
 </div>
@@ -1840,8 +2466,9 @@ footer{
 </h3>
 
 <p>
-  Je suis disponible pour échanger autour d'opportunités professionnelles
-  et de projets liés aux systèmes, réseaux, infrastructures IT,
+  Je suis disponible pour échanger autour
+  d'opportunités professionnelles et de projets
+  liés aux systèmes, réseaux, infrastructures IT,
   support informatique et vidéosurveillance.
 </p>
 
@@ -1862,6 +2489,7 @@ footer{
 </a>
 
 </div>
+
 
 <div class="contact-list">
 
@@ -1884,6 +2512,7 @@ footer{
 
 </a>
 
+
 <a
   href="tel:+212648037074"
   class="contact-item">
@@ -1902,6 +2531,7 @@ footer{
 </span>
 
 </a>
+
 
 <a
   href="https://wa.me/212648037074"
@@ -1924,6 +2554,7 @@ footer{
 
 </a>
 
+
 <a
   href="https://www.linkedin.com/in/aminekramo/"
   target="_blank"
@@ -1944,6 +2575,7 @@ footer{
 </span>
 
 </a>
+
 
 <div class="contact-item">
 
@@ -1977,8 +2609,15 @@ footer{
 <div class="container footer-content">
 
 <div>
-  <strong>Amine Kramo</strong>
-  <span>Technicien Systèmes & Réseaux</span>
+
+<strong>
+  Amine Kramo
+</strong>
+
+<span>
+  Technicien Systèmes & Réseaux
+</span>
+
 </div>
 
 <p>
