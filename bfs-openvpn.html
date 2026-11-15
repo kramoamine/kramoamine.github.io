@@ -6,12 +6,120 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Projet BFS | OpenVPN avec pfSense | Amine Kramo</title>
+<!-- =====================================================
+     SEO
+===================================================== -->
+
+<title>BFS | OpenVPN & pfSense | Amine Kramo</title>
 
 <meta
   name="description"
-  content="Projet BFS : accès distant sécurisé entre le Maroc et l'Espagne via OpenVPN avec pfSense."
+  content="Projet BFS : mise en place d'un accès distant sécurisé entre le Maroc et l'Espagne avec OpenVPN et pfSense pour accéder aux ressources internes autorisées."
 >
+
+<meta
+  name="author"
+  content="Amine Kramo"
+>
+
+<meta
+  name="robots"
+  content="index, follow, max-image-preview:large"
+>
+
+<link
+  rel="canonical"
+  href="https://kramoamine.github.io/bfs-openvpn.html"
+>
+
+<!-- =====================================================
+     OPEN GRAPH - LINKEDIN / WHATSAPP
+===================================================== -->
+
+<meta
+  property="og:type"
+  content="article"
+>
+
+<meta
+  property="og:locale"
+  content="fr_FR"
+>
+
+<meta
+  property="og:site_name"
+  content="Portfolio Amine Kramo"
+>
+
+<meta
+  property="og:title"
+  content="Projet BFS | OpenVPN & pfSense"
+>
+
+<meta
+  property="og:description"
+  content="Accès distant sécurisé entre le Maroc et l'Espagne avec pfSense comme Firewall/VPN Gateway et OpenVPN pour établir un tunnel chiffré."
+>
+
+<meta
+  property="og:url"
+  content="https://kramoamine.github.io/bfs-openvpn.html"
+>
+
+<meta
+  property="og:image"
+  content="https://kramoamine.github.io/bfs-architecture.png"
+>
+
+<meta
+  property="og:image:alt"
+  content="Architecture BFS Maroc Espagne avec pfSense et OpenVPN"
+>
+
+<!-- =====================================================
+     SOCIAL CARD
+===================================================== -->
+
+<meta
+  name="twitter:card"
+  content="summary_large_image"
+>
+
+<meta
+  name="twitter:title"
+  content="Projet BFS | OpenVPN & pfSense"
+>
+
+<meta
+  name="twitter:description"
+  content="Architecture d'accès distant sécurisé entre le Maroc et l'Espagne avec pfSense et OpenVPN."
+>
+
+<meta
+  name="twitter:image"
+  content="https://kramoamine.github.io/bfs-architecture.png"
+>
+
+<!-- =====================================================
+     GOOGLE ANALYTICS 4
+===================================================== -->
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-KC6V9B6NZ9">
+</script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){
+    dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-KC6V9B6NZ9');
+</script>
+
 
 <style>
 
@@ -25,15 +133,25 @@
   --card:#0b1b2e;
   --card2:#10243b;
   --border:#173250;
+
   --text:#eaf4ff;
   --muted:#9fb3c8;
+
   --cyan:#22d3ee;
   --blue:#3b82f6;
   --green:#22c55e;
   --orange:#f59e0b;
-  --gradient:linear-gradient(120deg,var(--cyan),var(--blue));
+
+  --gradient:
+    linear-gradient(
+      120deg,
+      var(--cyan),
+      var(--blue)
+    );
+
   --max-width:1180px;
 }
+
 
 /* =====================================================
    GENERAL
@@ -51,7 +169,10 @@ html{
 }
 
 body{
-  font-family:"Segoe UI",Arial,sans-serif;
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
 
   background:
     radial-gradient(
@@ -62,7 +183,6 @@ body{
     var(--bg);
 
   color:var(--text);
-
   line-height:1.7;
 
   overflow-x:hidden;
@@ -77,6 +197,7 @@ a{
   margin:auto;
 }
 
+
 /* =====================================================
    HEADER
 ===================================================== */
@@ -86,9 +207,11 @@ header{
   top:0;
   z-index:100;
 
-  background:rgba(5,13,24,.94);
+  background:
+    rgba(5,13,24,.94);
 
-  backdrop-filter:blur(14px);
+  backdrop-filter:
+    blur(14px);
 
   border-bottom:
     1px solid rgba(255,255,255,.07);
@@ -98,9 +221,7 @@ header{
   min-height:75px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
 
   gap:25px;
@@ -108,13 +229,11 @@ header{
 
 .brand{
   display:flex;
-
   align-items:center;
 
   gap:12px;
 
   text-decoration:none;
-
   font-weight:800;
 }
 
@@ -123,7 +242,6 @@ header{
   height:48px;
 
   object-fit:cover;
-
   object-position:center;
 
   border-radius:50%;
@@ -142,13 +260,11 @@ header{
 
 .back-link{
   display:inline-flex;
-
   align-items:center;
 
   gap:8px;
 
   color:var(--muted);
-
   text-decoration:none;
 
   font-size:.9rem;
@@ -158,9 +274,9 @@ header{
 
 .back-link:hover{
   color:var(--cyan);
-
   transform:translateX(-3px);
 }
+
 
 /* =====================================================
    HERO
@@ -168,7 +284,6 @@ header{
 
 .hero{
   padding:95px 0 80px;
-
   text-align:center;
 }
 
@@ -188,7 +303,6 @@ header{
     1px solid rgba(34,211,238,.25);
 
   font-size:.76rem;
-
   font-weight:800;
 
   letter-spacing:.1em;
@@ -217,7 +331,6 @@ header{
 
 .hero-description{
   max-width:800px;
-
   margin:auto;
 
   color:var(--muted);
@@ -227,9 +340,7 @@ header{
 
 .project-meta{
   display:flex;
-
   justify-content:center;
-
   flex-wrap:wrap;
 
   gap:9px;
@@ -253,6 +364,7 @@ header{
   font-size:.79rem;
 }
 
+
 /* =====================================================
    COMMUN
 ===================================================== */
@@ -266,7 +378,6 @@ section{
 
 .section-head{
   max-width:760px;
-
   margin-bottom:38px;
 }
 
@@ -278,7 +389,6 @@ section{
   color:var(--cyan);
 
   font-size:.75rem;
-
   font-weight:800;
 
   letter-spacing:.18em;
@@ -297,15 +407,14 @@ section{
   color:var(--muted);
 }
 
+
 /* =====================================================
    CONTEXTE
 ===================================================== */
 
 .context-grid{
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
+  grid-template-columns:1fr 1fr;
 
   gap:20px;
 }
@@ -328,7 +437,6 @@ section{
 
 .card h3{
   margin-bottom:13px;
-
   color:var(--cyan);
 }
 
@@ -338,13 +446,11 @@ section{
 
 .objectives{
   display:grid;
-
   gap:11px;
 }
 
 .objective{
   display:flex;
-
   align-items:flex-start;
 
   gap:11px;
@@ -362,9 +468,9 @@ section{
 
 .check{
   color:var(--green);
-
   font-weight:900;
 }
+
 
 /* =====================================================
    ARCHITECTURE IMAGE
@@ -404,6 +510,7 @@ section{
   font-size:.82rem;
 }
 
+
 /* =====================================================
    SECURITY NOTE
 ===================================================== */
@@ -429,6 +536,7 @@ section{
 .security-note strong{
   color:#fbbf24;
 }
+
 
 /* =====================================================
    FONCTIONNEMENT
@@ -475,7 +583,6 @@ section{
   color:var(--cyan);
 
   font-size:.74rem;
-
   font-weight:900;
 
   letter-spacing:.12em;
@@ -483,15 +590,14 @@ section{
 
 .step h3{
   margin-bottom:7px;
-
   font-size:1rem;
 }
 
 .step p{
   color:var(--muted);
-
   font-size:.88rem;
 }
+
 
 /* =====================================================
    INTERVENTION
@@ -508,7 +614,6 @@ section{
 
 .work{
   display:flex;
-
   align-items:flex-start;
 
   gap:13px;
@@ -531,7 +636,6 @@ section{
   height:40px;
 
   display:grid;
-
   place-items:center;
 
   border-radius:10px;
@@ -544,15 +648,14 @@ section{
 
 .work strong{
   display:block;
-
   margin-bottom:3px;
 }
 
 .work p{
   color:var(--muted);
-
   font-size:.87rem;
 }
+
 
 /* =====================================================
    TECHNOLOGIES
@@ -560,7 +663,6 @@ section{
 
 .technology-list{
   display:flex;
-
   flex-wrap:wrap;
 
   gap:10px;
@@ -580,9 +682,9 @@ section{
     1px solid rgba(34,211,238,.18);
 
   font-size:.82rem;
-
   font-weight:650;
 }
+
 
 /* =====================================================
    RESULTAT
@@ -618,7 +720,6 @@ section{
   height:65px;
 
   display:grid;
-
   place-items:center;
 
   border-radius:50%;
@@ -629,7 +730,6 @@ section{
   color:#72e59a;
 
   font-size:1.8rem;
-
   font-weight:900;
 }
 
@@ -641,6 +741,7 @@ section{
   color:var(--muted);
 }
 
+
 /* =====================================================
    RETURN
 ===================================================== */
@@ -651,9 +752,7 @@ section{
 
 .return-button{
   display:inline-flex;
-
   align-items:center;
-
   justify-content:center;
 
   padding:13px 23px;
@@ -675,6 +774,7 @@ section{
   transform:translateY(-3px);
 }
 
+
 /* =====================================================
    FOOTER
 ===================================================== */
@@ -693,6 +793,7 @@ footer{
 
   font-size:.84rem;
 }
+
 
 /* =====================================================
    RESPONSIVE
@@ -715,7 +816,6 @@ footer{
 
   .navbar{
     min-height:65px;
-
     gap:12px;
   }
 
@@ -736,13 +836,17 @@ footer{
     padding:65px 0 55px;
   }
 
+  .hero h1{
+    font-size:
+      clamp(2.2rem,12vw,3.5rem);
+  }
+
   section{
     padding:65px 0;
   }
 
   .architecture-image{
     padding:6px;
-
     border-radius:14px;
   }
 
@@ -757,7 +861,6 @@ footer{
 
   .result-box{
     grid-template-columns:1fr;
-
     text-align:center;
   }
 
@@ -770,6 +873,7 @@ footer{
 </style>
 
 </head>
+
 
 <body>
 
@@ -809,7 +913,9 @@ footer{
 
 </header>
 
+
 <main>
+
 
 <!-- =====================================================
      HERO
@@ -865,6 +971,7 @@ footer{
 
 </section>
 
+
 <!-- =====================================================
      CONTEXTE
 ===================================================== -->
@@ -891,6 +998,7 @@ footer{
 
 </div>
 
+
 <div class="context-grid">
 
 <div class="card">
@@ -907,6 +1015,7 @@ footer{
 </p>
 
 </div>
+
 
 <div class="card">
 
@@ -946,6 +1055,7 @@ footer{
 
 </section>
 
+
 <!-- =====================================================
      ARCHITECTURE
 ===================================================== -->
@@ -972,6 +1082,7 @@ footer{
 
 </div>
 
+
 <div class="architecture-image">
 
 <img
@@ -981,10 +1092,12 @@ footer{
 
 </div>
 
+
 <p class="image-caption">
   Architecture logique du projet BFS :
   réseau local au Maroc et accès distant depuis l'Espagne via OpenVPN.
 </p>
+
 
 <div class="security-note">
 
@@ -1002,6 +1115,7 @@ ne sont pas publiés.
 </div>
 
 </section>
+
 
 <!-- =====================================================
      FONCTIONNEMENT
@@ -1028,6 +1142,7 @@ ne sont pas publiés.
 
 </div>
 
+
 <div class="steps">
 
 <div class="step">
@@ -1043,6 +1158,7 @@ ne sont pas publiés.
 
 </div>
 
+
 <div class="step">
 
 <h3>
@@ -1055,6 +1171,7 @@ ne sont pas publiés.
 </p>
 
 </div>
+
 
 <div class="step">
 
@@ -1069,6 +1186,7 @@ ne sont pas publiés.
 
 </div>
 
+
 <div class="step">
 
 <h3>
@@ -1082,6 +1200,7 @@ ne sont pas publiés.
 
 </div>
 
+
 <div class="step">
 
 <h3>
@@ -1094,6 +1213,7 @@ ne sont pas publiés.
 </p>
 
 </div>
+
 
 <div class="step">
 
@@ -1113,6 +1233,7 @@ ne sont pas publiés.
 </div>
 
 </section>
+
 
 <!-- =====================================================
      MON INTERVENTION
@@ -1139,6 +1260,7 @@ ne sont pas publiés.
 
 </div>
 
+
 <div class="intervention-grid">
 
 <div class="work">
@@ -1149,6 +1271,7 @@ ne sont pas publiés.
 
 <div>
   <strong>Architecture réseau</strong>
+
   <p>
     Préparation de l'architecture permettant
     la communication entre le site marocain
@@ -1158,6 +1281,7 @@ ne sont pas publiés.
 
 </div>
 
+
 <div class="work">
 
 <span class="work-icon">
@@ -1166,6 +1290,7 @@ ne sont pas publiés.
 
 <div>
   <strong>pfSense</strong>
+
   <p>
     Utilisation de pfSense comme pare-feu
     et passerelle VPN de l'infrastructure.
@@ -1173,6 +1298,7 @@ ne sont pas publiés.
 </div>
 
 </div>
+
 
 <div class="work">
 
@@ -1182,6 +1308,7 @@ ne sont pas publiés.
 
 <div>
   <strong>OpenVPN</strong>
+
   <p>
     Mise en place du service OpenVPN
     pour assurer les connexions distantes sécurisées.
@@ -1189,6 +1316,7 @@ ne sont pas publiés.
 </div>
 
 </div>
+
 
 <div class="work">
 
@@ -1198,6 +1326,7 @@ ne sont pas publiés.
 
 <div>
   <strong>Client distant</strong>
+
   <p>
     Préparation de l'accès OpenVPN
     permettant au collaborateur en Espagne
@@ -1207,6 +1336,7 @@ ne sont pas publiés.
 
 </div>
 
+
 <div class="work">
 
 <span class="work-icon">
@@ -1215,6 +1345,7 @@ ne sont pas publiés.
 
 <div>
   <strong>Contrôle des accès</strong>
+
   <p>
     Définition de l'accès entre le réseau VPN
     et les ressources internes nécessaires.
@@ -1222,6 +1353,7 @@ ne sont pas publiés.
 </div>
 
 </div>
+
 
 <div class="work">
 
@@ -1231,6 +1363,7 @@ ne sont pas publiés.
 
 <div>
   <strong>Tests & validation</strong>
+
   <p>
     Vérification du tunnel VPN,
     de la connectivité et de l'accès
@@ -1245,6 +1378,7 @@ ne sont pas publiés.
 </div>
 
 </section>
+
 
 <!-- =====================================================
      TECHNOLOGIES
@@ -1270,6 +1404,7 @@ ne sont pas publiés.
 </p>
 
 </div>
+
 
 <div class="technology-list">
 
@@ -1311,6 +1446,7 @@ ne sont pas publiés.
 
 </section>
 
+
 <!-- =====================================================
      RESULTAT
 ===================================================== -->
@@ -1331,6 +1467,7 @@ ne sont pas publiés.
 
 </div>
 
+
 <div class="result-box">
 
 <div class="result-icon">
@@ -1346,9 +1483,11 @@ ne sont pas publiés.
 <p>
   La solution permet au collaborateur situé en Espagne
   d'établir une connexion sécurisée vers l'infrastructure
-  de l'entreprise au Maroc. OpenVPN chiffre les communications,
-  tandis que pfSense contrôle les échanges entre le VPN
-  et les ressources internes autorisées.
+  de l'entreprise au Maroc.
+
+  OpenVPN chiffre les communications,
+  tandis que pfSense contrôle les échanges
+  entre le VPN et les ressources internes autorisées.
 </p>
 
 </div>
@@ -1358,6 +1497,7 @@ ne sont pas publiés.
 </div>
 
 </section>
+
 
 <!-- =====================================================
      RETOUR PORTFOLIO
@@ -1378,7 +1518,9 @@ ne sont pas publiés.
 
 </section>
 
+
 </main>
+
 
 <!-- =====================================================
      FOOTER
