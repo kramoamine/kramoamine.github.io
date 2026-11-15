@@ -6,18 +6,108 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>
-Projet ENCG Settat | Vidéosurveillance IP & Réseau | Amine Kramo
-</title>
+<!-- =====================================================
+     SEO
+===================================================== -->
+
+<title>ENCG Settat | Vidéosurveillance IP & Réseau | Amine Kramo</title>
 
 <meta
   name="description"
-  content="Projet ENCG Settat : installation, configuration et remise en service d'une infrastructure de vidéosurveillance IP avec liaisons sans fil TP-Link CPE510."
+  content="Projet ENCG Settat : intervention sur une infrastructure de vidéosurveillance IP avec caméras réseau, TP-Link CPE510, liaison sans fil 5 GHz, Switch PoE et NVR."
 >
 
-<!-- Google Analytics 4 -->
+<meta
+  name="author"
+  content="Amine Kramo"
+>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KC6V9B6NZ9"></script>
+<meta
+  name="robots"
+  content="index, follow, max-image-preview:large"
+>
+
+<link
+  rel="canonical"
+  href="https://kramoamine.github.io/encg-cctv.html"
+>
+
+<!-- =====================================================
+     OPEN GRAPH - LINKEDIN / WHATSAPP
+===================================================== -->
+
+<meta
+  property="og:type"
+  content="article"
+>
+
+<meta
+  property="og:locale"
+  content="fr_FR"
+>
+
+<meta
+  property="og:site_name"
+  content="Portfolio Amine Kramo"
+>
+
+<meta
+  property="og:title"
+  content="ENCG Settat | Vidéosurveillance IP & Réseau"
+>
+
+<meta
+  property="og:description"
+  content="Infrastructure de vidéosurveillance IP avec caméras réseau, TP-Link CPE510, liaison sans fil 5 GHz, Switch PoE et NVR."
+>
+
+<meta
+  property="og:url"
+  content="https://kramoamine.github.io/encg-cctv.html"
+>
+
+<meta
+  property="og:image"
+  content="https://kramoamine.github.io/encg-cctv-architecture.png"
+>
+
+<meta
+  property="og:image:alt"
+  content="Architecture de vidéosurveillance IP ENCG Settat"
+>
+
+<!-- =====================================================
+     SOCIAL CARD
+===================================================== -->
+
+<meta
+  name="twitter:card"
+  content="summary_large_image"
+>
+
+<meta
+  name="twitter:title"
+  content="ENCG Settat | Vidéosurveillance IP & Réseau"
+>
+
+<meta
+  name="twitter:description"
+  content="Projet CCTV avec caméras IP, TP-Link CPE510, liaison 5 GHz, Switch PoE et NVR."
+>
+
+<meta
+  name="twitter:image"
+  content="https://kramoamine.github.io/encg-cctv-architecture.png"
+>
+
+<!-- =====================================================
+     GOOGLE ANALYTICS 4
+===================================================== -->
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-KC6V9B6NZ9">
+</script>
 
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -52,12 +142,11 @@ Projet ENCG Settat | Vidéosurveillance IP & Réseau | Amine Kramo
   --green:#22c55e;
   --orange:#f59e0b;
 
-  --gradient:
-    linear-gradient(
-      120deg,
-      var(--cyan),
-      var(--blue)
-    );
+  --gradient:linear-gradient(
+    120deg,
+    var(--cyan),
+    var(--blue)
+  );
 
   --max:1180px;
 }
@@ -79,10 +168,7 @@ html{
 }
 
 body{
-  font-family:
-    "Segoe UI",
-    Arial,
-    sans-serif;
+  font-family:"Segoe UI",Arial,sans-serif;
 
   background:
     radial-gradient(
@@ -118,8 +204,7 @@ header{
   top:0;
   z-index:100;
 
-  background:
-    rgba(5,13,24,.94);
+  background:rgba(5,13,24,.94);
 
   backdrop-filter:blur(14px);
 
@@ -131,7 +216,6 @@ header{
   min-height:75px;
 
   display:flex;
-
   align-items:center;
   justify-content:space-between;
 
@@ -140,7 +224,6 @@ header{
 
 .brand{
   display:flex;
-
   align-items:center;
 
   gap:12px;
@@ -171,7 +254,6 @@ header{
 
 .brand:hover .brand-logo{
   transform:scale(1.05);
-
   border-color:var(--cyan);
 }
 
@@ -181,7 +263,6 @@ header{
 
 .back-link{
   display:inline-flex;
-
   align-items:center;
 
   gap:7px;
@@ -198,8 +279,7 @@ header{
 .back-link:hover{
   color:var(--cyan);
 
-  transform:
-    translateX(-3px);
+  transform:translateX(-3px);
 }
 
 
@@ -208,8 +288,7 @@ header{
 ===================================================== */
 
 .hero{
-  padding:
-    95px 0 80px;
+  padding:95px 0 80px;
 
   text-align:center;
 }
@@ -217,15 +296,13 @@ header{
 .project-label{
   display:inline-flex;
 
-  padding:
-    7px 14px;
+  padding:7px 14px;
 
   border-radius:50px;
 
   color:var(--cyan);
 
-  background:
-    rgba(34,211,238,.07);
+  background:rgba(34,211,238,.07);
 
   border:
     1px solid rgba(34,211,238,.25);
@@ -240,8 +317,7 @@ header{
 .hero h1{
   max-width:950px;
 
-  margin:
-    22px auto 18px;
+  margin:22px auto 18px;
 
   font-size:
     clamp(2.5rem,6vw,4.5rem);
@@ -250,6 +326,8 @@ header{
 }
 
 .gradient{
+  display:block;
+
   background:var(--gradient);
 
   -webkit-background-clip:text;
@@ -270,9 +348,7 @@ header{
 
 .project-meta{
   display:flex;
-
   justify-content:center;
-
   flex-wrap:wrap;
 
   gap:9px;
@@ -281,13 +357,11 @@ header{
 }
 
 .meta{
-  padding:
-    6px 12px;
+  padding:6px 12px;
 
   border-radius:50px;
 
-  background:
-    rgba(255,255,255,.035);
+  background:rgba(255,255,255,.035);
 
   border:
     1px solid var(--border);
@@ -303,8 +377,7 @@ header{
 ===================================================== */
 
 section{
-  padding:
-    85px 0;
+  padding:85px 0;
 
   border-top:
     1px solid rgba(255,255,255,.06);
@@ -351,8 +424,7 @@ section{
 .context-grid{
   display:grid;
 
-  grid-template-columns:
-    1fr 1fr;
+  grid-template-columns:1fr 1fr;
 
   gap:20px;
 }
@@ -391,17 +463,14 @@ section{
 
 .objective{
   display:flex;
-
   gap:11px;
-
   align-items:flex-start;
 
   padding:13px;
 
   border-radius:12px;
 
-  background:
-    rgba(5,13,24,.48);
+  background:rgba(5,13,24,.48);
 
   border:
     1px solid rgba(255,255,255,.06);
@@ -409,13 +478,12 @@ section{
 
 .check{
   color:var(--green);
-
   font-weight:900;
 }
 
 
 /* =====================================================
-   ARCHITECTURE IMAGE
+   ARCHITECTURE
 ===================================================== */
 
 .architecture-image{
@@ -429,8 +497,7 @@ section{
   border-radius:22px;
 
   box-shadow:
-    0 25px 60px
-    rgba(0,0,0,.30);
+    0 25px 60px rgba(0,0,0,.30);
 }
 
 .architecture-image img{
@@ -445,8 +512,7 @@ section{
 .image-caption{
   max-width:900px;
 
-  margin:
-    15px auto 0;
+  margin:15px auto 0;
 
   text-align:center;
 
@@ -455,16 +521,10 @@ section{
   font-size:.82rem;
 }
 
-
-/* =====================================================
-   NOTE
-===================================================== */
-
 .project-note{
   margin-top:22px;
 
-  padding:
-    18px 20px;
+  padding:18px 20px;
 
   border-radius:14px;
 
@@ -518,7 +578,6 @@ section{
   height:48px;
 
   display:grid;
-
   place-items:center;
 
   margin-bottom:15px;
@@ -553,11 +612,8 @@ section{
 
 .data-flow{
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   flex-wrap:wrap;
 
   gap:10px;
@@ -578,8 +634,7 @@ section{
 }
 
 .flow-node{
-  padding:
-    10px 15px;
+  padding:10px 15px;
 
   border-radius:10px;
 
@@ -651,8 +706,7 @@ section{
 }
 
 .step::before{
-  content:
-    "0" counter(step);
+  content:"0" counter(step);
 
   display:block;
 
@@ -681,7 +735,7 @@ section{
 
 
 /* =====================================================
-   MON INTERVENTION
+   INTERVENTION
 ===================================================== */
 
 .intervention-grid{
@@ -718,7 +772,6 @@ section{
   height:40px;
 
   display:grid;
-
   place-items:center;
 
   border-radius:10px;
@@ -755,8 +808,7 @@ section{
 }
 
 .technology{
-  padding:
-    9px 16px;
+  padding:9px 16px;
 
   border-radius:50px;
 
@@ -808,7 +860,6 @@ section{
   height:65px;
 
   display:grid;
-
   place-items:center;
 
   border-radius:50%;
@@ -846,8 +897,7 @@ section{
   align-items:center;
   justify-content:center;
 
-  padding:
-    13px 23px;
+  padding:13px 23px;
 
   border-radius:11px;
 
@@ -863,8 +913,7 @@ section{
 }
 
 .return-button:hover{
-  transform:
-    translateY(-3px);
+  transform:translateY(-3px);
 }
 
 
@@ -873,8 +922,7 @@ section{
 ===================================================== */
 
 footer{
-  padding:
-    28px 0;
+  padding:28px 0;
 
   border-top:
     1px solid rgba(255,255,255,.07);
@@ -910,7 +958,6 @@ footer{
 
   .navbar{
     min-height:65px;
-
     gap:12px;
   }
 
@@ -928,13 +975,16 @@ footer{
   }
 
   .hero{
-    padding:
-      65px 0 55px;
+    padding:65px 0 55px;
+  }
+
+  .hero h1{
+    font-size:
+      clamp(2.15rem,11vw,3.4rem);
   }
 
   section{
-    padding:
-      65px 0;
+    padding:65px 0;
   }
 
   .architecture-image{
@@ -958,8 +1008,7 @@ footer{
   }
 
   .flow-arrow{
-    transform:
-      rotate(90deg);
+    transform:rotate(90deg);
   }
 
   .result-box{
@@ -1035,23 +1084,19 @@ footer{
 </span>
 
 <h1>
-
   Système de vidéosurveillance IP
 
   <span class="gradient">
     ENCG Settat
   </span>
-
 </h1>
 
 <p class="hero-description">
-
   Intervention sur une infrastructure de vidéosurveillance IP
   intégrant des caméras réseau, des équipements de commutation
   et des liaisons sans fil TP-Link CPE510 afin d'assurer
   la transmission des flux vidéo entre différentes zones
   de l'établissement et le système central de surveillance.
-
 </p>
 
 <div class="project-meta">
@@ -1124,7 +1169,6 @@ footer{
 </h3>
 
 <p>
-
   L'ENCG Settat dispose de plusieurs zones à surveiller.
   Certaines caméras IP peuvent être installées à distance
   du local technique ou de la salle de surveillance.
@@ -1132,7 +1176,6 @@ footer{
   L'infrastructure doit permettre de transmettre
   les flux vidéo des différentes zones vers le réseau
   principal et le système d'enregistrement central.
-
 </p>
 
 </div>
@@ -1148,36 +1191,27 @@ footer{
 
 <div class="objective">
   <span class="check">✓</span>
-  <span>
-    Assurer la connectivité des caméras IP.
-  </span>
+  <span>Assurer la connectivité des caméras IP.</span>
 </div>
 
 <div class="objective">
   <span class="check">✓</span>
-  <span>
-    Relier les zones distantes au réseau principal.
-  </span>
+  <span>Relier les zones distantes au réseau principal.</span>
 </div>
 
 <div class="objective">
   <span class="check">✓</span>
-  <span>
-    Centraliser les flux vidéo vers le NVR.
-  </span>
+  <span>Centraliser les flux vidéo vers le NVR.</span>
 </div>
 
 <div class="objective">
   <span class="check">✓</span>
-  <span>
-    Vérifier le fonctionnement et la qualité des flux.
-  </span>
+  <span>Vérifier le fonctionnement et la qualité des flux.</span>
 </div>
 
 </div>
 
 </div>
-
 
 </div>
 
@@ -1205,11 +1239,9 @@ footer{
 </h2>
 
 <p>
-
   Représentation simplifiée de la transmission
   des flux des caméras IP vers la salle
   de surveillance de l'établissement.
-
 </p>
 
 </div>
@@ -1226,11 +1258,9 @@ footer{
 
 
 <p class="image-caption">
-
   Schéma logique de l'infrastructure :
   caméras IP, réseau local, liaisons sans fil 5 GHz
   et centralisation des flux vers le NVR.
-
 </p>
 
 
@@ -1246,7 +1276,6 @@ La disposition réelle des équipements dépend des zones
 et des besoins de couverture de l'établissement.
 
 </div>
-
 
 </div>
 
@@ -1281,7 +1310,6 @@ et des besoins de couverture de l'établissement.
 
 <div class="equipment-grid">
 
-
 <div class="equipment">
 
 <div class="equipment-icon">
@@ -1293,10 +1321,8 @@ et des besoins de couverture de l'établissement.
 </h3>
 
 <p>
-
   Capture des zones à surveiller et transmission
   des flux vidéo numériques à travers le réseau.
-
 </p>
 
 </div>
@@ -1313,11 +1339,9 @@ et des besoins de couverture de l'établissement.
 </h3>
 
 <p>
-
   Assure la connexion réseau des caméras et,
   lorsque l'équipement le permet,
   leur alimentation électrique via Ethernet.
-
 </p>
 
 </div>
@@ -1334,11 +1358,9 @@ et des besoins de couverture de l'établissement.
 </h3>
 
 <p>
-
   Équipement extérieur 5 GHz permettant
   de créer une liaison réseau sans fil
   entre plusieurs zones de l'établissement.
-
 </p>
 
 </div>
@@ -1355,11 +1377,9 @@ et des besoins de couverture de l'établissement.
 </h3>
 
 <p>
-
   Infrastructure réseau transportant
   les flux des caméras vers le local
   ou la salle de surveillance.
-
 </p>
 
 </div>
@@ -1376,11 +1396,9 @@ et des besoins de couverture de l'établissement.
 </h3>
 
 <p>
-
   Réception, enregistrement
   et conservation des flux vidéo
   provenant des caméras IP.
-
 </p>
 
 </div>
@@ -1397,15 +1415,12 @@ et des besoins de couverture de l'établissement.
 </h3>
 
 <p>
-
   Visualisation des caméras
   et consultation des flux vidéo
   et des enregistrements.
-
 </p>
 
 </div>
-
 
 </div>
 
@@ -1433,10 +1448,8 @@ et des besoins de couverture de l'établissement.
 </h2>
 
 <p>
-
   Exemple logique de transmission d'une caméra
   distante vers le système central.
-
 </p>
 
 </div>
@@ -1448,62 +1461,47 @@ et des besoins de couverture de l'établissement.
   📹 Caméras IP
 </div>
 
-<div class="flow-arrow">
-  →
-</div>
+<div class="flow-arrow">→</div>
 
 <div class="flow-node">
   🔌 Switch PoE
 </div>
 
-<div class="flow-arrow">
-  →
-</div>
+<div class="flow-arrow">→</div>
 
 <div class="flow-node">
   📡 CPE510
 </div>
 
-<div class="flow-arrow">
-  →
-</div>
+<div class="flow-arrow">→</div>
 
 <div class="flow-node wireless-node">
   📶 Liaison 5 GHz
 </div>
 
-<div class="flow-arrow">
-  →
-</div>
+<div class="flow-arrow">→</div>
 
 <div class="flow-node">
   📡 CPE510
 </div>
 
-<div class="flow-arrow">
-  →
-</div>
+<div class="flow-arrow">→</div>
 
 <div class="flow-node">
   🌐 Réseau principal
 </div>
 
-<div class="flow-arrow">
-  →
-</div>
+<div class="flow-arrow">→</div>
 
 <div class="flow-node">
   💾 NVR
 </div>
 
-<div class="flow-arrow">
-  →
-</div>
+<div class="flow-arrow">→</div>
 
 <div class="flow-node">
   🖥️ Surveillance
 </div>
-
 
 </div>
 
@@ -1531,17 +1529,14 @@ et des besoins de couverture de l'établissement.
 </h2>
 
 <p>
-
   Du captage de l'image jusqu'à
   l'enregistrement et la visualisation.
-
 </p>
 
 </div>
 
 
 <div class="steps">
-
 
 <div class="step">
 
@@ -1550,10 +1545,8 @@ et des besoins de couverture de l'établissement.
 </h3>
 
 <p>
-
   Les caméras IP capturent les différentes
   zones de surveillance de l'établissement.
-
 </p>
 
 </div>
@@ -1566,11 +1559,9 @@ et des besoins de couverture de l'établissement.
 </h3>
 
 <p>
-
   Les caméras sont raccordées
   à l'infrastructure réseau,
   notamment via des switches.
-
 </p>
 
 </div>
@@ -1583,11 +1574,9 @@ et des besoins de couverture de l'établissement.
 </h3>
 
 <p>
-
   Lorsqu'une zone est éloignée du réseau principal,
   une liaison sans fil peut transporter
   les données vers le site central.
-
 </p>
 
 </div>
@@ -1600,11 +1589,9 @@ et des besoins de couverture de l'établissement.
 </h3>
 
 <p>
-
   Les équipements TP-Link CPE510 assurent
   la transmission réseau sans fil
   entre les zones concernées.
-
 </p>
 
 </div>
@@ -1617,11 +1604,9 @@ et des besoins de couverture de l'établissement.
 </h3>
 
 <p>
-
   Les flux rejoignent le réseau principal
   puis sont transmis vers le système
   d'enregistrement NVR.
-
 </p>
 
 </div>
@@ -1634,15 +1619,12 @@ et des besoins de couverture de l'établissement.
 </h3>
 
 <p>
-
   Le NVR permet l'enregistrement
   tandis que le poste de surveillance
   permet la visualisation des caméras.
-
 </p>
 
 </div>
-
 
 </div>
 
@@ -1670,17 +1652,14 @@ et des besoins de couverture de l'établissement.
 </h2>
 
 <p>
-
   Principales tâches réalisées lors
   de l'intervention sur l'infrastructure.
-
 </p>
 
 </div>
 
 
 <div class="intervention-grid">
-
 
 <div class="work">
 
@@ -1695,10 +1674,8 @@ et des besoins de couverture de l'établissement.
 </strong>
 
 <p>
-
   Intervention sur les caméras
   et vérification de leur fonctionnement.
-
 </p>
 
 </div>
@@ -1719,10 +1696,8 @@ et des besoins de couverture de l'établissement.
 </strong>
 
 <p>
-
   Vérification et raccordement
   des équipements à l'infrastructure réseau.
-
 </p>
 
 </div>
@@ -1743,11 +1718,9 @@ et des besoins de couverture de l'établissement.
 </strong>
 
 <p>
-
   Intervention sur les équipements
   TP-Link CPE510 utilisés pour transporter
   les données entre les différentes zones.
-
 </p>
 
 </div>
@@ -1768,10 +1741,8 @@ et des besoins de couverture de l'établissement.
 </strong>
 
 <p>
-
   Vérification de la communication
   entre les équipements et le réseau principal.
-
 </p>
 
 </div>
@@ -1792,11 +1763,9 @@ et des besoins de couverture de l'établissement.
 </strong>
 
 <p>
-
   Vérification de la réception
   des flux vidéo au niveau
   du système d'enregistrement.
-
 </p>
 
 </div>
@@ -1817,17 +1786,14 @@ et des besoins de couverture de l'établissement.
 </strong>
 
 <p>
-
   Tests de connectivité,
   vérification des flux et validation
   du bon fonctionnement de la solution.
-
 </p>
 
 </div>
 
 </div>
-
 
 </div>
 
@@ -1899,7 +1865,6 @@ et des besoins de couverture de l'établissement.
   Vidéosurveillance IP
 </span>
 
-
 </div>
 
 </div>
@@ -1941,7 +1906,6 @@ et des besoins de couverture de l'établissement.
 </h3>
 
 <p>
-
   L'infrastructure permet la transmission des flux vidéo
   depuis différentes zones de l'établissement vers
   le système central de surveillance.
@@ -1950,7 +1914,6 @@ et des besoins de couverture de l'établissement.
   de transporter les données des caméras,
   tandis que le NVR assure leur enregistrement
   et leur disponibilité pour la visualisation.
-
 </p>
 
 </div>
