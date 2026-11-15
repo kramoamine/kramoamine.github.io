@@ -220,6 +220,26 @@
       transform:translateY(-7px) rotate(-45deg);
     }
 
+    #langButton{
+      flex-shrink:0;
+      min-width:44px;
+      padding:7px 12px;
+      border-radius:9px;
+      border:1px solid rgba(34,211,238,.35);
+      background:rgba(34,211,238,.08);
+      color:var(--cyan);
+      font-family:inherit;
+      font-size:.82rem;
+      font-weight:800;
+      cursor:pointer;
+      transition:.25s;
+    }
+
+    #langButton:hover{
+      background:var(--cyan);
+      color:#04101d;
+    }
+
     /* --- القسم الرئيسي (HERO SECTION) --- */
     .hero{
       min-height:calc(100vh - 75px);
@@ -356,18 +376,11 @@
         );
     }
 
-    .profile-photos{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      margin-bottom:25px;
-    }
-
     .photo-wrapper{
       position:relative;
       width:170px;
       height:170px;
-      margin-bottom:0;
+      margin:0 auto 25px auto;
     }
 
     .photo-wrapper::before{
@@ -397,12 +410,14 @@
     .profile-card h2{
       position:relative;
       font-size:1.55rem;
+      text-align:center;
     }
 
     .profile-role{
       position:relative;
       color:var(--cyan);
       font-weight:600;
+      text-align:center;
     }
 
     .profile-info{
@@ -526,7 +541,7 @@
       font-size:.91rem;
     }
 
-    /* --- بطاقات المهارات والمشاريع (SKILLS & CARDS) --- */
+    /* --- المهارات (SKILLS) --- */
     .skills-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -601,7 +616,7 @@
       font-weight:600;
     }
 
-    /* --- قسم الإنجازات (PROJECTS SECTION) --- */
+    /* --- المشاريع والإنجازات (PROJECTS) --- */
     .projects-grid{
       display:grid;
       grid-template-columns:repeat(2,1fr);
@@ -669,6 +684,304 @@
       font-size:.87rem;
     }
 
+    .project-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-top:24px;
+      padding:10px 17px;
+      border-radius:9px;
+      color:var(--cyan);
+      background:rgba(34,211,238,.07);
+      border:1px solid rgba(34,211,238,.25);
+      text-decoration:none;
+      font-size:.84rem;
+      font-weight:700;
+      transition:.25s;
+    }
+
+    .project-link:hover{
+      background:var(--cyan);
+      color:#04101d;
+    }
+
+    /* --- الخبرة المهنية (EXPERIENCE) --- */
+    .experience-timeline{
+      position:relative;
+      display:grid;
+      gap:22px;
+      padding-left:38px;
+    }
+
+    .experience-timeline::before{
+      content:"";
+      position:absolute;
+      top:10px;
+      bottom:10px;
+      left:8px;
+      width:2px;
+      background:linear-gradient(var(--cyan),var(--blue),transparent);
+    }
+
+    .experience-item{
+      position:relative;
+    }
+
+    .timeline-dot{
+      position:absolute;
+      left:-38px;
+      top:30px;
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      background:var(--bg);
+      border:3px solid var(--cyan);
+    }
+
+    .experience-item.current .timeline-dot{
+      background:var(--cyan);
+    }
+
+    .experience-card{
+      padding:29px;
+    }
+
+    .experience-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:25px;
+      margin-bottom:17px;
+    }
+
+    .company{
+      color:var(--cyan);
+      font-weight:700;
+    }
+
+    .experience-status{
+      display:inline-block;
+      padding:3px 9px;
+      margin-bottom:5px;
+      border-radius:50px;
+      color:#79e6f5;
+      background:rgba(34,211,238,.08);
+      font-size:.67rem;
+      font-weight:800;
+    }
+
+    .experience-date{
+      flex-shrink:0;
+      padding:6px 12px;
+      border-radius:50px;
+      color:#c7e9f2;
+      background:rgba(34,211,238,.07);
+      font-size:.79rem;
+    }
+
+    .experience-description{
+      color:var(--muted);
+      font-size:.93rem;
+    }
+
+    .missions ul{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:5px 30px;
+    }
+
+    .project-highlight{
+      margin:18px 0;
+      padding:16px;
+      border-radius:13px;
+      background:rgba(34,211,238,.055);
+      border:1px solid rgba(34,211,238,.16);
+    }
+
+    .project-highlight span{
+      display:block;
+      color:var(--cyan);
+      font-size:.67rem;
+      font-weight:800;
+      margin-bottom:4px;
+    }
+
+    /* --- التكوين الأكاديمي (FORMATION) --- */
+    .formation-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .formation-card{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .formation-main{
+      border-color:rgba(34,211,238,.3);
+    }
+
+    .formation-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:20px;
+    }
+
+    .formation-date{
+      padding:5px 11px;
+      border-radius:50px;
+      background:rgba(34,211,238,.07);
+      color:#bdebf4;
+      font-size:.76rem;
+    }
+
+    .diploma-status{
+      align-self:flex-start;
+      padding:4px 10px;
+      margin-bottom:14px;
+      border-radius:50px;
+      color:#72e59a;
+      background:rgba(34,197,94,.07);
+      border:1px solid rgba(34,197,94,.2);
+      font-size:.65rem;
+      font-weight:800;
+    }
+
+    .formation-card h3{
+      margin-bottom:5px;
+    }
+
+    .formation-card h4{
+      min-height:52px;
+      margin-bottom:14px;
+      color:var(--cyan);
+      font-size:.93rem;
+    }
+
+    .school{
+      color:#d6e7f5;
+      font-weight:650;
+    }
+
+    .formation-location{
+      color:var(--muted);
+      font-size:.82rem;
+    }
+
+    .formation-description{
+      color:var(--muted);
+      font-size:.87rem;
+      margin:18px 0;
+      flex-grow:1;
+    }
+
+    /* --- قسم التواصل (CONTACT) --- */
+    .contact-box{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:45px;
+      padding:42px;
+      border-radius:25px;
+      border:1px solid #214765;
+      background:linear-gradient(135deg,#102b48,#071523);
+    }
+
+    .contact-badge{
+      display:inline-flex;
+      margin-bottom:20px;
+      padding:5px 11px;
+      border-radius:50px;
+      color:#73e59a;
+      background:rgba(34,197,94,.07);
+      font-size:.67rem;
+      font-weight:800;
+    }
+
+    .contact-intro h3{
+      font-size:clamp(1.7rem,3vw,2.4rem);
+      margin-bottom:15px;
+    }
+
+    .contact-intro p{
+      color:var(--muted);
+    }
+
+    .contact-skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+      margin-top:23px;
+    }
+
+    .contact-skills span{
+      padding:5px 11px;
+      border-radius:50px;
+      background:rgba(34,211,238,.07);
+      color:#bdebf5;
+      font-size:.73rem;
+    }
+
+    .contact-cv{
+      display:inline-flex;
+      margin-top:30px;
+      padding:12px 20px;
+      border-radius:11px;
+      background:var(--gradient);
+      color:#04101d;
+      text-decoration:none;
+      font-weight:750;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:11px;
+    }
+
+    .contact-item{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+      padding:14px 16px;
+      border-radius:14px;
+      background:rgba(255,255,255,.035);
+      border:1px solid rgba(255,255,255,.08);
+      text-decoration:none;
+    }
+
+    .contact-icon{
+      width:43px;
+      height:43px;
+      flex-shrink:0;
+      display:grid;
+      place-items:center;
+      border-radius:11px;
+      background:rgba(34,211,238,.09);
+      color:var(--cyan);
+    }
+
+    .contact-details{
+      min-width:0;
+      flex-grow:1;
+    }
+
+    .contact-details small{
+      display:block;
+      color:var(--muted);
+      font-size:.72rem;
+    }
+
+    .contact-details strong{
+      font-size:.9rem;
+      overflow-wrap:anywhere;
+    }
+
+    .contact-arrow{
+      color:var(--cyan);
+    }
+
     /* --- التذييل (FOOTER) --- */
     footer{
       padding:28px 0;
@@ -683,18 +996,22 @@
       gap:20px;
     }
 
+    .footer-content div{
+      display:flex;
+      flex-direction:column;
+    }
+
     .footer-content span{
       color:var(--cyan);
-      font-size:.8rem;
-      font-weight:700;
+      font-size:.75rem;
     }
 
     .footer-content p{
       color:var(--muted);
-      font-size:.82rem;
+      font-size:.8rem;
     }
 
-    /* --- نافذة تكبير الصور (LIGHTBOX MODAL) --- */
+    /* --- نافذة تكبير الصور المنبثقة (LIGHTBOX MODAL) --- */
     .lightbox {
       display: none;
       position: fixed;
@@ -744,7 +1061,8 @@
     /* --- التجاوب مع الشاشات (RESPONSIVE DESIGN) --- */
     @media(max-width:950px){
       .hero,
-      .about-grid{
+      .about-grid,
+      .contact-box{
         grid-template-columns:1fr;
       }
 
@@ -754,6 +1072,10 @@
 
       .skills-grid{
         grid-template-columns:repeat(2,1fr);
+      }
+
+      .formation-grid{
+        grid-template-columns:1fr;
       }
     }
 
@@ -819,6 +1141,12 @@
         color:#c4d5e5;
       }
 
+      #langButton{
+        width:100%;
+        margin-top:5px;
+        padding:10px;
+      }
+
       .hero{
         grid-template-columns:1fr;
         gap:40px;
@@ -848,12 +1176,28 @@
 
       .about-info,
       .skills-grid,
-      .projects-grid{
+      .projects-grid,
+      .formation-grid{
         grid-template-columns:1fr;
       }
 
       .project-card{
         padding:23px;
+      }
+
+      .missions ul{
+        grid-template-columns:1fr;
+      }
+
+      .experience-top{
+        flex-direction:column;
+        gap:8px;
+      }
+
+      .contact-box{
+        grid-template-columns:1fr;
+        padding:23px;
+        gap:30px;
       }
 
       .footer-content{
@@ -873,20 +1217,16 @@
   <header>
     <div class="container navbar">
 
-      <div class="brand">
+      <a href="#accueil" class="brand">
         <img
           src="banner.jpg"
           alt="Logo du portfolio Amine Kramo"
           class="brand-logo"
-          data-zoom
-          tabindex="0"
-          role="button"
-          title="Cliquer pour agrandir"
         >
-        <a href="#accueil" class="brand-name" style="text-decoration:none; color:inherit;">
+        <span class="brand-name">
           Amine <span>Kramo</span>
-        </a>
-      </div>
+        </span>
+      </a>
 
       <button
         class="menu-toggle"
@@ -962,24 +1302,21 @@
         </div>
       </div>
 
-      <!-- بطاقة البروفايل (تم الإبقاء على الصورة الأولى فقط) -->
+      <!-- بطاقة البروفايل الجانبية -->
       <aside class="profile-card">
-        <div class="profile-photos">
-          <div class="photo-wrapper">
-            <img
-              src="profile.jpg"
-              alt="Photo professionnelle d'Amine Kramo"
-              class="profile-photo"
-              data-zoom
-              tabindex="0"
-              role="button"
-              aria-label="Agrandir la photo de profil"
-            >
-          </div>
+        <div class="photo-wrapper">
+          <img
+            src="profile.jpg"
+            alt="Photo professionnelle d'Amine Kramo"
+            class="profile-photo"
+          >
         </div>
 
         <h2>Amine Kramo</h2>
-        <p class="profile-role">Technicien Systèmes & Réseaux</p>
+
+        <p class="profile-role">
+          Technicien Systèmes & Réseaux
+        </p>
 
         <div class="profile-info">
           <div><span class="icon">📍</span> Casablanca, Maroc</div>
@@ -1108,4 +1445,547 @@
             <h3>Réseaux informatiques</h3>
             <p>Installation, configuration et dépannage des infrastructures réseau LAN/WAN.</p>
             <div class="skill-tags">
-              <span>TCP
+              <span>TCP/IP</span>
+              <span>LAN/WAN</span>
+              <span>VLAN</span>
+              <span>Cisco</span>
+              <span>Switching</span>
+              <span>Routing</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">🛡️</div>
+            <h3>Sécurité réseau</h3>
+            <p>Configuration de solutions de sécurité réseau, pare-feu et accès distant sécurisé.</p>
+            <div class="skill-tags">
+              <span>pfSense</span>
+              <span>Firewall</span>
+              <span>OpenVPN</span>
+              <span>Remote Access VPN</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">☁️</div>
+            <h3>Virtualisation</h3>
+            <p>Création, déploiement et gestion d'environnements virtualisés pour les systèmes et services informatiques.</p>
+            <div class="skill-tags">
+              <span>VMware Workstation</span>
+              <span>VMware ESXi</span>
+              <span>Hyper-V</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">💾</div>
+            <h3>Sauvegarde</h3>
+            <p>Mise en place et gestion de solutions de sauvegarde pour les données et environnements informatiques.</p>
+            <div class="skill-tags">
+              <span>Veeam Backup & Replication</span>
+              <span>Backup Jobs</span>
+              <span>Cobian Backup</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">🛠️</div>
+            <h3>Support informatique</h3>
+            <p>Support utilisateurs N1/N2, diagnostic et résolution des incidents matériels, logiciels et réseau.</p>
+            <div class="skill-tags">
+              <span>GLPI</span>
+              <span>Support N1/N2</span>
+              <span>Diagnostic</span>
+              <span>Maintenance</span>
+              <span>RDP</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">📧</div>
+            <h3>Microsoft 365</h3>
+            <p>Utilisation et gestion des principaux outils collaboratifs Microsoft.</p>
+            <div class="skill-tags">
+              <span>Microsoft 365</span>
+              <span>Outlook</span>
+              <span>Teams</span>
+              <span>OneDrive</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">📹</div>
+            <h3>Vidéosurveillance IP</h3>
+            <p>Installation, configuration, diagnostic et remise en service des infrastructures de vidéosurveillance.</p>
+            <div class="skill-tags">
+              <span>CCTV</span>
+              <span>Caméras IP</span>
+              <span>DVR / NVR</span>
+              <span>Switch PoE</span>
+              <span>TP-Link CPE510</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         10. قسم الإنجازات والمشاريع (PROJECTS HTML)
+    ===================================================== -->
+    <section id="realisations">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">SUR LE TERRAIN</span>
+          <h2>Réalisations & interventions</h2>
+          <p>Quelques projets illustrant mon expérience pratique.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-number">01</div>
+            <div class="project-header">
+              <div class="project-icon">🛡️</div>
+              <div>
+                <span class="project-location">📍 Kénitra</span>
+                <h3>Accès distant sécurisé avec OpenVPN & pfSense</h3>
+              </div>
+            </div>
+
+            <p class="project-description">
+              Mise en place d'un accès distant sécurisé permettant à un collaborateur
+              situé en Espagne d'accéder aux ressources autorisées
+              du réseau de l'entreprise au Maroc via OpenVPN et pfSense.
+            </p>
+
+            <div class="project-work">
+              <h4>Intervention</h4>
+              <ul>
+                <li>Préparation de l'architecture réseau</li>
+                <li>Configuration de pfSense</li>
+                <li>Mise en place du serveur OpenVPN</li>
+                <li>Configuration de l'accès distant</li>
+                <li>Contrôle des accès aux ressources internes</li>
+                <li>Tests de connectivité et validation</li>
+              </ul>
+            </div>
+
+            <div class="project-tags">
+              <span>pfSense</span>
+              <span>OpenVPN</span>
+              <span>TCP/IP</span>
+              <span>LAN/WAN</span>
+              <span>Firewall</span>
+              <span>Remote Access VPN</span>
+            </div>
+
+            <a href="bfs-openvpn.html" class="project-link">Voir le projet →</a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">02</div>
+            <div class="project-header">
+              <div class="project-icon">📹</div>
+              <div>
+                <span class="project-location">📍 ENCG Settat</span>
+                <h3>Vidéosurveillance IP & Réseau</h3>
+              </div>
+            </div>
+
+            <p class="project-description">
+              Intervention sur une infrastructure de vidéosurveillance IP
+              intégrant des liaisons sans fil TP-Link CPE510
+              pour transporter les flux vidéo vers le réseau principal et le NVR.
+            </p>
+
+            <div class="project-work">
+              <h4>Intervention</h4>
+              <ul>
+                <li>Diagnostic des équipements</li>
+                <li>Intervention sur les caméras IP</li>
+                <li>Vérification du câblage</li>
+                <li>Intervention sur les liaisons TP-Link CPE510</li>
+                <li>Vérification de la connectivité réseau</li>
+                <li>Tests et remise en service</li>
+              </ul>
+            </div>
+
+            <div class="project-tags">
+              <span>CCTV</span>
+              <span>Caméras IP</span>
+              <span>TP-Link CPE510</span>
+              <span>5 GHz</span>
+              <span>Switch PoE</span>
+              <span>NVR</span>
+              <span>TCP/IP</span>
+            </div>
+
+            <a href="encg-cctv.html" class="project-link">Voir le projet →</a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">03</div>
+            <div class="project-header">
+              <div class="project-icon">💾</div>
+              <div>
+                <span class="project-location">🎓 PFE · Maghreb Steel</span>
+                <h3>Veeam Backup & Replication</h3>
+              </div>
+            </div>
+
+            <p class="project-description">
+              Projet de fin d'études consacré à l'installation,
+              la configuration et la démonstration
+              de Veeam Backup & Replication
+              dans un environnement virtualisé.
+            </p>
+
+            <div class="project-work">
+              <h4>Travaux réalisés</h4>
+              <ul>
+                <li>Présentation et étude de la solution Veeam</li>
+                <li>Installation et configuration en environnement virtualisé</li>
+                <li>Création et planification des Backup Jobs</li>
+                <li>Configuration des paramètres et tentatives</li>
+                <li>Suivi des tâches de sauvegarde</li>
+                <li>Tests de restauration</li>
+              </ul>
+            </div>
+
+            <div class="project-tags">
+              <span>Veeam Backup & Replication</span>
+              <span>VMware</span>
+              <span>Virtualisation</span>
+              <span>Backup Jobs</span>
+              <span>Restore</span>
+            </div>
+
+            <a href="veeam-backup.html" class="project-link">Voir le projet →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         11. الخبرة المهنية (EXPERIENCE HTML)
+    ===================================================== -->
+    <section id="experience">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">PARCOURS</span>
+          <h2>Expérience professionnelle</h2>
+          <p>Mon parcours dans le support informatique, les systèmes, les réseaux et les infrastructures IT.</p>
+        </div>
+
+        <div class="experience-timeline">
+
+          <article class="experience-item current">
+            <div class="timeline-dot"></div>
+            <div class="experience-card">
+              <div class="experience-top">
+                <div>
+                  <span class="experience-status">POSTE ACTUEL</span>
+                  <h3>Technicien Informatique / Systèmes & Réseaux</h3>
+                  <p class="company">Maroges / RysaSoft</p>
+                </div>
+                <span class="experience-date">Février 2025 – Présent</span>
+              </div>
+              <p class="experience-description">Support informatique, maintenance, réseaux et interventions techniques sur site.</p>
+              <div class="missions">
+                <ul>
+                  <li>Support aux utilisateurs</li>
+                  <li>Diagnostic des incidents</li>
+                  <li>Installation des postes</li>
+                  <li>Maintenance matérielle et logicielle</li>
+                  <li>Installation et dépannage réseau</li>
+                  <li>Configuration des équipements réseau</li>
+                  <li>Vidéosurveillance</li>
+                  <li>Interventions techniques sur site</li>
+                </ul>
+              </div>
+              <div class="experience-tags">
+                <span>Support IT</span>
+                <span>Windows</span>
+                <span>Réseaux</span>
+                <span>CCTV</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="experience-item">
+            <div class="timeline-dot"></div>
+            <div class="experience-card">
+              <div class="experience-top">
+                <div>
+                  <h3>Technicien Informatique Freelance</h3>
+                  <p class="company">Derb Chalef</p>
+                </div>
+                <span class="experience-date">Octobre 2024 – Janvier 2025</span>
+              </div>
+              <p class="experience-description">Maintenance, diagnostic, installation des systèmes et assistance technique.</p>
+            </div>
+          </article>
+
+          <article class="experience-item">
+            <div class="timeline-dot"></div>
+            <div class="experience-card">
+              <div class="experience-top">
+                <div>
+                  <h3>Stagiaire PFE</h3>
+                  <p class="company">Maghreb Steel</p>
+                </div>
+                <span class="experience-date">Mars 2024</span>
+              </div>
+              <div class="project-highlight">
+                <span>PROJET PFE</span>
+                <strong>Solution de sauvegarde avec Veeam Backup & Replication</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="experience-item">
+            <div class="timeline-dot"></div>
+            <div class="experience-card">
+              <div class="experience-top">
+                <div>
+                  <h3>Stagiaire Informatique</h3>
+                  <p class="company">SIRAIL Maroc</p>
+                </div>
+                <span class="experience-date">Avril 2023 – Mai 2023</span>
+              </div>
+              <p class="experience-description">Participation aux activités de support et de maintenance informatique.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         12. التكوين الأكاديمي (FORMATION HTML)
+    ===================================================== -->
+    <section id="formation">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">PARCOURS ACADÉMIQUE</span>
+          <h2>Formation</h2>
+          <p>Un parcours orienté vers les systèmes, les réseaux et les infrastructures informatiques.</p>
+        </div>
+
+        <div class="formation-grid">
+
+          <article class="formation-card formation-main">
+            <div class="formation-top">
+              <div class="formation-icon">🎓</div>
+              <span class="formation-date">2025 – 2026</span>
+            </div>
+            <span class="diploma-status">✓ DIPLÔME OBTENU</span>
+            <h3>Licence Professionnelle</h3>
+            <h4>Administration Avancée des Systèmes et Réseaux</h4>
+            <p class="school">Faculté des Sciences Aïn Chock</p>
+            <p class="formation-location">📍 Casablanca, Maroc</p>
+            <p class="formation-description">Formation spécialisée dans l'administration avancée des systèmes, réseaux et infrastructures informatiques.</p>
+            <div class="formation-tags">
+              <span>Systèmes</span>
+              <span>Réseaux</span>
+              <span>Administration</span>
+            </div>
+          </article>
+
+          <article class="formation-card">
+            <div class="formation-top">
+              <div class="formation-icon">💻</div>
+              <span class="formation-date">2022 – 2024</span>
+            </div>
+            <span class="diploma-status">✓ DIPLÔME OBTENU</span>
+            <h3>Diplôme de Technicien Spécialisé</h3>
+            <h4>Infrastructure Digitale : Systèmes et Réseaux</h4>
+            <p class="school">CFP Hassania</p>
+            <p class="formation-location">📍 Casablanca, Maroc</p>
+            <p class="formation-description">Formation technique orientée systèmes, réseaux, infrastructure digitale et support informatique.</p>
+            <div class="formation-tags">
+              <span>Windows</span>
+              <span>Linux</span>
+              <span>Réseaux</span>
+            </div>
+          </article>
+
+          <article class="formation-card">
+            <div class="formation-top">
+              <div class="formation-icon">📘</div>
+              <span class="formation-date">2020 – 2021</span>
+            </div>
+            <span class="diploma-status">✓ DIPLÔME OBTENU</span>
+            <h3>Baccalauréat Scientifique</h3>
+            <h4>Sciences Physiques</h4>
+            <p class="school">Lycée Oued Eddahab</p>
+            <p class="formation-location">📍 Casablanca, Maroc</p>
+            <p class="formation-description">Formation scientifique constituant la base de mon parcours vers les technologies de l'information.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         13. قسم التواصل (CONTACT HTML)
+    ===================================================== -->
+    <section id="contact">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">CONTACT</span>
+          <h2>Restons en contact</h2>
+          <p>Vous souhaitez échanger au sujet d'une opportunité professionnelle ou d'un projet IT ? N'hésitez pas à me contacter.</p>
+        </div>
+
+        <div class="contact-box">
+
+          <div class="contact-intro">
+            <span class="contact-badge">● DISPONIBLE POUR ÉCHANGER</span>
+            <h3>Échangeons sur vos besoins IT</h3>
+            <p>Je suis disponible pour échanger autour d'opportunités professionnelles et de projets liés aux systèmes, réseaux, infrastructures IT, support informatique et vidéosurveillance.</p>
+            
+            <div class="contact-skills">
+              <span>Systèmes</span>
+              <span>Réseaux</span>
+              <span>Support IT</span>
+              <span>Infrastructure</span>
+              <span>pfSense</span>
+              <span>CCTV</span>
+            </div>
+
+            <a href="CV-KRAMO-AMINE.pdf" class="contact-cv" download>
+              Télécharger mon CV ↓
+            </a>
+          </div>
+
+          <div class="contact-list">
+            <a href="mailto:aminekramo@gmail.com" class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <span class="contact-details">
+                <small>E-mail</small>
+                <strong>aminekramo@gmail.com</strong>
+              </span>
+              <span class="contact-arrow">→</span>
+            </a>
+
+            <a href="tel:+212648037074" class="contact-item">
+              <span class="contact-icon">☎️</span>
+              <span class="contact-details">
+                <small>Téléphone</small>
+                <strong>+212 648 037 074</strong>
+              </span>
+              <span class="contact-arrow">→</span>
+            </a>
+
+            <a href="https://wa.me/212648037074" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <span class="contact-icon">💬</span>
+              <span class="contact-details">
+                <small>WhatsApp</small>
+                <strong>Envoyer un message</strong>
+              </span>
+              <span class="contact-arrow">→</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/aminekramo/" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <span class="contact-icon">in</span>
+              <span class="contact-details">
+                <small>LinkedIn</small>
+                <strong>linkedin.com/in/aminekramo</strong>
+              </span>
+              <span class="contact-arrow">→</span>
+            </a>
+
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <span class="contact-details">
+                <small>Localisation</small>
+                <strong>Casablanca, Maroc</strong>
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       14. تذييل الصفحة (FOOTER HTML)
+  ===================================================== -->
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <strong>Amine Kramo</strong>
+        <span>Technicien Systèmes & Réseaux</span>
+      </div>
+      <p>© 2026 Amine Kramo — Portfolio professionnel</p>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       15. نافذة تكبير الصور المنبثقة (LIGHTBOX HTML)
+  ===================================================== -->
+  <div id="imageLightbox" class="lightbox" aria-hidden="true">
+    <span class="lightbox-close" id="lightboxClose" title="Fermer">&times;</span>
+    <img id="lightboxImg" class="lightbox-img" src="" alt="Agrandissement de l'image">
+  </div>
+
+  <!-- =====================================================
+       16. أكواد التفاعل وتكبير الصور (JAVASCRIPT)
+  ===================================================== -->
+  <script>
+    // --- تفعيل تكبير الصور عند الضغط عليها ---
+    const lightbox = document.getElementById("imageLightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const zoomableImages = document.querySelectorAll(".brand-logo, .profile-photo");
+
+    zoomableImages.forEach(img => {
+      img.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+    }
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("open")) {
+        closeLightbox();
+      }
+    });
+
+    // --- تفعيل قائمة الهاتف المحمول ---
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        mainNav.classList.toggle("open");
+      });
+    }
+  </script>
+
+</body>
+</html>
