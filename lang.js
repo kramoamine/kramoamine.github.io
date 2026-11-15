@@ -1,22 +1,7 @@
 /* =========================================================
    AMINE KRAMO PORTFOLIO — FR / EN
    ---------------------------------------------------------
-   Fonctionne sur TOUTES les pages (index + pages projets).
-
-   Principe :
-   - Le HTML reste en français (c'est la langue source).
-   - Ce fichier contient un dictionnaire  "texte français" -> "English".
-   - Au chargement, le script repère chaque texte de la page,
-     et le remplace par sa traduction si la langue est "en".
-   - Aucun sélecteur fragile, aucun index (details[4]...) :
-     si vous modifiez le HTML, la traduction continue de marcher.
-   - Si un texte n'a pas de traduction, il reste en français.
-
-   Pour ajouter / corriger une traduction : modifier le
-   dictionnaire COMMON (toutes les pages) ou PAGES (une page).
-
-   Astuce : ouvrir une page avec  ?i18n-debug  à la fin de l'URL
-   affiche dans la console les textes sans traduction.
+   
 ========================================================= */
 
 (function () {
@@ -818,35 +803,71 @@
   /* =======================================================
      BOUTON FR / EN
   ======================================================= */
+  /* =======================================================
+     BOUTON FR / EN — VERSION CORRIGÉE
+     Visible sur ordinateur et téléphone
+  ======================================================= */
 
   function injectButtonStyle() {
+    if (document.getElementById("langButtonStyle")) return;
+
     var style = document.createElement("style");
     style.id = "langButtonStyle";
+
     style.textContent =
-      "#langButton{flex-shrink:0;min-width:44px;padding:7px 12px;border-radius:9px;" +
-      "border:1px solid rgba(34,211,238,.35);background:rgba(34,211,238,.08);" +
-      "color:#22d3ee;font-family:inherit;font-size:.82rem;font-weight:800;" +
-      "cursor:pointer;transition:.25s;margin-left:12px}" +
-      "#langButton:hover{background:#22d3ee;color:#04101d}";
+      "#langButton{" +
+      "flex-shrink:0;" +
+      "min-width:44px;" +
+      "padding:7px 12px;" +
+      "border-radius:9px;" +
+      "border:1px solid rgba(34,211,238,.35);" +
+      "background:rgba(34,211,238,.08);" +
+      "color:#22d3ee;" +
+      "font-family:inherit;" +
+      "font-size:.82rem;" +
+      "font-weight:800;" +
+      "cursor:pointer;" +
+      "transition:.25s;" +
+      "margin-left:12px;" +
+      "}" +
+
+      "#langButton:hover{" +
+      "background:#22d3ee;" +
+      "color:#04101d;" +
+      "}";
+
     document.head.appendChild(style);
   }
 
+
   function setupButton() {
     langButton = document.getElementById("langButton");
+
     if (langButton) return;
 
-    var mainNav = document.getElementById("mainNav");
     var navbar = document.querySelector(".navbar");
-    var host = mainNav || navbar;
-    if (!host) return;
+    var mainNav = document.getElementById("mainNav");
+    var menuToggle = document.getElementById("menuToggle");
+
+    if (!navbar) return;
 
     langButton = document.createElement("button");
+
     langButton.id = "langButton";
     langButton.type = "button";
-    host.appendChild(langButton);
+    langButton.setAttribute("aria-label", "Changer la langue");
+    langButton.textContent = "EN";
 
-    // pages projets : le style du bouton n'existe pas dans leur CSS
-    if (!mainNav) injectButtonStyle();
+    // Le bouton reste visible même lorsque le menu mobile est fermé.
+    if (menuToggle && menuToggle.parentNode === navbar) {
+      menuToggle.insertAdjacentElement("afterend", langButton);
+    } else if (mainNav && mainNav.parentNode === navbar) {
+      navbar.insertBefore(langButton, mainNav);
+    } else {
+      navbar.appendChild(langButton);
+    }
+
+    injectButtonStyle();
   }
 
 
