@@ -448,7 +448,25 @@ nav a:hover{
       transparent 68%
     );
 }
+.profile-photos{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
+}
 
+.profile-photos .photo-wrapper{
+  width:140px;
+  height:140px;
+  margin-bottom:0;
+}
+
+.profile-photos .profile-photo{
+  width:140px;
+  height:140px;
+}
 .photo-wrapper{
   position:relative;
   width:170px;
@@ -1142,6 +1160,20 @@ footer{
 
 @media(max-width:700px){
 
+  .profile-photos{
+  gap:15px;
+}
+
+.profile-photos .photo-wrapper{
+  width:115px;
+  height:115px;
+}
+
+.profile-photos .profile-photo{
+  width:115px;
+  height:115px;
+}
+
   .navbar{
     position:relative;
     min-height:68px;
@@ -1377,13 +1409,31 @@ footer{
 
 <aside class="profile-card">
 
-<div class="photo-wrapper">
+<div class="profile-photos">
 
-<img
-  src="profile.jpg"
-  alt="Photo professionnelle d'Amine Kramo"
-  class="profile-photo"
->
+  <div class="photo-wrapper">
+    <img
+      src="profile.jpg"
+      alt="Photo professionnelle d'Amine Kramo"
+      class="profile-photo"
+      data-zoom
+      tabindex="0"
+      role="button"
+      aria-label="Agrandir la première photo de profil"
+    >
+  </div>
+
+  <div class="photo-wrapper">
+    <img
+      src="profil2.png"
+      alt="Deuxième photo professionnelle d'Amine Kramo"
+      class="profile-photo"
+      data-zoom
+      tabindex="0"
+      role="button"
+      aria-label="Agrandir la deuxième photo de profil"
+    >
+  </div>
 
 </div>
 
