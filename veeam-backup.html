@@ -2,18 +2,102 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Projet PFE | Veeam Backup & Replication | Amine Kramo</title>
+<!-- =====================================================
+     SEO
+===================================================== -->
+
+<title>Veeam Backup & Replication | PFE Maghreb Steel | Amine Kramo</title>
 
 <meta
   name="description"
-  content="Projet de fin d'études consacré à Veeam Backup & Replication dans un environnement virtualisé, réalisé durant un stage au sein de Maghreb Steel."
+  content="Projet PFE réalisé durant un stage chez Maghreb Steel : étude et configuration de Veeam Backup & Replication dans un environnement virtualisé, avec Backup Jobs, planification et tests de restauration."
 >
 
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KC6V9B6NZ9"></script>
+<meta name="author" content="Amine Kramo">
+
+<meta
+  name="robots"
+  content="index, follow, max-image-preview:large"
+>
+
+<link
+  rel="canonical"
+  href="https://kramoamine.github.io/veeam-backup.html"
+>
+
+<!-- =====================================================
+     OPEN GRAPH - LINKEDIN / WHATSAPP
+===================================================== -->
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+
+<meta
+  property="og:site_name"
+  content="Portfolio Amine Kramo"
+>
+
+<meta
+  property="og:title"
+  content="Veeam Backup & Replication | Projet PFE"
+>
+
+<meta
+  property="og:description"
+  content="Projet PFE consacré à Veeam Backup & Replication dans un environnement virtualisé : Backup Jobs, planification, sauvegarde et tests de restauration."
+>
+
+<meta
+  property="og:url"
+  content="https://kramoamine.github.io/veeam-backup.html"
+>
+
+<meta
+  property="og:image"
+  content="https://kramoamine.github.io/veeam-pfe-maghreb-steel.png"
+>
+
+<meta
+  property="og:image:alt"
+  content="Présentation du projet PFE Veeam Backup & Replication"
+>
+
+<!-- =====================================================
+     SOCIAL CARD
+===================================================== -->
+
+<meta
+  name="twitter:card"
+  content="summary_large_image"
+>
+
+<meta
+  name="twitter:title"
+  content="Veeam Backup & Replication | Projet PFE"
+>
+
+<meta
+  name="twitter:description"
+  content="Projet Veeam : environnement virtualisé, Backup Jobs, planification, sauvegarde et tests de restauration."
+>
+
+<meta
+  name="twitter:image"
+  content="https://kramoamine.github.io/veeam-pfe-maghreb-steel.png"
+>
+
+<!-- =====================================================
+     GOOGLE ANALYTICS 4
+===================================================== -->
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-KC6V9B6NZ9">
+</script>
 
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -25,6 +109,7 @@
   gtag('js', new Date());
   gtag('config', 'G-KC6V9B6NZ9');
 </script>
+
 
 <style>
 
@@ -47,12 +132,11 @@
   --green:#22c55e;
   --purple:#8b5cf6;
 
-  --gradient:
-    linear-gradient(
-      120deg,
-      var(--cyan),
-      var(--blue)
-    );
+  --gradient:linear-gradient(
+    120deg,
+    var(--cyan),
+    var(--blue)
+  );
 
   --max:1180px;
 }
@@ -85,7 +169,9 @@ body{
     var(--bg);
 
   color:var(--text);
+
   line-height:1.7;
+
   overflow-x:hidden;
 }
 
@@ -109,6 +195,7 @@ header{
   z-index:100;
 
   background:rgba(5,13,24,.94);
+
   backdrop-filter:blur(14px);
 
   border-bottom:
@@ -132,6 +219,7 @@ header{
   gap:12px;
 
   text-decoration:none;
+
   font-weight:800;
 }
 
@@ -172,6 +260,7 @@ header{
   color:var(--muted);
 
   text-decoration:none;
+
   font-size:.9rem;
 
   transition:.25s;
@@ -189,6 +278,7 @@ header{
 
 .hero{
   padding:95px 0 80px;
+
   text-align:center;
 }
 
@@ -201,13 +291,16 @@ header{
 
   color:var(--cyan);
 
-  background:rgba(34,211,238,.07);
+  background:
+    rgba(34,211,238,.07);
 
   border:
     1px solid rgba(34,211,238,.25);
 
   font-size:.76rem;
+
   font-weight:800;
+
   letter-spacing:.1em;
 }
 
@@ -223,6 +316,8 @@ header{
 }
 
 .gradient{
+  display:block;
+
   background:var(--gradient);
 
   -webkit-background-clip:text;
@@ -233,9 +328,11 @@ header{
 
 .hero-description{
   max-width:820px;
+
   margin:auto;
 
   color:var(--muted);
+
   font-size:1.05rem;
 }
 
@@ -254,12 +351,14 @@ header{
 
   border-radius:50px;
 
-  background:rgba(255,255,255,.035);
+  background:
+    rgba(255,255,255,.035);
 
   border:
     1px solid var(--border);
 
   color:#c9deee;
+
   font-size:.79rem;
 }
 
@@ -277,6 +376,7 @@ section{
 
 .section-head{
   max-width:760px;
+
   margin-bottom:38px;
 }
 
@@ -288,7 +388,9 @@ section{
   color:var(--cyan);
 
   font-size:.75rem;
+
   font-weight:800;
+
   letter-spacing:.18em;
 }
 
@@ -312,6 +414,7 @@ section{
 
 .context-grid{
   display:grid;
+
   grid-template-columns:1fr 1fr;
 
   gap:20px;
@@ -322,8 +425,7 @@ section{
 
   border-radius:20px;
 
-  border:
-    1px solid var(--border);
+  border:1px solid var(--border);
 
   background:
     linear-gradient(
@@ -335,6 +437,7 @@ section{
 
 .card h3{
   margin-bottom:13px;
+
   color:var(--cyan);
 }
 
@@ -344,6 +447,7 @@ section{
 
 .objectives{
   display:grid;
+
   gap:11px;
 }
 
@@ -357,7 +461,8 @@ section{
 
   border-radius:12px;
 
-  background:rgba(5,13,24,.48);
+  background:
+    rgba(5,13,24,.48);
 
   border:
     1px solid rgba(255,255,255,.06);
@@ -365,6 +470,7 @@ section{
 
 .check{
   color:var(--green);
+
   font-weight:900;
 }
 
@@ -387,8 +493,7 @@ section{
 
   border-radius:17px;
 
-  border:
-    1px solid var(--border);
+  border:1px solid var(--border);
 
   background:
     linear-gradient(
@@ -409,7 +514,8 @@ section{
 
   border-radius:12px;
 
-  background:rgba(34,211,238,.08);
+  background:
+    rgba(34,211,238,.08);
 
   border:
     1px solid rgba(34,211,238,.15);
@@ -419,11 +525,13 @@ section{
 
 .environment-card h3{
   margin-bottom:7px;
+
   font-size:1.02rem;
 }
 
 .environment-card p{
   color:var(--muted);
+
   font-size:.87rem;
 }
 
@@ -434,10 +542,8 @@ section{
 
 .backup-flow{
   display:flex;
-
   align-items:center;
   justify-content:center;
-
   flex-wrap:wrap;
 
   gap:10px;
@@ -453,8 +559,7 @@ section{
       #071421
     );
 
-  border:
-    1px solid #214766;
+  border:1px solid #214766;
 }
 
 .flow-node{
@@ -462,7 +567,8 @@ section{
 
   border-radius:11px;
 
-  background:rgba(34,211,238,.07);
+  background:
+    rgba(34,211,238,.07);
 
   border:
     1px solid rgba(34,211,238,.20);
@@ -470,25 +576,33 @@ section{
   color:#d6edf5;
 
   font-size:.82rem;
+
   font-weight:700;
 
   text-align:center;
 }
 
 .flow-node.veeam{
-  border-color:rgba(139,92,246,.4);
-  background:rgba(139,92,246,.08);
+  border-color:
+    rgba(139,92,246,.4);
+
+  background:
+    rgba(139,92,246,.08);
 }
 
 .flow-node.backup{
-  border-color:rgba(34,197,94,.35);
-  background:rgba(34,197,94,.07);
+  border-color:
+    rgba(34,197,94,.35);
+
+  background:
+    rgba(34,197,94,.07);
 }
 
 .flow-arrow{
   color:var(--cyan);
 
   font-size:1.2rem;
+
   font-weight:900;
 }
 
@@ -515,8 +629,7 @@ section{
 
   border-radius:17px;
 
-  border:
-    1px solid var(--border);
+  border:1px solid var(--border);
 
   background:
     linear-gradient(
@@ -538,17 +651,21 @@ section{
   color:var(--cyan);
 
   font-size:.74rem;
+
   font-weight:900;
+
   letter-spacing:.12em;
 }
 
 .step h3{
   margin-bottom:7px;
+
   font-size:1rem;
 }
 
 .step p{
   color:var(--muted);
+
   font-size:.88rem;
 }
 
@@ -568,11 +685,11 @@ section{
 
   background:#081525;
 
-  border:
-    1px solid #214766;
+  border:1px solid #214766;
 
   box-shadow:
-    0 25px 60px rgba(0,0,0,.30);
+    0 25px 60px
+    rgba(0,0,0,.30);
 }
 
 .presentation-image img{
@@ -592,6 +709,7 @@ section{
   text-align:center;
 
   color:var(--muted);
+
   font-size:.82rem;
 }
 
@@ -602,7 +720,8 @@ section{
 
   border-radius:14px;
 
-  background:rgba(59,130,246,.055);
+  background:
+    rgba(59,130,246,.055);
 
   border:
     1px solid rgba(59,130,246,.22);
@@ -643,7 +762,8 @@ section{
   border:
     1px solid var(--border);
 
-  background:rgba(255,255,255,.025);
+  background:
+    rgba(255,255,255,.025);
 }
 
 .work-icon{
@@ -657,18 +777,21 @@ section{
 
   border-radius:10px;
 
-  background:rgba(34,211,238,.09);
+  background:
+    rgba(34,211,238,.09);
 
   color:var(--cyan);
 }
 
 .work strong{
   display:block;
+
   margin-bottom:3px;
 }
 
 .work p{
   color:var(--muted);
+
   font-size:.87rem;
 }
 
@@ -679,6 +802,7 @@ section{
 
 .technology-list{
   display:flex;
+
   flex-wrap:wrap;
 
   gap:10px;
@@ -691,12 +815,14 @@ section{
 
   color:#c8edf5;
 
-  background:rgba(34,211,238,.07);
+  background:
+    rgba(34,211,238,.07);
 
   border:
     1px solid rgba(34,211,238,.18);
 
   font-size:.82rem;
+
   font-weight:650;
 }
 
@@ -708,7 +834,8 @@ section{
 .result-box{
   display:grid;
 
-  grid-template-columns:auto 1fr;
+  grid-template-columns:
+    auto 1fr;
 
   align-items:center;
 
@@ -738,11 +865,13 @@ section{
 
   border-radius:50%;
 
-  background:rgba(34,197,94,.12);
+  background:
+    rgba(34,197,94,.12);
 
   color:#72e59a;
 
   font-size:1.8rem;
+
   font-weight:900;
 }
 
@@ -765,7 +894,6 @@ section{
 
 .return-button{
   display:inline-flex;
-
   align-items:center;
   justify-content:center;
 
@@ -778,6 +906,7 @@ section{
   color:#04101d;
 
   text-decoration:none;
+
   font-weight:800;
 
   transition:.25s;
@@ -803,6 +932,7 @@ footer{
   color:var(--muted);
 
   text-align:center;
+
   font-size:.84rem;
 }
 
@@ -827,6 +957,7 @@ footer{
 
   .navbar{
     min-height:65px;
+
     gap:12px;
   }
 
@@ -845,6 +976,11 @@ footer{
 
   .hero{
     padding:65px 0 55px;
+  }
+
+  .hero h1{
+    font-size:
+      clamp(2.15rem,11vw,3.4rem);
   }
 
   section{
@@ -866,6 +1002,7 @@ footer{
 
   .presentation-image{
     padding:5px;
+
     border-radius:14px;
   }
 
@@ -875,6 +1012,7 @@ footer{
 
   .result-box{
     grid-template-columns:1fr;
+
     text-align:center;
   }
 
@@ -900,7 +1038,10 @@ footer{
 
 <div class="container navbar">
 
-<a href="index.html" class="brand">
+<a
+  href="index.html"
+  class="brand"
+>
 
 <img
   src="banner.jpg"
@@ -942,23 +1083,19 @@ footer{
 </span>
 
 <h1>
-
   Solution de sauvegarde avec
 
   <span class="gradient">
     Veeam Backup & Replication
   </span>
-
 </h1>
 
 <p class="hero-description">
-
   Projet de fin d'études réalisé dans le cadre
   d'un stage au sein de Maghreb Steel,
   consacré à l'étude, l'installation et la configuration
   d'une solution de sauvegarde et de restauration
   dans un environnement virtualisé.
-
 </p>
 
 <div class="project-meta">
@@ -1009,18 +1146,15 @@ footer{
 </h2>
 
 <p>
-
   Étudier et mettre en œuvre les principes
   d'une stratégie de sauvegarde permettant
   de protéger les données et les machines virtuelles.
-
 </p>
 
 </div>
 
 
 <div class="context-grid">
-
 
 <div class="card">
 
@@ -1029,7 +1163,6 @@ footer{
 </h3>
 
 <p>
-
   Le projet a été réalisé durant mon stage
   de fin d'études au sein de Maghreb Steel.
 
@@ -1038,7 +1171,6 @@ footer{
   dans un environnement virtualisé pour configurer,
   planifier et tester des opérations de sauvegarde
   et de restauration.
-
 </p>
 
 </div>
@@ -1054,43 +1186,32 @@ footer{
 
 <div class="objective">
   <span class="check">✓</span>
-  <span>
-    Comprendre les principes de sauvegarde.
-  </span>
+  <span>Comprendre les principes de sauvegarde.</span>
 </div>
 
 <div class="objective">
   <span class="check">✓</span>
-  <span>
-    Installer et configurer Veeam.
-  </span>
+  <span>Installer et configurer Veeam.</span>
 </div>
 
 <div class="objective">
   <span class="check">✓</span>
-  <span>
-    Créer des tâches de sauvegarde.
-  </span>
+  <span>Créer des tâches de sauvegarde.</span>
 </div>
 
 <div class="objective">
   <span class="check">✓</span>
-  <span>
-    Automatiser les sauvegardes par planification.
-  </span>
+  <span>Automatiser les sauvegardes par planification.</span>
 </div>
 
 <div class="objective">
   <span class="check">✓</span>
-  <span>
-    Étudier et tester les mécanismes de restauration.
-  </span>
+  <span>Étudier et tester les mécanismes de restauration.</span>
 </div>
 
 </div>
 
 </div>
-
 
 </div>
 
@@ -1118,18 +1239,15 @@ footer{
 </h2>
 
 <p>
-
   Le projet présente l'utilisation
   de Veeam Backup & Replication dans
   un environnement de virtualisation.
-
 </p>
 
 </div>
 
 
 <div class="environment">
-
 
 <div class="environment-card">
 
@@ -1142,11 +1260,9 @@ footer{
 </h3>
 
 <p>
-
   Environnement contenant les machines virtuelles
   utilisées comme sources pour les opérations
   de sauvegarde et de restauration.
-
 </p>
 
 </div>
@@ -1163,12 +1279,10 @@ footer{
 </h3>
 
 <p>
-
   Solution utilisée pour configurer
   les tâches de sauvegarde,
   gérer leur exécution et étudier
   les mécanismes de restauration.
-
 </p>
 
 </div>
@@ -1185,15 +1299,12 @@ footer{
 </h3>
 
 <p>
-
   Destination logique utilisée
   pour conserver les données générées
   par les tâches de sauvegarde.
-
 </p>
 
 </div>
-
 
 </div>
 
@@ -1221,10 +1332,8 @@ footer{
 </h2>
 
 <p>
-
   Vue simplifiée du fonctionnement
   étudié pendant le projet.
-
 </p>
 
 </div>
@@ -1236,41 +1345,31 @@ footer{
   ☁️ Machines virtuelles
 </div>
 
-<div class="flow-arrow">
-  →
-</div>
+<div class="flow-arrow">→</div>
 
 <div class="flow-node veeam">
   💾 Veeam Backup & Replication
 </div>
 
-<div class="flow-arrow">
-  →
-</div>
+<div class="flow-arrow">→</div>
 
 <div class="flow-node">
   ⚙️ Backup Job
 </div>
 
-<div class="flow-arrow">
-  →
-</div>
+<div class="flow-arrow">→</div>
 
 <div class="flow-node">
   📅 Planification
 </div>
 
-<div class="flow-arrow">
-  →
-</div>
+<div class="flow-arrow">→</div>
 
 <div class="flow-node backup">
   🗄️ Sauvegarde
 </div>
 
-<div class="flow-arrow">
-  ↔
-</div>
+<div class="flow-arrow">↔</div>
 
 <div class="flow-node backup">
   🔄 Restore
@@ -1302,17 +1401,14 @@ footer{
 </h2>
 
 <p>
-
   Principales opérations étudiées
   et présentées dans le cadre du PFE.
-
 </p>
 
 </div>
 
 
 <div class="steps">
-
 
 <div class="step">
 
@@ -1321,11 +1417,9 @@ footer{
 </h3>
 
 <p>
-
   Étude du rôle de Veeam Backup & Replication,
   de ses principales fonctions et de son utilisation
   dans la protection des environnements virtualisés.
-
 </p>
 
 </div>
@@ -1338,11 +1432,9 @@ footer{
 </h3>
 
 <p>
-
   Installation de la solution
   dans l'environnement utilisé
   pour la réalisation du projet.
-
 </p>
 
 </div>
@@ -1355,11 +1447,9 @@ footer{
 </h3>
 
 <p>
-
   Préparation des composants nécessaires
   à la création et à l'exécution
   des tâches de sauvegarde.
-
 </p>
 
 </div>
@@ -1372,11 +1462,9 @@ footer{
 </h3>
 
 <p>
-
   Création de tâches de sauvegarde
   avec sélection des éléments à protéger
   et définition des paramètres nécessaires.
-
 </p>
 
 </div>
@@ -1389,11 +1477,9 @@ footer{
 </h3>
 
 <p>
-
   Définition des horaires
   et des fréquences d'exécution
   afin d'automatiser les opérations de sauvegarde.
-
 </p>
 
 </div>
@@ -1406,12 +1492,10 @@ footer{
 </h3>
 
 <p>
-
   Étude des paramètres liés
   aux tentatives d'exécution
   lorsqu'une tâche de sauvegarde
   ne se termine pas correctement.
-
 </p>
 
 </div>
@@ -1424,11 +1508,9 @@ footer{
 </h3>
 
 <p>
-
   Contrôle de l'état des tâches
   et validation du bon déroulement
   des opérations de sauvegarde.
-
 </p>
 
 </div>
@@ -1441,15 +1523,12 @@ footer{
 </h3>
 
 <p>
-
   Étude et réalisation de tests
   permettant de vérifier le principe
   de récupération des données sauvegardées.
-
 </p>
 
 </div>
-
 
 </div>
 
@@ -1477,12 +1556,10 @@ footer{
 </h2>
 
 <p>
-
   Présentation des principales étapes
   de configuration de Veeam Backup & Replication,
   notamment les tâches de sauvegarde
   et leur planification.
-
 </p>
 
 </div>
@@ -1492,17 +1569,15 @@ footer{
 
 <img
   src="veeam-pfe-maghreb-steel.png"
-  alt="Présentation technique du projet Veeam Backup & Replication"
+  alt="Présentation du projet PFE Veeam Backup & Replication"
 >
 
 </div>
 
 
 <p class="image-caption">
-
   Présentation technique du projet de fin d'études
   consacré à Veeam Backup & Replication.
-
 </p>
 
 
@@ -1519,7 +1594,6 @@ un déploiement sur l'infrastructure
 de production de Maghreb Steel.
 
 </div>
-
 
 </div>
 
@@ -1545,17 +1619,14 @@ de production de Maghreb Steel.
 </h2>
 
 <p>
-
   Principales tâches réalisées
   dans le cadre de ce projet de fin d'études.
-
 </p>
 
 </div>
 
 
 <div class="intervention-grid">
-
 
 <div class="work">
 
@@ -1570,11 +1641,9 @@ de production de Maghreb Steel.
 </strong>
 
 <p>
-
   Analyse des fonctionnalités
   de Veeam Backup & Replication
   et des principes de protection des données.
-
 </p>
 
 </div>
@@ -1595,11 +1664,9 @@ de production de Maghreb Steel.
 </strong>
 
 <p>
-
   Installation et préparation
   de la solution dans
   l'environnement virtualisé du projet.
-
 </p>
 
 </div>
@@ -1620,10 +1687,8 @@ de production de Maghreb Steel.
 </strong>
 
 <p>
-
   Création et configuration
   des tâches de sauvegarde.
-
 </p>
 
 </div>
@@ -1644,11 +1709,9 @@ de production de Maghreb Steel.
 </strong>
 
 <p>
-
   Paramétrage des horaires
   et de l'exécution automatique
   des tâches de sauvegarde.
-
 </p>
 
 </div>
@@ -1669,11 +1732,9 @@ de production de Maghreb Steel.
 </strong>
 
 <p>
-
   Étude des paramètres de reprise
   et de nouvelle tentative
   en cas d'échec d'une tâche.
-
 </p>
 
 </div>
@@ -1694,17 +1755,14 @@ de production de Maghreb Steel.
 </strong>
 
 <p>
-
   Réalisation de tests
   afin d'étudier et de valider
   le processus de restauration.
-
 </p>
 
 </div>
 
 </div>
-
 
 </div>
 
@@ -1813,14 +1871,12 @@ de production de Maghreb Steel.
 </h3>
 
 <p>
-
   Le projet m'a permis d'approfondir
   le fonctionnement de Veeam Backup & Replication,
   depuis la création et la planification
   des Backup Jobs jusqu'au suivi des tâches
   et aux tests de restauration dans
   un environnement virtualisé.
-
 </p>
 
 </div>
