@@ -1,958 +1,1277 @@
 /* =========================================================
-   Portfolio Amine Kramo - FR / EN
-   ========================================================= */
+   AMINE KRAMO PORTFOLIO
+   FR / EN LANGUAGE SYSTEM
+   Compatible avec index.html actuel
+========================================================= */
 
-(function () {
-  "use strict";
-
+document.addEventListener("DOMContentLoaded", () => {
 
   /* =======================================================
      CONFIGURATION
   ======================================================= */
 
-  const CONFIG = {
+  const translations = {
 
-    cvFR: "CV-KRAMO-AMINE.pdf",
-    cvEN: "CV-KRAMO-AMINE-EN.pdf",
+    /* ===================== FRENCH ===================== */
 
-    titleFR:
-      "Amine Kramo | Technicien Systèmes & Réseaux à Casablanca",
+    fr: {
 
-    titleEN:
-      "Amine Kramo | Systems & Networks Technician in Casablanca",
+      pageTitle:
+        "Amine Kramo | Technicien Systèmes & Réseaux à Casablanca",
 
-    descriptionFR:
-      "Portfolio d'Amine Kramo, Technicien Systèmes & Réseaux à Casablanca : support IT, pfSense, OpenVPN, Windows, Linux, VMware, Veeam et vidéosurveillance IP.",
+      nav: [
+        "Accueil",
+        "À propos",
+        "Compétences",
+        "Réalisations",
+        "Expérience",
+        "Formation",
+        "Contact"
+      ],
 
-    descriptionEN:
-      "Portfolio of Amine Kramo, Systems & Networks Technician in Casablanca: IT support, pfSense, OpenVPN, Windows, Linux, VMware, Veeam and IP video surveillance.",
+      hero: {
+        badge: "Profil Systèmes & Réseaux",
+        hello: "Bonjour, je suis",
+        role: "Technicien Systèmes & Réseaux",
+        degree:
+          "Diplômé d'une Licence Professionnelle en Administration Avancée des Systèmes et Réseaux",
+        description:
+          "Je possède une expérience pratique en support IT, administration systèmes, réseaux et infrastructures informatiques. J'interviens sur l'installation, la configuration, la maintenance et le dépannage des équipements et services informatiques.",
+        cv: "Télécharger mon CV ↓",
+        contact: "Me contacter",
+        location: "📍 Casablanca, Maroc",
+        licence: "🎓 Licence Professionnelle",
+        speciality: "💻 Systèmes & Réseaux",
+        permit: "🚗 Permis B"
+      },
 
-    ogTitleFR:
-      "Amine Kramo | Technicien Systèmes & Réseaux",
+      about: {
+        label: "PRÉSENTATION",
+        title: "À propos de moi",
+        intro:
+          "Un profil technique orienté systèmes, réseaux et infrastructures informatiques.",
+        cardTitle: "Technicien Systèmes & Réseaux",
 
-    ogTitleEN:
-      "Amine Kramo | Systems & Networks Technician",
+        paragraphs: [
+          "Diplômé d'une Licence Professionnelle en Administration Avancée des Systèmes et Réseaux, ainsi que d'un Diplôme de Technicien Spécialisé en Infrastructure Digitale, option Systèmes et Réseaux, j'ai développé un profil technique orienté infrastructure et support IT.",
 
-    ogDescriptionFR:
-      "Découvrez mon portfolio : systèmes, réseaux, support IT, pfSense, OpenVPN, virtualisation, Veeam Backup & Replication et vidéosurveillance IP.",
+          "Mon expérience professionnelle et mes interventions sur le terrain m'ont permis de renforcer mes compétences en administration Windows et Linux, réseaux LAN/WAN, support informatique, maintenance, virtualisation, sauvegarde, sécurité réseau et vidéosurveillance.",
 
-    ogDescriptionEN:
-      "Explore my portfolio: systems, networks, IT support, pfSense, OpenVPN, virtualization, Veeam Backup & Replication and IP video surveillance."
+          "J'interviens également sur l'installation, la configuration, le diagnostic et le dépannage des équipements et infrastructures informatiques.",
+
+          "Autonome, rigoureux et orienté résolution de problèmes, je souhaite continuer à développer mon expertise dans les systèmes, les réseaux et les infrastructures IT."
+        ]
+      },
+
+      skills: {
+        label: "EXPERTISE",
+        title: "Compétences techniques",
+        intro:
+          "Mes principales compétences en administration systèmes, réseaux, virtualisation, sécurité et support IT.",
+
+        cards: [
+          {
+            title: "Administration Systèmes",
+            description:
+              "Installation, configuration et administration des systèmes Windows Server, des postes Windows et des environnements Linux."
+          },
+          {
+            title: "Services Microsoft",
+            description:
+              "Administration des services Microsoft dans un environnement Windows Server et domaine d'entreprise."
+          },
+          {
+            title: "Réseaux informatiques",
+            description:
+              "Installation, configuration et dépannage des infrastructures réseau LAN/WAN."
+          },
+          {
+            title: "Sécurité réseau",
+            description:
+              "Configuration de solutions de sécurité réseau, pare-feu et accès distant sécurisé."
+          },
+          {
+            title: "Virtualisation",
+            description:
+              "Création, déploiement et gestion d'environnements virtualisés pour les systèmes et services informatiques."
+          },
+          {
+            title: "Sauvegarde",
+            description:
+              "Mise en place et gestion de solutions de sauvegarde pour les données et environnements informatiques."
+          },
+          {
+            title: "Support informatique",
+            description:
+              "Support utilisateurs N1/N2, diagnostic et résolution des incidents matériels, logiciels et réseau."
+          },
+          {
+            title: "Microsoft 365",
+            description:
+              "Utilisation et gestion des principaux outils collaboratifs Microsoft."
+          },
+          {
+            title: "Vidéosurveillance IP",
+            description:
+              "Installation, configuration, diagnostic et remise en service des infrastructures de vidéosurveillance."
+          }
+        ]
+      },
+
+      projects: {
+        label: "SUR LE TERRAIN",
+        title: "Réalisations & interventions",
+        intro:
+          "Quelques projets illustrant mon expérience pratique.",
+
+        cards: [
+          {
+            location: "📍 Kénitra",
+            title:
+              "Accès distant sécurisé avec OpenVPN & pfSense",
+            description:
+              "Mise en place d'un accès distant sécurisé permettant à un collaborateur situé en Espagne d'accéder aux ressources autorisées du réseau de l'entreprise au Maroc via OpenVPN et pfSense.",
+            workTitle: "Intervention",
+            tasks: [
+              "Préparation de l'architecture réseau",
+              "Configuration de pfSense",
+              "Mise en place du serveur OpenVPN",
+              "Configuration de l'accès distant",
+              "Contrôle des accès aux ressources internes",
+              "Tests de connectivité et validation"
+            ]
+          },
+
+          {
+            location: "📍 ENCG Settat",
+            title: "Vidéosurveillance IP & Réseau",
+            description:
+              "Intervention sur une infrastructure de vidéosurveillance IP intégrant des liaisons sans fil TP-Link CPE510 pour transporter les flux vidéo vers le réseau principal et le NVR.",
+            workTitle: "Intervention",
+            tasks: [
+              "Diagnostic des équipements",
+              "Intervention sur les caméras IP",
+              "Vérification du câblage",
+              "Intervention sur les liaisons TP-Link CPE510",
+              "Vérification de la connectivité réseau",
+              "Tests et remise en service"
+            ]
+          },
+
+          {
+            location: "🎓 PFE · Maghreb Steel",
+            title: "Veeam Backup & Replication",
+            description:
+              "Projet de fin d'études consacré à l'installation, la configuration et la démonstration de Veeam Backup & Replication dans un environnement virtualisé.",
+            workTitle: "Travaux réalisés",
+            tasks: [
+              "Présentation et étude de la solution Veeam",
+              "Installation et configuration en environnement virtualisé",
+              "Création et planification des Backup Jobs",
+              "Configuration des paramètres et tentatives",
+              "Suivi des tâches de sauvegarde",
+              "Tests de restauration"
+            ]
+          }
+        ],
+
+        view: "Voir le projet →"
+      },
+
+      experience: {
+        label: "PARCOURS",
+        title: "Expérience professionnelle",
+        intro:
+          "Mon parcours dans le support informatique, les systèmes, les réseaux et les infrastructures IT.",
+
+        current: "POSTE ACTUEL",
+
+        cards: [
+          {
+            title:
+              "Technicien Informatique / Systèmes & Réseaux",
+            description:
+              "Support informatique, maintenance, réseaux et interventions techniques sur site."
+          },
+          {
+            title: "Technicien Informatique Freelance",
+            description:
+              "Maintenance, diagnostic, installation des systèmes et assistance technique."
+          },
+          {
+            title: "Stagiaire PFE"
+          },
+          {
+            title: "Stagiaire Informatique",
+            description:
+              "Participation aux activités de support et de maintenance informatique."
+          }
+        ]
+      },
+
+      education: {
+        label: "PARCOURS ACADÉMIQUE",
+        title: "Formation",
+        intro:
+          "Un parcours orienté vers les systèmes, les réseaux et les infrastructures informatiques.",
+        obtained: "✓ DIPLÔME OBTENU",
+
+        cards: [
+          {
+            degree: "Licence Professionnelle",
+            field:
+              "Administration Avancée des Systèmes et Réseaux",
+            description:
+              "Formation spécialisée dans l'administration avancée des systèmes, réseaux et infrastructures informatiques."
+          },
+          {
+            degree:
+              "Diplôme de Technicien Spécialisé",
+            field:
+              "Infrastructure Digitale : Systèmes et Réseaux",
+            description:
+              "Formation technique orientée systèmes, réseaux, infrastructure digitale et support informatique."
+          },
+          {
+            degree: "Baccalauréat Scientifique",
+            field: "Sciences Physiques",
+            description:
+              "Formation scientifique constituant la base de mon parcours vers les technologies de l'information."
+          }
+        ]
+      },
+
+      contact: {
+        label: "CONTACT",
+        title: "Restons en contact",
+        intro:
+          "Vous souhaitez échanger au sujet d'une opportunité professionnelle ou d'un projet IT ? N'hésitez pas à me contacter.",
+        badge: "● DISPONIBLE POUR ÉCHANGER",
+        heading: "Échangeons sur vos besoins IT",
+        description:
+          "Je suis disponible pour échanger autour d'opportunités professionnelles et de projets liés aux systèmes, réseaux, infrastructures IT, support informatique et vidéosurveillance.",
+        cv: "Télécharger mon CV ↓",
+        email: "E-mail",
+        phone: "Téléphone",
+        whatsapp: "WhatsApp",
+        whatsappAction: "Envoyer un message",
+        location: "Localisation"
+      },
+
+      footer: {
+        role: "Technicien Systèmes & Réseaux",
+        copyright:
+          "© 2026 Amine Kramo — Portfolio professionnel"
+      }
+    },
+
+
+    /* ===================== ENGLISH ===================== */
+
+    en: {
+
+      pageTitle:
+        "Amine Kramo | Systems & Network Technician in Casablanca",
+
+      nav: [
+        "Home",
+        "About",
+        "Skills",
+        "Projects",
+        "Experience",
+        "Education",
+        "Contact"
+      ],
+
+      hero: {
+        badge: "Systems & Networks Profile",
+        hello: "Hello, I'm",
+        role: "Systems & Network Technician",
+        degree:
+          "Graduate with a Professional Bachelor's Degree in Advanced Systems and Network Administration",
+        description:
+          "I have hands-on experience in IT support, systems administration, networking and IT infrastructure. I work on the installation, configuration, maintenance and troubleshooting of IT equipment and services.",
+        cv: "Download my CV ↓",
+        contact: "Contact me",
+        location: "📍 Casablanca, Morocco",
+        licence: "🎓 Professional Bachelor's Degree",
+        speciality: "💻 Systems & Networks",
+        permit: "🚗 Driving Licence B"
+      },
+
+      about: {
+        label: "PROFILE",
+        title: "About me",
+        intro:
+          "A technical profile focused on systems, networks and IT infrastructure.",
+        cardTitle: "Systems & Network Technician",
+
+        paragraphs: [
+          "Graduate with a Professional Bachelor's Degree in Advanced Systems and Network Administration and a Specialized Technician Diploma in Digital Infrastructure, Systems and Networks option, I have developed a technical profile focused on infrastructure and IT support.",
+
+          "My professional experience and field interventions have enabled me to strengthen my skills in Windows and Linux administration, LAN/WAN networks, IT support, maintenance, virtualization, backup, network security and video surveillance.",
+
+          "I also work on the installation, configuration, diagnosis and troubleshooting of IT equipment and infrastructure.",
+
+          "Independent, rigorous and solution-oriented, I aim to continue developing my expertise in systems, networks and IT infrastructure."
+        ]
+      },
+
+      skills: {
+        label: "EXPERTISE",
+        title: "Technical Skills",
+        intro:
+          "My main skills in systems administration, networking, virtualization, security and IT support.",
+
+        cards: [
+          {
+            title: "Systems Administration",
+            description:
+              "Installation, configuration and administration of Windows Server systems, Windows workstations and Linux environments."
+          },
+          {
+            title: "Microsoft Services",
+            description:
+              "Administration of Microsoft services in Windows Server and enterprise domain environments."
+          },
+          {
+            title: "Computer Networks",
+            description:
+              "Installation, configuration and troubleshooting of LAN/WAN network infrastructures."
+          },
+          {
+            title: "Network Security",
+            description:
+              "Configuration of network security solutions, firewalls and secure remote access."
+          },
+          {
+            title: "Virtualization",
+            description:
+              "Creation, deployment and management of virtualized environments for IT systems and services."
+          },
+          {
+            title: "Backup",
+            description:
+              "Implementation and management of backup solutions for data and IT environments."
+          },
+          {
+            title: "IT Support",
+            description:
+              "Level 1/2 user support, diagnosis and resolution of hardware, software and network incidents."
+          },
+          {
+            title: "Microsoft 365",
+            description:
+              "Use and management of the main Microsoft collaboration tools."
+          },
+          {
+            title: "IP Video Surveillance",
+            description:
+              "Installation, configuration, diagnosis and restoration of video surveillance infrastructure."
+          }
+        ]
+      },
+
+      projects: {
+        label: "FIELD WORK",
+        title: "Projects & Interventions",
+        intro:
+          "Selected projects demonstrating my hands-on experience.",
+
+        cards: [
+          {
+            location: "📍 Kenitra",
+            title:
+              "Secure Remote Access with OpenVPN & pfSense",
+            description:
+              "Implementation of secure remote access allowing a collaborator located in Spain to access authorized resources on the company's network in Morocco using OpenVPN and pfSense.",
+            workTitle: "Implementation",
+            tasks: [
+              "Network architecture preparation",
+              "pfSense configuration",
+              "OpenVPN server deployment",
+              "Remote access configuration",
+              "Internal resource access control",
+              "Connectivity testing and validation"
+            ]
+          },
+
+          {
+            location: "📍 ENCG Settat",
+            title: "IP Video Surveillance & Networking",
+            description:
+              "Intervention on an IP video surveillance infrastructure integrating TP-Link CPE510 wireless links to transport video streams to the main network and NVR.",
+            workTitle: "Intervention",
+            tasks: [
+              "Equipment diagnosis",
+              "IP camera intervention",
+              "Cabling verification",
+              "TP-Link CPE510 wireless link intervention",
+              "Network connectivity verification",
+              "Testing and service restoration"
+            ]
+          },
+
+          {
+            location: "🎓 Final Project · Maghreb Steel",
+            title: "Veeam Backup & Replication",
+            description:
+              "Final-year project focused on the installation, configuration and demonstration of Veeam Backup & Replication in a virtualized environment.",
+            workTitle: "Work completed",
+            tasks: [
+              "Presentation and study of Veeam solution",
+              "Installation and configuration in a virtualized environment",
+              "Creation and scheduling of Backup Jobs",
+              "Configuration of parameters and attempts",
+              "Backup task monitoring",
+              "Restore testing"
+            ]
+          }
+        ],
+
+        view: "View project →"
+      },
+
+      experience: {
+        label: "CAREER",
+        title: "Professional Experience",
+        intro:
+          "My experience in IT support, systems, networks and IT infrastructure.",
+
+        current: "CURRENT POSITION",
+
+        cards: [
+          {
+            title:
+              "IT / Systems & Network Technician",
+            description:
+              "IT support, maintenance, networking and technical on-site interventions."
+          },
+          {
+            title: "Freelance IT Technician",
+            description:
+              "Maintenance, diagnosis, system installation and technical assistance."
+          },
+          {
+            title: "Final-Year Project Intern"
+          },
+          {
+            title: "IT Intern",
+            description:
+              "Participation in IT support and maintenance activities."
+          }
+        ]
+      },
+
+      education: {
+        label: "ACADEMIC BACKGROUND",
+        title: "Education",
+        intro:
+          "An academic background focused on systems, networks and IT infrastructure.",
+        obtained: "✓ DEGREE OBTAINED",
+
+        cards: [
+          {
+            degree: "Professional Bachelor's Degree",
+            field:
+              "Advanced Systems and Network Administration",
+            description:
+              "Specialized program in advanced systems, networks and IT infrastructure administration."
+          },
+          {
+            degree:
+              "Specialized Technician Diploma",
+            field:
+              "Digital Infrastructure: Systems and Networks",
+            description:
+              "Technical training focused on systems, networks, digital infrastructure and IT support."
+          },
+          {
+            degree: "Scientific Baccalaureate",
+            field: "Physical Sciences",
+            description:
+              "Scientific education forming the foundation of my career in information technology."
+          }
+        ]
+      },
+
+      contact: {
+        label: "CONTACT",
+        title: "Let's stay in touch",
+        intro:
+          "Would you like to discuss a professional opportunity or an IT project? Feel free to contact me.",
+        badge: "● AVAILABLE TO CONNECT",
+        heading: "Let's discuss your IT needs",
+        description:
+          "I am available to discuss professional opportunities and projects related to systems, networks, IT infrastructure, IT support and video surveillance.",
+        cv: "Download my CV ↓",
+        email: "Email",
+        phone: "Phone",
+        whatsapp: "WhatsApp",
+        whatsappAction: "Send a message",
+        location: "Location"
+      },
+
+      footer: {
+        role: "Systems & Network Technician",
+        copyright:
+          "© 2026 Amine Kramo — Professional Portfolio"
+      }
+    }
 
   };
 
 
   /* =======================================================
-     DICTIONNAIRE FR -> EN
+     HELPERS
   ======================================================= */
 
-  const EN = {
+  const $ = (selector) =>
+    document.querySelector(selector);
 
-    /* ---------------------------------------------------
-       NAVIGATION
-    --------------------------------------------------- */
+  const $$ = (selector) =>
+    Array.from(document.querySelectorAll(selector));
 
-    "Accueil":
-      "Home",
 
-    "À propos":
-      "About",
+  function setText(selector, text){
+    const element = $(selector);
 
-    "Compétences":
-      "Skills",
-
-    "Réalisations":
-      "Projects",
-
-    "Expérience":
-      "Experience",
-
-    "Formation":
-      "Education",
-
-    "Contact":
-      "Contact",
-
-
-    /* ---------------------------------------------------
-       HERO
-    --------------------------------------------------- */
-
-    "Profil Systèmes & Réseaux":
-      "Systems & Networks Profile",
-
-    "Bonjour, je suis":
-      "Hello, I'm",
-
-    "Technicien Systèmes & Réseaux":
-      "Systems & Networks Technician",
-
-    "Diplômé d'une Licence Professionnelle en Administration Avancée des Systèmes et Réseaux":
-      "Graduate with a Professional Bachelor's Degree in Advanced Systems and Network Administration",
-
-    "Je possède une expérience pratique en support IT, administration systèmes, réseaux et infrastructures informatiques. J'interviens sur l'installation, la configuration, la maintenance et le dépannage des équipements et services informatiques.":
-      "I have hands-on experience in IT support, systems administration, networking and IT infrastructure. I work on the installation, configuration, maintenance and troubleshooting of IT equipment and services.",
-
-    "Télécharger mon CV ↓":
-      "Download my CV ↓",
-
-    "Me contacter":
-      "Contact me",
-
-    "Casablanca, Maroc":
-      "Casablanca, Morocco",
-
-    "Permis B":
-      "Category B Driving Licence",
-
-    "Licence Professionnelle":
-      "Professional Bachelor's Degree",
-
-    "Systèmes & Réseaux":
-      "Systems & Networks",
-
-
-    /* ---------------------------------------------------
-       À PROPOS
-    --------------------------------------------------- */
-
-    "PRÉSENTATION":
-      "PROFILE",
-
-    "À propos de moi":
-      "About Me",
-
-    "Un profil technique orienté systèmes, réseaux et infrastructures informatiques.":
-      "A technical profile focused on systems, networks and IT infrastructure.",
-
-    "Diplômé d'une Licence Professionnelle en Administration Avancée des Systèmes et Réseaux, ainsi que d'un Diplôme de Technicien Spécialisé en Infrastructure Digitale, option Systèmes et Réseaux, j'ai développé un profil technique orienté infrastructure et support IT.":
-      "I hold a Professional Bachelor's Degree in Advanced Systems and Network Administration, as well as a Specialized Technician Diploma in Digital Infrastructure, Systems and Networks. I have developed a technical profile focused on IT infrastructure and support.",
-
-    "Mon expérience professionnelle et mes interventions sur le terrain m'ont permis de renforcer mes compétences en administration Windows et Linux, réseaux LAN/WAN, support informatique, maintenance, virtualisation, sauvegarde, sécurité réseau et vidéosurveillance.":
-      "My professional experience and field work have strengthened my skills in Windows and Linux administration, LAN/WAN networking, IT support, maintenance, virtualization, backup, network security and video surveillance.",
-
-    "J'interviens également sur l'installation, la configuration, le diagnostic et le dépannage des équipements et infrastructures informatiques.":
-      "I also work on the installation, configuration, diagnosis and troubleshooting of IT equipment and infrastructure.",
-
-    "Autonome, rigoureux et orienté résolution de problèmes, je souhaite continuer à développer mon expertise dans les systèmes, les réseaux et les infrastructures IT.":
-      "Independent, rigorous and solution-oriented, I aim to continue developing my expertise in systems, networks and IT infrastructure.",
-
-    "Localisation":
-      "Location",
-
-    "Diplôme":
-      "Degree",
-
-    "Spécialité":
-      "Specialization",
-
-    "Support":
-      "Support",
-
-    "Niveau 1 & 2":
-      "Level 1 & 2",
-
-    "Orientation":
-      "Focus",
-
-    "Infrastructure IT":
-      "IT Infrastructure",
-
-    "Mobilité":
-      "Mobility",
-
-
-    /* ---------------------------------------------------
-       COMPÉTENCES
-    --------------------------------------------------- */
-
-    "EXPERTISE":
-      "EXPERTISE",
-
-    "Compétences techniques":
-      "Technical Skills",
-
-    "Mes principales compétences en systèmes, réseaux, infrastructures et support IT.":
-      "My main technical skills in systems, networks, IT infrastructure and support.",
-
-    "Support informatique":
-      "IT Support",
-
-    "Support utilisateurs N1/N2, diagnostic et résolution des incidents matériels, logiciels et réseau.":
-      "Level 1/2 user support, diagnosis and resolution of hardware, software and network incidents.",
-
-    "Support N1/N2":
-      "Level 1/2 Support",
-
-    "Diagnostic":
-      "Diagnostics",
-
-    "Maintenance":
-      "Maintenance",
-
-    "Windows & Linux":
-      "Windows & Linux",
-
-    "Installation, configuration, administration et maintenance des postes et systèmes informatiques.":
-      "Installation, configuration, administration and maintenance of workstations and IT systems.",
-
-    "Administration":
-      "Administration",
-
-    "Réseaux informatiques":
-      "Computer Networks",
-
-    "Installation, configuration et dépannage des infrastructures réseau.":
-      "Installation, configuration and troubleshooting of network infrastructures.",
-
-    "Sécurité réseau":
-      "Network Security",
-
-    "Configuration de solutions permettant de sécuriser les infrastructures réseau.":
-      "Configuration of solutions designed to secure network infrastructures.",
-
-    "Virtualisation":
-      "Virtualization",
-
-    "Création et utilisation d'environnements virtualisés pour systèmes et services.":
-      "Creation and use of virtualized environments for systems and services.",
-
-    "Sauvegarde & restauration":
-      "Backup & Recovery",
-
-    "Solutions de sauvegarde et de restauration des données et environnements informatiques.":
-      "Backup and recovery solutions for data and IT environments.",
-
-    "Vidéosurveillance":
-      "Video Surveillance",
-
-    "Installation, configuration, diagnostic et remise en service des équipements CCTV.":
-      "Installation, configuration, diagnostics and recommissioning of CCTV equipment.",
-
-    "Caméras IP":
-      "IP Cameras",
-
-    "Utilisation et gestion des principaux outils collaboratifs Microsoft.":
-      "Use and management of Microsoft collaboration tools.",
-
-
-    /* ---------------------------------------------------
-       RÉALISATIONS - COMMUN
-    --------------------------------------------------- */
-
-    "SUR LE TERRAIN":
-      "FIELD EXPERIENCE",
-
-    "Réalisations & interventions":
-      "Projects & Field Work",
-
-    "Quelques projets illustrant mon expérience pratique.":
-      "Selected projects demonstrating my hands-on experience.",
-
-    "Intervention":
-      "Work Performed",
-
-    "Travaux réalisés":
-      "Work Performed",
-
-    "Voir le projet →":
-      "View project →",
-
-
-    /* ---------------------------------------------------
-       PROJET 01 - OPENVPN / PFSENSE
-    --------------------------------------------------- */
-
-    "Accès distant sécurisé avec OpenVPN & pfSense":
-      "Secure Remote Access with OpenVPN & pfSense",
-
-    "Mise en place d'un accès distant sécurisé permettant à un collaborateur situé en Espagne d'accéder aux ressources autorisées du réseau de l'entreprise au Maroc via OpenVPN et pfSense.":
-      "Implementation of secure remote access allowing a remote user in Spain to access authorized resources on the company's network in Morocco through OpenVPN and pfSense.",
-
-    "Préparation de l'architecture réseau":
-      "Network architecture preparation",
-
-    "Configuration de pfSense":
-      "pfSense configuration",
-
-    "Mise en place du serveur OpenVPN":
-      "OpenVPN server deployment",
-
-    "Configuration de l'accès distant":
-      "Remote access configuration",
-
-    "Contrôle des accès aux ressources internes":
-      "Access control for internal resources",
-
-    "Tests de connectivité et validation":
-      "Connectivity testing and validation",
-
-    "Remote Access VPN":
-      "Remote Access VPN",
-
-    "Firewall":
-      "Firewall",
-
-
-    /* ---------------------------------------------------
-       PROJET 02 - ENCG SETTAT
-    --------------------------------------------------- */
-
-    "Vidéosurveillance IP & Réseau":
-      "IP Video Surveillance & Network",
-
-    "Intervention sur une infrastructure de vidéosurveillance IP intégrant des liaisons sans fil TP-Link CPE510 pour transporter les flux vidéo vers le réseau principal et le NVR.":
-      "Work on an IP video surveillance infrastructure using TP-Link CPE510 wireless links to transport video streams to the main network and NVR.",
-
-    "Diagnostic des équipements":
-      "Equipment diagnostics",
-
-    "Intervention sur les caméras IP":
-      "IP camera intervention",
-
-    "Vérification du câblage":
-      "Cabling verification",
-
-    "Intervention sur les liaisons TP-Link CPE510":
-      "TP-Link CPE510 wireless link intervention",
-
-    "Vérification de la connectivité réseau":
-      "Network connectivity verification",
-
-    "Tests et remise en service":
-      "Testing and recommissioning",
-
-    "Câblage":
-      "Cabling",
-
-    "Caméras IP":
-      "IP Cameras",
-
-    "Switch PoE":
-      "PoE Switch",
-
-    "Réseau LAN":
-      "LAN Network",
-
-    "Vidéosurveillance IP":
-      "IP Video Surveillance",
-
-
-    /* ---------------------------------------------------
-       PROJET 03 - VEEAM
-    --------------------------------------------------- */
-
-    "PFE · Maghreb Steel":
-      "Final Year Project · Maghreb Steel",
-
-    "Projet de Fin d'Études":
-      "Final Year Project",
-
-    "Projet de fin d'études consacré à l'installation, la configuration et la démonstration de Veeam Backup & Replication dans un environnement virtualisé.":
-      "Final year project focused on the installation, configuration and demonstration of Veeam Backup & Replication in a virtualized environment.",
-
-    "Présentation et étude de la solution Veeam":
-      "Presentation and study of the Veeam solution",
-
-    "Installation et configuration en environnement virtualisé":
-      "Installation and configuration in a virtualized environment",
-
-    "Création et planification des Backup Jobs":
-      "Creation and scheduling of Backup Jobs",
-
-    "Configuration des paramètres et tentatives":
-      "Configuration of settings and retry attempts",
-
-    "Suivi des tâches de sauvegarde":
-      "Backup job monitoring",
-
-    "Tests de restauration":
-      "Restore testing",
-
-    "Virtualisation":
-      "Virtualization",
-
-    "Backup Jobs":
-      "Backup Jobs",
-
-    "Restore":
-      "Restore",
-
-
-    /* ---------------------------------------------------
-       EXPÉRIENCE
-    --------------------------------------------------- */
-
-    "PARCOURS":
-      "CAREER",
-
-    "Expérience professionnelle":
-      "Professional Experience",
-
-    "Mon parcours dans le support informatique, les systèmes, les réseaux et les infrastructures IT.":
-      "My professional background in IT support, systems, networks and IT infrastructure.",
-
-    "POSTE ACTUEL":
-      "CURRENT POSITION",
-
-    "Technicien Informatique / Systèmes & Réseaux":
-      "IT / Systems & Networks Technician",
-
-    "Février 2025 – Présent":
-      "February 2025 – Present",
-
-    "Support informatique, maintenance, réseaux et interventions techniques sur site.":
-      "IT support, maintenance, networking and on-site technical interventions.",
-
-    "Support aux utilisateurs":
-      "User support",
-
-    "Diagnostic des incidents":
-      "Incident diagnosis",
-
-    "Installation des postes":
-      "Workstation installation",
-
-    "Maintenance matérielle et logicielle":
-      "Hardware and software maintenance",
-
-    "Installation et dépannage réseau":
-      "Network installation and troubleshooting",
-
-    "Configuration des équipements réseau":
-      "Network equipment configuration",
-
-    "Interventions techniques sur site":
-      "On-site technical interventions",
-
-    "Technicien Informatique Freelance":
-      "Freelance IT Technician",
-
-    "Octobre 2024 – Janvier 2025":
-      "October 2024 – January 2025",
-
-    "Maintenance, diagnostic, installation des systèmes et assistance technique.":
-      "Maintenance, diagnostics, system installation and technical support.",
-
-    "Stagiaire PFE":
-      "Final Year Project Intern",
-
-    "Mars 2024":
-      "March 2024",
-
-    "PROJET PFE":
-      "FINAL YEAR PROJECT",
-
-    "Solution de sauvegarde avec Veeam Backup & Replication":
-      "Backup Solution with Veeam Backup & Replication",
-
-    "Stagiaire Informatique":
-      "IT Intern",
-
-    "Avril 2023 – Mai 2023":
-      "April 2023 – May 2023",
-
-    "Participation aux activités de support et de maintenance informatique.":
-      "Participation in IT support and maintenance activities.",
-
-
-    /* ---------------------------------------------------
-       FORMATION
-    --------------------------------------------------- */
-
-    "PARCOURS ACADÉMIQUE":
-      "ACADEMIC BACKGROUND",
-
-    "Formation":
-      "Education",
-
-    "Un parcours orienté vers les systèmes, les réseaux et les infrastructures informatiques.":
-      "An academic background focused on systems, networks and IT infrastructure.",
-
-    "✓ DIPLÔME OBTENU":
-      "✓ DEGREE OBTAINED",
-
-    "Administration Avancée des Systèmes et Réseaux":
-      "Advanced Systems and Network Administration",
-
-    "Faculté des Sciences Aïn Chock":
-      "Faculty of Sciences Aïn Chock",
-
-    "Formation spécialisée dans l'administration avancée des systèmes, réseaux et infrastructures informatiques.":
-      "Specialized training in advanced systems, networks and IT infrastructure administration.",
-
-    "Systèmes":
-      "Systems",
-
-    "Réseaux":
-      "Networks",
-
-    "Diplôme de Technicien Spécialisé":
-      "Specialized Technician Diploma",
-
-    "Infrastructure Digitale : Systèmes et Réseaux":
-      "Digital Infrastructure: Systems & Networks",
-
-    "Formation technique orientée systèmes, réseaux, infrastructure digitale et support informatique.":
-      "Technical training focused on systems, networks, digital infrastructure and IT support.",
-
-    "Baccalauréat Scientifique":
-      "Scientific Baccalaureate",
-
-    "Sciences Physiques":
-      "Physical Sciences",
-
-    "Formation scientifique constituant la base de mon parcours vers les technologies de l'information.":
-      "Scientific education that provided the foundation for my career in information technology.",
-
-
-    /* ---------------------------------------------------
-       CONTACT
-    --------------------------------------------------- */
-
-    "Restons en contact":
-      "Let's Connect",
-
-    "Vous souhaitez échanger au sujet d'une opportunité professionnelle ou d'un projet IT ? N'hésitez pas à me contacter.":
-      "Would you like to discuss a professional opportunity or an IT project? Feel free to contact me.",
-
-    "● DISPONIBLE POUR ÉCHANGER":
-      "● AVAILABLE TO CONNECT",
-
-    "Échangeons sur vos besoins IT":
-      "Let's Discuss Your IT Needs",
-
-    "Je suis disponible pour échanger autour d'opportunités professionnelles et de projets liés aux systèmes, réseaux, infrastructures IT, support informatique et vidéosurveillance.":
-      "I am available to discuss professional opportunities and projects related to systems, networks, IT infrastructure, IT support and video surveillance.",
-
-    "Infrastructure":
-      "Infrastructure",
-
-    "E-mail":
-      "Email",
-
-    "Téléphone":
-      "Phone",
-
-    "Envoyer un message":
-      "Send a message",
-
-    "© 2026 Amine Kramo — Portfolio professionnel":
-      "© 2026 Amine Kramo — Professional Portfolio"
-
-  };
-
-
-  /* =======================================================
-     NORMALISATION
-  ======================================================= */
-
-  function normalize(text) {
-    return text
-      .replace(/\s+/g, " ")
-      .trim();
+    if(element && text !== undefined){
+      element.textContent = text;
+    }
   }
 
 
-  /* =======================================================
-     CAPTURE DES TEXTES FRANÇAIS
-  ======================================================= */
+  function setArrayText(selector, values){
 
-  const textNodes = [];
+    const elements = $$(selector);
 
-  const walker =
-    document.createTreeWalker(
-      document.body,
-      NodeFilter.SHOW_TEXT,
-      {
-        acceptNode: function (node) {
+    elements.forEach((element, index) => {
 
-          if (!node.nodeValue.trim()) {
-            return NodeFilter.FILTER_REJECT;
-          }
-
-          const parent =
-            node.parentElement;
-
-          if (
-            !parent ||
-            ["SCRIPT", "STYLE", "NOSCRIPT"].includes(
-              parent.tagName
-            )
-          ) {
-            return NodeFilter.FILTER_REJECT;
-          }
-
-          return NodeFilter.FILTER_ACCEPT;
-        }
-      }
-    );
-
-
-  while (walker.nextNode()) {
-
-    textNodes.push({
-      node: walker.currentNode,
-      french: walker.currentNode.nodeValue
-    });
-
-  }
-
-
-  /* =======================================================
-     BOUTON FR / EN
-  ======================================================= */
-
-  const nav =
-    document.querySelector("#mainNav") ||
-    document.querySelector("nav");
-
-  const langButton =
-    document.createElement("button");
-
-  langButton.id =
-    "langButton";
-
-  langButton.type =
-    "button";
-
-  langButton.textContent =
-    "EN";
-
-  langButton.setAttribute(
-    "aria-label",
-    "Afficher le portfolio en anglais"
-  );
-
-
-  if (nav) {
-    nav.appendChild(langButton);
-  }
-
-
-  /* =======================================================
-     CV FR / EN
-  ======================================================= */
-
-  function updateCV(language) {
-
-    document
-      .querySelectorAll(
-        'a[download][href$=".pdf"]'
-      )
-      .forEach(function (link) {
-
-        link.setAttribute(
-          "href",
-          language === "en"
-            ? CONFIG.cvEN
-            : CONFIG.cvFR
-        );
-
-      });
-
-  }
-
-
-  /* =======================================================
-     SEO / OPEN GRAPH FR / EN
-  ======================================================= */
-
-  function updateMeta(language) {
-
-    const isEnglish =
-      language === "en";
-
-    const title =
-      isEnglish
-        ? CONFIG.titleEN
-        : CONFIG.titleFR;
-
-    const description =
-      isEnglish
-        ? CONFIG.descriptionEN
-        : CONFIG.descriptionFR;
-
-    const ogTitle =
-      isEnglish
-        ? CONFIG.ogTitleEN
-        : CONFIG.ogTitleFR;
-
-    const ogDescription =
-      isEnglish
-        ? CONFIG.ogDescriptionEN
-        : CONFIG.ogDescriptionFR;
-
-
-    const metaDescription =
-      document.querySelector(
-        'meta[name="description"]'
-      );
-
-    const openGraphTitle =
-      document.querySelector(
-        'meta[property="og:title"]'
-      );
-
-    const openGraphDescription =
-      document.querySelector(
-        'meta[property="og:description"]'
-      );
-
-    const openGraphLocale =
-      document.querySelector(
-        'meta[property="og:locale"]'
-      );
-
-    const twitterTitle =
-      document.querySelector(
-        'meta[name="twitter:title"]'
-      );
-
-    const twitterDescription =
-      document.querySelector(
-        'meta[name="twitter:description"]'
-      );
-
-
-    if (metaDescription) {
-
-      metaDescription.setAttribute(
-        "content",
-        description
-      );
-
-    }
-
-
-    if (openGraphTitle) {
-
-      openGraphTitle.setAttribute(
-        "content",
-        ogTitle
-      );
-
-    }
-
-
-    if (openGraphDescription) {
-
-      openGraphDescription.setAttribute(
-        "content",
-        ogDescription
-      );
-
-    }
-
-
-    if (openGraphLocale) {
-
-      openGraphLocale.setAttribute(
-        "content",
-        isEnglish
-          ? "en_US"
-          : "fr_FR"
-      );
-
-    }
-
-
-    if (twitterTitle) {
-
-      twitterTitle.setAttribute(
-        "content",
-        ogTitle
-      );
-
-    }
-
-
-    if (twitterDescription) {
-
-      twitterDescription.setAttribute(
-        "content",
-        ogDescription
-      );
-
-    }
-
-  }
-
-
-  /* =======================================================
-     APPLICATION DE LA LANGUE
-  ======================================================= */
-
-  function applyLanguage(language) {
-
-    textNodes.forEach(function (item) {
-
-      const original =
-        item.french;
-
-      const translated =
-        EN[normalize(original)];
-
-
-      if (
-        language === "en" &&
-        translated
-      ) {
-
-        const leading =
-          (
-            original.match(/^\s*/) ||
-            [""]
-          )[0];
-
-        const trailing =
-          (
-            original.match(/\s*$/) ||
-            [""]
-          )[0];
-
-        item.node.nodeValue =
-          leading +
-          translated +
-          trailing;
-
-      } else {
-
-        item.node.nodeValue =
-          original;
-
+      if(values[index] !== undefined){
+        element.textContent = values[index];
       }
 
     });
 
-
-    /* HTML LANG */
-
-    document.documentElement.lang =
-      language;
+  }
 
 
-    /* TITLE */
+  /* =======================================================
+     LANGUAGE BUTTON
+  ======================================================= */
 
-    document.title =
-      language === "en"
-        ? CONFIG.titleEN
-        : CONFIG.titleFR;
+  const mainNav = $("#mainNav");
 
-
-    /* SEO */
-
-    updateMeta(language);
+  let langButton = $("#langButton");
 
 
-    /* CV */
+  if(mainNav && !langButton){
 
-    updateCV(language);
+    langButton = document.createElement("button");
 
-
-    /* BOUTON */
-
-    langButton.textContent =
-      language === "en"
-        ? "FR"
-        : "EN";
-
-
+    langButton.id = "langButton";
+    langButton.type = "button";
     langButton.setAttribute(
       "aria-label",
-      language === "en"
-        ? "Afficher le portfolio en français"
-        : "Afficher le portfolio en anglais"
+      "Changer la langue"
+    );
+
+    mainNav.appendChild(langButton);
+  }
+
+
+  /* =======================================================
+     APPLY LANGUAGE
+  ======================================================= */
+
+  function applyLanguage(lang){
+
+    const t = translations[lang];
+
+    if(!t){
+      return;
+    }
+
+
+    /* HTML language */
+
+    document.documentElement.lang = lang;
+
+
+    /* Page title */
+
+    document.title = t.pageTitle;
+
+
+    /* ================= NAVIGATION ================= */
+
+    setArrayText(
+      "#mainNav > a",
+      t.nav
     );
 
 
-    langButton.setAttribute(
-      "title",
-      language === "en"
-        ? "Français"
-        : "English"
+    /* ================= HERO ================= */
+
+    setText(
+      ".badge",
+      t.hero.badge
     );
 
+    const heroHeading = $(".hero h1");
 
-    /* SAUVEGARDE */
+    if(heroHeading){
 
-    try {
-
-      localStorage.setItem(
-        "portfolioLanguage",
-        language
-      );
-
-    } catch (error) {
-
-      /* Le portfolio reste fonctionnel
-         si localStorage est indisponible. */
+      heroHeading.innerHTML =
+        `${t.hero.hello}<br><span>Amine Kramo</span>`;
 
     }
+
+    setText(
+      ".job-title",
+      t.hero.role
+    );
+
+    setText(
+      ".degree",
+      t.hero.degree
+    );
+
+    setText(
+      ".description",
+      t.hero.description
+    );
+
+
+    const heroButtons =
+      $$(".hero .buttons .btn");
+
+    if(heroButtons[0]){
+      heroButtons[0].textContent =
+        t.hero.cv;
+    }
+
+    if(heroButtons[1]){
+      heroButtons[1].textContent =
+        t.hero.contact;
+    }
+
+
+    const heroInformation =
+      $$(".information span");
+
+    if(heroInformation[0]){
+      heroInformation[0].textContent =
+        t.hero.location;
+    }
+
+    if(heroInformation[1]){
+      heroInformation[1].textContent =
+        t.hero.permit;
+    }
+
+
+    setText(
+      ".profile-card h2",
+      "Amine Kramo"
+    );
+
+    setText(
+      ".profile-role",
+      t.hero.role
+    );
+
+
+    const profileInfo =
+      $$(".profile-info > div");
+
+    const profileValues = [
+      t.hero.location,
+      t.hero.licence,
+      t.hero.speciality,
+      t.hero.permit
+    ];
+
+    profileInfo.forEach(
+      (element, index) => {
+
+        if(
+          profileValues[index] !== undefined
+        ){
+
+          const icon =
+            element.querySelector(".icon");
+
+          const iconText =
+            icon ? icon.textContent : "";
+
+          element.innerHTML = "";
+
+          if(icon){
+
+            const newIcon =
+              document.createElement("span");
+
+            newIcon.className = "icon";
+
+            newIcon.textContent =
+              iconText;
+
+            element.appendChild(newIcon);
+          }
+
+          const value =
+            profileValues[index]
+              .replace(/^[^\s]+\s/, "");
+
+          element.appendChild(
+            document.createTextNode(value)
+          );
+
+        }
+
+      }
+    );
+
+
+    /* ================= ABOUT ================= */
+
+    const about =
+      $("#apropos");
+
+    if(about){
+
+      const header =
+        about.querySelector(".section-header");
+
+      if(header){
+
+        setText(
+          "#apropos .section-label",
+          t.about.label
+        );
+
+        setText(
+          "#apropos .section-header h2",
+          t.about.title
+        );
+
+        setText(
+          "#apropos .section-header p",
+          t.about.intro
+        );
+      }
+
+
+      setText(
+        "#apropos .about-card h3",
+        t.about.cardTitle
+      );
+
+
+      const aboutParagraphs =
+        $$("#apropos .about-card p");
+
+      aboutParagraphs.forEach(
+        (paragraph, index) => {
+
+          if(
+            t.about.paragraphs[index]
+            !== undefined
+          ){
+            paragraph.textContent =
+              t.about.paragraphs[index];
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ================= SKILLS ================= */
+
+    setText(
+      "#competences .section-label",
+      t.skills.label
+    );
+
+    setText(
+      "#competences .section-header h2",
+      t.skills.title
+    );
+
+    setText(
+      "#competences .section-header p",
+      t.skills.intro
+    );
+
+
+    const skillCards =
+      $$("#competences .skill-card");
+
+    skillCards.forEach(
+      (card, index) => {
+
+        const translation =
+          t.skills.cards[index];
+
+        if(!translation){
+          return;
+        }
+
+        const title =
+          card.querySelector("h3");
+
+        const description =
+          card.querySelector("p");
+
+        if(title){
+          title.textContent =
+            translation.title;
+        }
+
+        if(description){
+          description.textContent =
+            translation.description;
+        }
+
+      }
+    );
+
+
+    /* ================= PROJECTS ================= */
+
+    setText(
+      "#realisations .section-label",
+      t.projects.label
+    );
+
+    setText(
+      "#realisations .section-header h2",
+      t.projects.title
+    );
+
+    setText(
+      "#realisations .section-header p",
+      t.projects.intro
+    );
+
+
+    const projectCards =
+      $$("#realisations .project-card");
+
+    projectCards.forEach(
+      (card, index) => {
+
+        const project =
+          t.projects.cards[index];
+
+        if(!project){
+          return;
+        }
+
+
+        const location =
+          card.querySelector(
+            ".project-location"
+          );
+
+        const title =
+          card.querySelector(
+            ".project-header h3"
+          );
+
+        const description =
+          card.querySelector(
+            ".project-description"
+          );
+
+        const workTitle =
+          card.querySelector(
+            ".project-work h4"
+          );
+
+        const tasks =
+          card.querySelectorAll(
+            ".project-work li"
+          );
+
+        const link =
+          card.querySelector(
+            ".project-link"
+          );
+
+
+        if(location){
+          location.textContent =
+            project.location;
+        }
+
+        if(title){
+          title.textContent =
+            project.title;
+        }
+
+        if(description){
+          description.textContent =
+            project.description;
+        }
+
+        if(workTitle){
+          workTitle.textContent =
+            project.workTitle;
+        }
+
+        tasks.forEach(
+          (task, taskIndex) => {
+
+            if(
+              project.tasks[taskIndex]
+              !== undefined
+            ){
+              task.textContent =
+                project.tasks[taskIndex];
+            }
+
+          }
+        );
+
+        if(link){
+          link.textContent =
+            t.projects.view;
+        }
+
+      }
+    );
+
+
+    /* ================= EXPERIENCE ================= */
+
+    setText(
+      "#experience .section-label",
+      t.experience.label
+    );
+
+    setText(
+      "#experience .section-header h2",
+      t.experience.title
+    );
+
+    setText(
+      "#experience .section-header p",
+      t.experience.intro
+    );
+
+    setText(
+      "#experience .experience-status",
+      t.experience.current
+    );
+
+
+    const experienceCards =
+      $$("#experience .experience-card");
+
+    experienceCards.forEach(
+      (card, index) => {
+
+        const item =
+          t.experience.cards[index];
+
+        if(!item){
+          return;
+        }
+
+        const title =
+          card.querySelector("h3");
+
+        const description =
+          card.querySelector(
+            ".experience-description"
+          );
+
+        if(title && item.title){
+          title.textContent =
+            item.title;
+        }
+
+        if(
+          description &&
+          item.description
+        ){
+          description.textContent =
+            item.description;
+        }
+
+      }
+    );
+
+
+    /* ================= EDUCATION ================= */
+
+    setText(
+      "#formation .section-label",
+      t.education.label
+    );
+
+    setText(
+      "#formation .section-header h2",
+      t.education.title
+    );
+
+    setText(
+      "#formation .section-header p",
+      t.education.intro
+    );
+
+
+    const educationCards =
+      $$("#formation .formation-card");
+
+    educationCards.forEach(
+      (card, index) => {
+
+        const education =
+          t.education.cards[index];
+
+        if(!education){
+          return;
+        }
+
+        const status =
+          card.querySelector(
+            ".diploma-status"
+          );
+
+        const degree =
+          card.querySelector("h3");
+
+        const field =
+          card.querySelector("h4");
+
+        const description =
+          card.querySelector(
+            ".formation-description"
+          );
+
+
+        if(status){
+          status.textContent =
+            t.education.obtained;
+        }
+
+        if(degree){
+          degree.textContent =
+            education.degree;
+        }
+
+        if(field){
+          field.textContent =
+            education.field;
+        }
+
+        if(description){
+          description.textContent =
+            education.description;
+        }
+
+      }
+    );
+
+
+    /* ================= CONTACT ================= */
+
+    setText(
+      "#contact .section-label",
+      t.contact.label
+    );
+
+    setText(
+      "#contact .section-header h2",
+      t.contact.title
+    );
+
+    setText(
+      "#contact .section-header p",
+      t.contact.intro
+    );
+
+    setText(
+      ".contact-badge",
+      t.contact.badge
+    );
+
+    setText(
+      ".contact-intro h3",
+      t.contact.heading
+    );
+
+    setText(
+      ".contact-intro > p",
+      t.contact.description
+    );
+
+    setText(
+      ".contact-cv",
+      t.contact.cv
+    );
+
+
+    const contactDetails =
+      $$(".contact-details");
+
+    if(contactDetails[0]){
+
+      const small =
+        contactDetails[0]
+          .querySelector("small");
+
+      if(small){
+        small.textContent =
+          t.contact.email;
+      }
+
+    }
+
+
+    if(contactDetails[1]){
+
+      const small =
+        contactDetails[1]
+          .querySelector("small");
+
+      if(small){
+        small.textContent =
+          t.contact.phone;
+      }
+
+    }
+
+
+    if(contactDetails[2]){
+
+      const small =
+        contactDetails[2]
+          .querySelector("small");
+
+      const strong =
+        contactDetails[2]
+          .querySelector("strong");
+
+      if(small){
+        small.textContent =
+          t.contact.whatsapp;
+      }
+
+      if(strong){
+        strong.textContent =
+          t.contact.whatsappAction;
+      }
+
+    }
+
+
+    if(contactDetails[4]){
+
+      const small =
+        contactDetails[4]
+          .querySelector("small");
+
+      if(small){
+        small.textContent =
+          t.contact.location;
+      }
+
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    setText(
+      ".footer-content span",
+      t.footer.role
+    );
+
+    setText(
+      ".footer-content > p",
+      t.footer.copyright
+    );
+
+
+    /* ================= BUTTON ================= */
+
+    if(langButton){
+
+      langButton.textContent =
+        lang === "fr"
+          ? "EN"
+          : "FR";
+
+      langButton.setAttribute(
+        "aria-label",
+        lang === "fr"
+          ? "Switch to English"
+          : "Passer en français"
+      );
+
+    }
+
+
+    /* ================= SAVE LANGUAGE ================= */
+
+    localStorage.setItem(
+      "portfolioLanguage",
+      lang
+    );
 
   }
 
 
   /* =======================================================
-     LANGUE INITIALE
+     INITIAL LANGUAGE
   ======================================================= */
 
-  let currentLanguage =
-    "fr";
+  const savedLanguage =
+    localStorage.getItem(
+      "portfolioLanguage"
+    );
 
-
-  try {
-
-    const saved =
-      localStorage.getItem(
-        "portfolioLanguage"
-      );
-
-    if (
-      saved === "fr" ||
-      saved === "en"
-    ) {
-
-      currentLanguage =
-        saved;
-
-    }
-
-  } catch (error) {
-
-    currentLanguage =
-      "fr";
-
-  }
-
-
-  /* =======================================================
-     INITIALISATION
-  ======================================================= */
+  const initialLanguage =
+    savedLanguage === "en"
+      ? "en"
+      : "fr";
 
   applyLanguage(
-    currentLanguage
+    initialLanguage
   );
 
 
   /* =======================================================
-     CHANGEMENT DE LANGUE
+     LANGUAGE SWITCH
   ======================================================= */
 
-  langButton.addEventListener(
-    "click",
-    function () {
+  if(langButton){
 
-      currentLanguage =
-        currentLanguage === "fr"
-          ? "en"
-          : "fr";
+    langButton.addEventListener(
+      "click",
+      () => {
 
-      applyLanguage(
-        currentLanguage
-      );
+        const currentLanguage =
+          document.documentElement.lang;
 
-    }
-  );
+        const nextLanguage =
+          currentLanguage === "fr"
+            ? "en"
+            : "fr";
 
-})();
+        applyLanguage(
+          nextLanguage
+        );
+
+      }
+    );
+
+  }
+
+});
