@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kramoamine.github.io/sitemap.xml
