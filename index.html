@@ -2638,6 +2638,10 @@ const mainNav =
 
 if(menuToggle && mainNav){
 
+  function isEnglish(){
+    return document.documentElement.lang === "en";
+  }
+
   function closeMenu(){
 
     mainNav.classList.remove("open");
@@ -2651,7 +2655,7 @@ if(menuToggle && mainNav){
 
     menuToggle.setAttribute(
       "aria-label",
-      "Ouvrir le menu"
+      isEnglish() ? "Open menu" : "Ouvrir le menu"
     );
 
   }
@@ -2677,8 +2681,8 @@ if(menuToggle && mainNav){
       menuToggle.setAttribute(
         "aria-label",
         isOpen
-          ? "Fermer le menu"
-          : "Ouvrir le menu"
+          ? (isEnglish() ? "Close menu" : "Fermer le menu")
+          : (isEnglish() ? "Open menu" : "Ouvrir le menu")
       );
 
     }
