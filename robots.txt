@@ -1,4 +1,10 @@
+# ==========================================================
+# robots.txt - Portfolio Amine Kramo
+# ==========================================================
+
+# Autoriser tous les moteurs de recherche
 User-agent: *
 Allow: /
 
+# Sitemap principal du portfolio
 Sitemap: https://kramoamine.github.io/sitemap.xml
