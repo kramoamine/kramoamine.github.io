@@ -1,1 +1,1674 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050d18">
+  <meta name="color-scheme" content="dark">
+
+  <title>Active Directory Infrastructure Lab | Amine Kramo</title>
+
+  <meta
+    name="description"
+    content="Active Directory Infrastructure Lab by Amine Kramo: deployment of a Windows Server 2019 infrastructure with Active Directory, DNS, DHCP, Group Policy, File Server, NTFS permissions and Windows Server Backup."
+  >
+
+  <meta name="author" content="Amine Kramo">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <style>
+    :root {
+      --bg: #050d18;
+      --card: #0b1b2e;
+      --card-alt: #10243b;
+      --border: #173a59;
+      --text: #edf7ff;
+      --muted: #9fb3c8;
+      --cyan: #22d3ee;
+      --blue: #3b82f6;
+      --green: #22c55e;
+      --gradient: linear-gradient(120deg, var(--cyan), var(--blue));
+      --max-width: 1180px;
+      --radius: 18px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .32);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.68;
+      background:
+        radial-gradient(circle at 85% 8%, rgba(34,211,238,.08), transparent 28%),
+        radial-gradient(circle at 10% 45%, rgba(59,130,246,.05), transparent 30%),
+        var(--bg);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .15;
+      background-image:
+        radial-gradient(rgba(148,190,220,.28) .7px, transparent .7px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(var(--max-width), 92%);
+      margin-inline: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      background: rgba(5,13,24,.92);
+      backdrop-filter: blur(16px);
+    }
+
+    .navbar {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 850;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
+      border: 2px solid rgba(34,211,238,.55);
+      border-radius: 50%;
+    }
+
+    .brand span span {
+      color: var(--cyan);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-link {
+      padding: 9px 15px;
+      color: var(--cyan);
+      border: 1px solid rgba(34,211,238,.3);
+      border-radius: 9px;
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 750;
+      transition: .2s ease;
+    }
+
+    .nav-link:hover {
+      color: #04101d;
+      background: var(--cyan);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 85px 0 65px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      padding: 7px 14px;
+      margin-bottom: 21px;
+      color: var(--cyan);
+      border: 1px solid rgba(34,211,238,.25);
+      border-radius: 50px;
+      background: rgba(34,211,238,.07);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+    }
+
+    .hero h1 {
+      max-width: 950px;
+      margin: auto;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1.03;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: transparent;
+      background: var(--gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .hero-subtitle {
+      margin-top: 15px;
+      color: var(--cyan);
+      font-size: clamp(1rem,2vw,1.3rem);
+      font-weight: 700;
+    }
+
+    .hero-description {
+      max-width: 850px;
+      margin: 21px auto 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 29px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 47px;
+      padding: 10px 19px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 750;
+      transition: transform .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: #04101d;
+      background: var(--gradient);
+    }
+
+    .btn-secondary {
+      color: #fff;
+      border: 1px solid #345370;
+      background: rgba(255,255,255,.035);
+    }
+
+    /* ARCHITECTURE */
+
+    .architecture {
+      padding-bottom: 85px;
+    }
+
+    .architecture-card {
+      padding: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(34,211,238,.3);
+      border-radius: 22px;
+      background:
+        linear-gradient(145deg, rgba(16,43,72,.85), rgba(7,21,35,.95));
+      box-shadow: var(--shadow);
+    }
+
+    .architecture-card img {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+      cursor: zoom-in;
+    }
+
+    .architecture-caption {
+      padding: 16px 10px 7px;
+      color: var(--muted);
+      text-align: center;
+      font-size: .86rem;
+    }
+
+    /* SECTIONS */
+
+    .section {
+      padding: 85px 0;
+      border-top: 1px solid rgba(255,255,255,.055);
+    }
+
+    .section-header {
+      max-width: 780px;
+      margin-bottom: 35px;
+    }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 7px;
+      color: var(--cyan);
+      font-size: .72rem;
+      font-weight: 850;
+      letter-spacing: .17em;
+    }
+
+    .section-header h2 {
+      margin-bottom: 11px;
+      font-size: clamp(1.9rem,4vw,2.8rem);
+      line-height: 1.15;
+    }
+
+    .section-header p,
+    .content-card p {
+      color: var(--muted);
+    }
+
+    .content-card,
+    .case-info {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(145deg,var(--card-alt),#091727);
+    }
+
+    /* LAB */
+
+    .lab-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 13px;
+      margin-top: 25px;
+    }
+
+    .lab-item {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: #081727;
+    }
+
+    .lab-item.highlight {
+      border-color: rgba(34,211,238,.3);
+      background: rgba(34,211,238,.06);
+    }
+
+    .lab-item small {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--muted);
+      font-size: .7rem;
+    }
+
+    .lab-item strong {
+      color: #e4f2ff;
+      font-size: .9rem;
+      overflow-wrap: anywhere;
+    }
+
+    /* TAGS */
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tags span {
+      padding: 5px 11px;
+      color: #bfeaf5;
+      border: 1px solid rgba(34,211,238,.18);
+      border-radius: 50px;
+      background: rgba(34,211,238,.07);
+      font-size: .72rem;
+      font-weight: 650;
+    }
+
+    /* CASE STUDY */
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .case-info h3 {
+      margin-bottom: 13px;
+      color: var(--cyan);
+    }
+
+    .case-info p {
+      margin-bottom: 17px;
+      color: var(--muted);
+    }
+
+    .case-info ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .case-info li {
+      margin-bottom: 7px;
+    }
+
+    /* SCREENSHOTS */
+
+    .screenshots {
+      display: grid;
+      gap: 17px;
+    }
+
+    .screenshots.two {
+      grid-template-columns: repeat(2,1fr);
+    }
+
+    .screenshot-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #081727;
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .screenshot-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(34,211,238,.4);
+      box-shadow: var(--shadow);
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      min-height: 210px;
+      display: block;
+      object-fit: cover;
+      cursor: zoom-in;
+      background: #02070d;
+    }
+
+    .screenshot-content {
+      padding: 15px 17px 18px;
+    }
+
+    .screenshot-content h4 {
+      margin-bottom: 5px;
+    }
+
+    .screenshot-content p {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    /* RESOURCES */
+
+    .resource-list {
+      display: grid;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .resource {
+      padding: 11px 13px;
+      color: #cbe8f6;
+      border: 1px solid rgba(34,211,238,.13);
+      border-radius: 9px;
+      background: rgba(34,211,238,.05);
+      font-family: Consolas, monospace;
+      font-size: .8rem;
+      overflow-wrap: anywhere;
+    }
+
+    .success-card {
+      margin-top: 18px;
+      padding: 16px;
+      border: 1px solid rgba(34,197,94,.25);
+      border-radius: 12px;
+      background: rgba(34,197,94,.06);
+    }
+
+    .success-card strong {
+      color: #72e59a;
+    }
+
+    /* RESULTS */
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .result-card {
+      padding: 22px 17px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: linear-gradient(145deg,#10243b,#091727);
+    }
+
+    .result-number {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--cyan);
+      font-size: 1.8rem;
+      font-weight: 900;
+    }
+
+    .result-card p {
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 12px;
+    }
+
+    .skill-result {
+      display: flex;
+      gap: 11px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #081727;
+    }
+
+    .skill-check {
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid rgba(255,255,255,.07);
+      background: #040b14;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 17px;
+    }
+
+    .footer-content span,
+    .footer-content p {
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    /* LIGHTBOX */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      place-items: center;
+      padding: 25px;
+      background: rgba(3,9,17,.96);
+      backdrop-filter: blur(8px);
+    }
+
+    .lightbox.open {
+      display: grid;
+    }
+
+    .lightbox-img {
+      max-width: 94vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border: 2px solid var(--cyan);
+      border-radius: 14px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      color: var(--cyan);
+      border: 1px solid rgba(34,211,238,.35);
+      border-radius: 50%;
+      background: #071421;
+      cursor: pointer;
+      font-size: 2rem;
+    }
+
+    .zoomable {
+      cursor: zoom-in;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1000px) {
+      .lab-grid,
+      .results-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:750px) {
+      .screenshots.two,
+      .skills-list,
+      .lab-grid,
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-text {
+        display: none;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+
+    <a href="index-en.html" class="brand">
+      <img
+        src="banner.jpg"
+        alt="Amine Kramo Portfolio"
+        class="brand-logo"
+      >
+      <span class="brand-text">
+        Amine <span>Kramo</span>
+      </span>
+    </a>
+
+    <div class="nav-actions">
+      <a href="index-en.html#projects" class="nav-link">
+        ← Back to Projects
+      </a>
+
+      <a href="active-directory-lab.html" class="nav-link">
+        FR
+      </a>
+
+      <a href="index-en.html#contact" class="nav-link">
+        Contact
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container">
+
+      <span class="hero-badge">
+        MICROSOFT INFRASTRUCTURE LAB
+      </span>
+
+      <h1>
+        Active Directory
+        <span>Infrastructure Lab</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Windows Server 2019 · Systems Administration & Network Services
+      </p>
+
+      <p class="hero-description">
+        Design, deployment and validation of a centralized Microsoft
+        infrastructure integrating Active Directory Domain Services,
+        DNS, DHCP, Group Policy, file sharing, NTFS permissions
+        and Windows Server Backup.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#architecture" class="btn btn-primary">
+          View Architecture
+        </a>
+
+        <a href="#active-directory" class="btn btn-secondary">
+          Explore Project
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+
+  <section class="architecture" id="architecture">
+    <div class="container">
+
+      <div class="architecture-card">
+
+        <img
+          src="AD-Infrastructure-Architecture.png"
+          alt="Active Directory Lab architecture including DC01, CLIENT01, DNS, DHCP, Group Policy, File Server and Windows Server Backup"
+          class="zoomable"
+        >
+
+        <p class="architecture-caption">
+          Lab architecture:
+          <strong>amine-lab.local</strong> domain,
+          <strong>DC01</strong> domain controller
+          and <strong>CLIENT01</strong> workstation.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LAB CONFIGURATION -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">LAB ENVIRONMENT</span>
+
+        <h2>Infrastructure Configuration</h2>
+
+        <p>
+          Virtualized environment used to deploy and validate
+          Microsoft domain and network services.
+        </p>
+      </div>
+
+      <div class="content-card">
+
+        <div class="lab-grid">
+
+          <div class="lab-item highlight">
+            <small>Domain FQDN</small>
+            <strong>amine-lab.local</strong>
+          </div>
+
+          <div class="lab-item">
+            <small>NetBIOS</small>
+            <strong>AMINE-LAB</strong>
+          </div>
+
+          <div class="lab-item highlight">
+            <small>Domain Controller</small>
+            <strong>DC01</strong>
+          </div>
+
+          <div class="lab-item">
+            <small>Server OS</small>
+            <strong>Windows Server 2019</strong>
+          </div>
+
+          <div class="lab-item">
+            <small>Server IP</small>
+            <strong>192.168.11.200</strong>
+          </div>
+
+          <div class="lab-item highlight">
+            <small>Client Computer</small>
+            <strong>CLIENT01</strong>
+          </div>
+
+          <div class="lab-item">
+            <small>Client OS</small>
+            <strong>Windows 11</strong>
+          </div>
+
+          <div class="lab-item">
+            <small>Virtual Network</small>
+            <strong>VMnet1 · Host-only</strong>
+          </div>
+
+          <div class="lab-item">
+            <small>Network</small>
+            <strong>192.168.11.0/24</strong>
+          </div>
+
+          <div class="lab-item">
+            <small>Configured Gateway</small>
+            <strong>192.168.11.1</strong>
+          </div>
+
+          <div class="lab-item">
+            <small>DHCP Range</small>
+            <strong>192.168.11.100 – 192.168.11.180</strong>
+          </div>
+
+          <div class="lab-item">
+            <small>Backup Disk</small>
+            <strong>E:</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACTIVE DIRECTORY -->
+
+  <section class="section" id="active-directory">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">
+          01 · ACTIVE DIRECTORY
+        </span>
+
+        <h2>Active Directory Domain Services</h2>
+
+        <p>
+          Deployment of a centralized domain environment
+          for identity, group and resource administration.
+        </p>
+      </div>
+
+      <div class="case-grid">
+
+        <article class="case-info">
+
+          <h3>AD DS</h3>
+
+          <p>
+            Installation and configuration of Active Directory
+            Domain Services on DC01.
+          </p>
+
+          <ul>
+            <li>Deployment of the amine-lab.local domain</li>
+            <li>Configuration of the AMINE-LAB NetBIOS name</li>
+            <li>Creation and organization of 8 OUs</li>
+            <li>Creation of 6 user accounts</li>
+            <li>Creation of 3 security groups</li>
+            <li>User and group membership management</li>
+          </ul>
+
+          <div class="tags">
+            <span>AD DS</span>
+            <span>OU</span>
+            <span>Users</span>
+            <span>Security Groups</span>
+          </div>
+
+        </article>
+
+        <div class="screenshots">
+
+          <div class="screenshot-card">
+            <img
+              src="AD-Organizational-Units.png"
+              alt="Active Directory Organizational Units"
+              class="zoomable"
+              loading="lazy"
+            >
+
+            <div class="screenshot-content">
+              <h4>Organizational Units</h4>
+              <p>
+                Logical organization of domain resources
+                through Organizational Units.
+              </p>
+            </div>
+          </div>
+
+          <div class="screenshots two">
+
+            <div class="screenshot-card">
+              <img
+                src="AD-Users-Accounts.png"
+                alt="Active Directory user accounts"
+                class="zoomable"
+                loading="lazy"
+              >
+
+              <div class="screenshot-content">
+                <h4>User Accounts</h4>
+                <p>
+                  Creation and administration of domain user accounts.
+                </p>
+              </div>
+            </div>
+
+            <div class="screenshot-card">
+              <img
+                src="AD-Security-Groups.png"
+                alt="Active Directory Security Groups"
+                class="zoomable"
+                loading="lazy"
+              >
+
+              <div class="screenshot-content">
+                <h4>Security Groups</h4>
+                <p>
+                  Management of GG_IT, GG_RH and GG_FINANCE.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DNS -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">02 · DNS</span>
+
+        <h2>Domain Name System</h2>
+
+        <p>
+          DNS configuration to provide reliable name resolution
+          and support Active Directory domain services.
+        </p>
+      </div>
+
+      <div class="case-grid">
+
+        <article class="case-info">
+
+          <h3>DNS Configuration</h3>
+
+          <ul>
+            <li>Forward Lookup Zone creation</li>
+            <li>DNS A record configuration</li>
+            <li>SRV record verification</li>
+            <li>Name-resolution testing using nslookup</li>
+            <li>Client-side validation from CLIENT01</li>
+          </ul>
+
+          <div class="tags">
+            <span>DNS</span>
+            <span>A Records</span>
+            <span>SRV</span>
+            <span>nslookup</span>
+          </div>
+
+        </article>
+
+        <div class="screenshots two">
+
+          <div class="screenshot-card">
+            <img
+              src="DNS-Forward-Lookup-Zone.png"
+              alt="DNS Forward Lookup Zone configuration"
+              class="zoomable"
+              loading="lazy"
+            >
+
+            <div class="screenshot-content">
+              <h4>Forward Lookup Zone</h4>
+              <p>
+                Configuration of the amine-lab.local DNS zone.
+              </p>
+            </div>
+          </div>
+
+          <div class="screenshot-card">
+            <img
+              src="DNS-Client-Validation.png"
+              alt="DNS client validation"
+              class="zoomable"
+              loading="lazy"
+            >
+
+            <div class="screenshot-content">
+              <h4>Client Validation</h4>
+              <p>
+                DNS name-resolution validation from CLIENT01.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DHCP -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">03 · DHCP</span>
+
+        <h2>Dynamic Host Configuration Protocol</h2>
+
+        <p>
+          Automatic network configuration for domain clients
+          through a controlled DHCP scope.
+        </p>
+      </div>
+
+      <div class="case-grid">
+
+        <article class="case-info">
+
+          <h3>DHCP Server</h3>
+
+          <ul>
+            <li>DHCP Server role installation</li>
+            <li>DHCP scope creation and activation</li>
+            <li>Range: 192.168.11.100 – 192.168.11.180</li>
+            <li>Automatic IP configuration</li>
+            <li>Configuration validation on CLIENT01</li>
+          </ul>
+
+          <div class="tags">
+            <span>DHCP</span>
+            <span>IPv4</span>
+            <span>Scope</span>
+            <span>CLIENT01</span>
+          </div>
+
+        </article>
+
+        <div class="screenshots two">
+
+          <div class="screenshot-card">
+            <img
+              src="DHCP-Scope-Configuration.png"
+              alt="DHCP Scope Configuration"
+              class="zoomable"
+              loading="lazy"
+            >
+
+            <div class="screenshot-content">
+              <h4>Scope Configuration</h4>
+              <p>
+                Creation and activation of the IPv4 DHCP scope.
+              </p>
+            </div>
+          </div>
+
+          <div class="screenshot-card">
+            <img
+              src="DHCP-Client-IP-Configuration.png"
+              alt="DHCP Client IP Configuration"
+              class="zoomable"
+              loading="lazy"
+            >
+
+            <div class="screenshot-content">
+              <h4>Client IP Configuration</h4>
+              <p>
+                Validation of DHCP-assigned settings on CLIENT01.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GROUP POLICY -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">
+          04 · GROUP POLICY
+        </span>
+
+        <h2>Group Policy Management</h2>
+
+        <p>
+          Centralized policy management and automatic drive mapping
+          for departmental shared resources.
+        </p>
+      </div>
+
+      <div class="case-grid">
+
+        <article class="case-info">
+
+          <h3>Configured GPOs</h3>
+
+          <div class="resource-list">
+            <div class="resource">
+              GPO-IT-DRIVE-MAPPING
+            </div>
+
+            <div class="resource">
+              GPO-RH-DRIVE-MAPPING
+            </div>
+
+            <div class="resource">
+              GPO-FINANCE-DRIVE-MAPPING
+            </div>
+          </div>
+
+          <div class="tags">
+            <span>Group Policy</span>
+            <span>Drive Mapping</span>
+            <span>Centralized Management</span>
+          </div>
+
+        </article>
+
+        <div class="screenshot-card">
+          <img
+            src="GPO-List.png"
+            alt="Group Policy Objects list"
+            class="zoomable"
+            loading="lazy"
+          >
+
+          <div class="screenshot-content">
+            <h4>Group Policy Objects</h4>
+            <p>
+              Overview of the policies configured
+              within the Active Directory environment.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FILE SERVER -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">
+          05 · FILE SERVER
+        </span>
+
+        <h2>File Server & NTFS Permissions</h2>
+
+        <p>
+          Departmental shared-resource configuration
+          with Active Directory security groups and NTFS permissions.
+        </p>
+      </div>
+
+      <div class="case-grid">
+
+        <article class="case-info">
+
+          <h3>Shared Resources</h3>
+
+          <div class="resource-list">
+            <div class="resource">
+              \\DC01\IT → GG_IT
+            </div>
+
+            <div class="resource">
+              \\DC01\RH → GG_RH
+            </div>
+
+            <div class="resource">
+              \\DC01\FINANCE → GG_FINANCE
+            </div>
+          </div>
+
+          <div class="tags">
+            <span>File Server</span>
+            <span>NTFS</span>
+            <span>Permissions</span>
+            <span>Security Groups</span>
+          </div>
+
+        </article>
+
+        <div class="screenshot-card">
+          <img
+            src="FileServer-NTFS-Permissions.png"
+            alt="File Server NTFS permissions"
+            class="zoomable"
+            loading="lazy"
+          >
+
+          <div class="screenshot-content">
+            <h4>NTFS Permissions</h4>
+            <p>
+              Configuration and validation of access permissions
+              for IT, RH and FINANCE resources.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BACKUP -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">
+          06 · BACKUP & RECOVERY
+        </span>
+
+        <h2>Windows Server Backup</h2>
+
+        <p>
+          Protection of critical Active Directory components
+          using a validated System State backup.
+        </p>
+      </div>
+
+      <div class="case-grid">
+
+        <article class="case-info">
+
+          <h3>Backup & Recovery</h3>
+
+          <ul>
+            <li>Windows Server Backup installation</li>
+            <li>Backup disk E: configuration</li>
+            <li>System State selection</li>
+            <li>Backup execution</li>
+            <li>Backup result validation</li>
+          </ul>
+
+          <div class="success-card">
+            <strong>
+              ✓ SYSTEM STATE BACKUP: SUCCESS
+            </strong>
+          </div>
+
+          <div class="tags">
+            <span>Windows Server Backup</span>
+            <span>System State</span>
+            <span>Recovery</span>
+            <span>Disk E:</span>
+          </div>
+
+        </article>
+
+        <div class="screenshot-card">
+          <img
+            src="Backup-Recovery-Validation.png"
+            alt="Windows Server Backup System State validation"
+            class="zoomable"
+            loading="lazy"
+          >
+
+          <div class="screenshot-content">
+            <h4>Backup Validation</h4>
+            <p>
+              Successful System State backup validation
+              using Windows Server Backup.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+
+  <section class="section" id="results">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">
+          RESULTS
+        </span>
+
+        <h2>Project Results</h2>
+
+        <p>
+          Core infrastructure services were configured
+          and successfully validated in the lab environment.
+        </p>
+      </div>
+
+      <div class="results-grid">
+
+        <article class="result-card">
+          <span class="result-number">8</span>
+          <p>Organizational Units</p>
+        </article>
+
+        <article class="result-card">
+          <span class="result-number">6</span>
+          <p>User Accounts</p>
+        </article>
+
+        <article class="result-card">
+          <span class="result-number">3</span>
+          <p>Security Groups</p>
+        </article>
+
+        <article class="result-card">
+          <span class="result-number">✓</span>
+          <p>DNS A & SRV Validated</p>
+        </article>
+
+        <article class="result-card">
+          <span class="result-number">✓</span>
+          <p>DHCP Scope Enabled</p>
+        </article>
+
+        <article class="result-card">
+          <span class="result-number">3</span>
+          <p>Shared Resources Validated</p>
+        </article>
+
+        <article class="result-card">
+          <span class="result-number">3</span>
+          <p>Drive Mapping GPOs</p>
+        </article>
+
+        <article class="result-card">
+          <span class="result-number">✓</span>
+          <p>System State Backup Successful</p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TECHNOLOGIES -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">
+          TECH STACK
+        </span>
+
+        <h2>Technologies Used</h2>
+      </div>
+
+      <div class="content-card">
+
+        <div class="tags">
+          <span>Windows Server 2019</span>
+          <span>Active Directory Domain Services</span>
+          <span>DNS</span>
+          <span>DHCP</span>
+          <span>Group Policy</span>
+          <span>NTFS Permissions</span>
+          <span>File Server</span>
+          <span>Windows Server Backup</span>
+          <span>PowerShell</span>
+          <span>Windows 11</span>
+          <span>VMware</span>
+          <span>Virtualization</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">
+          SKILLS
+        </span>
+
+        <h2>Skills Demonstrated</h2>
+      </div>
+
+      <div class="skills-list">
+
+        <div class="skill-result">
+          <span class="skill-check">✓</span>
+          Windows Server Administration
+        </div>
+
+        <div class="skill-result">
+          <span class="skill-check">✓</span>
+          Active Directory Administration
+        </div>
+
+        <div class="skill-result">
+          <span class="skill-check">✓</span>
+          User & Group Management
+        </div>
+
+        <div class="skill-result">
+          <span class="skill-check">✓</span>
+          DNS & DHCP Configuration
+        </div>
+
+        <div class="skill-result">
+          <span class="skill-check">✓</span>
+          Group Policy Administration
+        </div>
+
+        <div class="skill-result">
+          <span class="skill-check">✓</span>
+          NTFS Permission Management
+        </div>
+
+        <div class="skill-result">
+          <span class="skill-check">✓</span>
+          File Server Administration
+        </div>
+
+        <div class="skill-result">
+          <span class="skill-check">✓</span>
+          System State Backup & Recovery
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="content-card" style="text-align:center;">
+
+        <span class="section-label">
+          PORTFOLIO
+        </span>
+
+        <h2 style="margin-bottom:12px;">
+          Explore My Other Projects
+        </h2>
+
+        <p>
+          Explore my OpenVPN & pfSense, CCTV infrastructure,
+          and Veeam Backup & Replication projects.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            href="index-en.html#projects"
+            class="btn btn-primary"
+          >
+            ← Back to Projects
+          </a>
+
+          <a
+            href="index-en.html#contact"
+            class="btn btn-secondary"
+          >
+            Contact Me
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container footer-content">
+
+    <div>
+      <strong>Amine Kramo</strong>
+      <span>Systems & Network Technician</span>
+    </div>
+
+    <p>
+      © <span id="currentYear">2026</span>
+      Amine Kramo · Active Directory Infrastructure Lab
+    </p>
+
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+
+<div
+  id="imageLightbox"
+  class="lightbox"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Screenshot preview"
+>
+
+  <button
+    type="button"
+    id="lightboxClose"
+    class="lightbox-close"
+    aria-label="Close image"
+  >
+    ×
+  </button>
+
+  <img
+    id="lightboxImg"
+    class="lightbox-img"
+    src=""
+    alt="Enlarged screenshot"
+  >
+
+</div>
+
+<script>
+  const lightbox =
+    document.getElementById("imageLightbox");
+
+  const lightboxImg =
+    document.getElementById("lightboxImg");
+
+  const lightboxClose =
+    document.getElementById("lightboxClose");
+
+  const zoomableImages =
+    document.querySelectorAll(".zoomable");
+
+  let lastFocusedImage = null;
+
+  function openLightbox(image) {
+
+    if (!lightbox || !lightboxImg) {
+      return;
+    }
+
+    lastFocusedImage = image;
+
+    lightboxImg.src =
+      image.currentSrc || image.src;
+
+    lightboxImg.alt =
+      image.alt || "Enlarged screenshot";
+
+    lightbox.classList.add("open");
+
+    lightbox.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    document.body.style.overflow =
+      "hidden";
+
+    if (lightboxClose) {
+      lightboxClose.focus();
+    }
+  }
+
+  function closeLightbox() {
+
+    if (!lightbox) {
+      return;
+    }
+
+    lightbox.classList.remove("open");
+
+    lightbox.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.style.overflow = "";
+
+    if (lightboxImg) {
+      lightboxImg.src = "";
+    }
+
+    if (lastFocusedImage) {
+      lastFocusedImage.focus();
+    }
+  }
+
+  zoomableImages.forEach(function(image) {
+
+    image.setAttribute(
+      "tabindex",
+      "0"
+    );
+
+    image.setAttribute(
+      "role",
+      "button"
+    );
+
+    image.addEventListener(
+      "click",
+      function() {
+        openLightbox(image);
+      }
+    );
+
+    image.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+          event.preventDefault();
+          openLightbox(image);
+        }
+
+      }
+    );
+
+  });
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener(
+      "click",
+      closeLightbox
+    );
+  }
+
+  if (lightbox) {
+
+    lightbox.addEventListener(
+      "click",
+      function(event) {
+
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+
+      }
+    );
+
+  }
+
+  document.addEventListener(
+    "keydown",
+    function(event) {
+
+      if (
+        event.key === "Escape" &&
+        lightbox &&
+        lightbox.classList.contains("open")
+      ) {
+        closeLightbox();
+      }
+
+    }
+  );
+
+  const yearElement =
+    document.getElementById("currentYear");
+
+  if (yearElement) {
+    yearElement.textContent =
+      new Date().getFullYear();
+  }
+</script>
+
+</body>
+</html>
