@@ -1,0 +1,3409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- =========================================================
+       01. GENERAL CONFIGURATION
+       EDIT HERE: PAGE TITLE, DESCRIPTION AND SEO
+  ========================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050d18">
+  <meta name="color-scheme" content="dark">
+
+  <title>Amine Kramo | Systems & Network Technician in Casablanca</title>
+
+  <meta
+    name="description"
+    content="Professional portfolio of Amine Kramo, Systems & Network Technician based in Casablanca. Explore my skills in Windows Server, Active Directory, networking, pfSense, OpenVPN, virtualization, Veeam Backup, IT support and IP video surveillance."
+  >
+
+  <meta name="author" content="Amine Kramo">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta
+    name="keywords"
+    content="Amine Kramo, Systems Network Technician, Casablanca, Windows Server, Active Directory, pfSense, OpenVPN, Veeam, Networking, IT Support"
+  >
+
+  <link
+    rel="canonical"
+    href="https://kramoamine.github.io/index-en.html"
+  >
+
+  <link
+    rel="icon"
+    href="favicon.svg"
+    type="image/svg+xml"
+  >
+
+  <!-- =========================================================
+       02. FRENCH / ENGLISH VERSIONS
+       index.html    = French
+       index-en.html = English
+  ========================================================== -->
+  <link
+    rel="alternate"
+    hreflang="fr"
+    href="https://kramoamine.github.io/"
+  >
+
+  <link
+    rel="alternate"
+    hreflang="en"
+    href="https://kramoamine.github.io/index-en.html"
+  >
+
+  <link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://kramoamine.github.io/"
+  >
+
+  <!-- =========================================================
+       03. OPEN GRAPH / SOCIAL MEDIA
+  ========================================================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Amine Kramo Portfolio">
+
+  <meta
+    property="og:title"
+    content="Amine Kramo | Systems & Network Technician"
+  >
+
+  <meta
+    property="og:description"
+    content="Professional portfolio focused on systems administration, networking, Windows Server, Active Directory, pfSense, OpenVPN, virtualization, Veeam and IT infrastructure."
+  >
+
+  <meta
+    property="og:url"
+    content="https://kramoamine.github.io/index-en.html"
+  >
+
+  <meta
+    property="og:image"
+    content="https://kramoamine.github.io/portfolio-preview.png"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="Professional portfolio of Amine Kramo"
+  >
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Amine Kramo | Systems & Network Technician"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Professional portfolio focused on systems, networks, IT infrastructure and technical support."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://kramoamine.github.io/portfolio-preview.png"
+  >
+
+  <!-- =========================================================
+       04. GOOGLE ANALYTICS 4
+       KEEP THIS ID IF YOU USE THE SAME GA4 PROPERTY
+  ========================================================== -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-KC6V9B6NZ9"
+  ></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+    gtag("config", "G-KC6V9B6NZ9");
+  </script>
+
+  <!-- =========================================================
+       05. STRUCTURED DATA / SEO
+  ========================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Amine Kramo",
+    "url": "https://kramoamine.github.io/index-en.html",
+    "image": "https://kramoamine.github.io/profile.jpg",
+    "jobTitle": "Systems & Network Technician",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Casablanca",
+      "addressCountry": "MA"
+    },
+    "email": "mailto:aminekramo@gmail.com",
+    "telephone": "+212648037074",
+    "sameAs": [
+      "https://www.linkedin.com/in/aminekramo/",
+      "https://github.com/kramoamine"
+    ],
+    "knowsAbout": [
+      "Windows Server",
+      "Active Directory",
+      "Computer Networks",
+      "OpenVPN",
+      "pfSense",
+      "Veeam Backup & Replication",
+      "Virtualization",
+      "IT Support",
+      "IP Video Surveillance"
+    ]
+  }
+  </script>
+
+  <!-- =========================================================
+       06. MAIN CSS
+  ========================================================== -->
+  <style>
+    :root {
+      --bg: #050d18;
+      --bg-alt: #071422;
+      --card: #0b1b2e;
+      --card-alt: #10243b;
+      --border: #173a59;
+      --text: #edf7ff;
+      --muted: #9fb3c8;
+      --cyan: #22d3ee;
+      --blue: #3b82f6;
+      --green: #22c55e;
+      --gradient: linear-gradient(120deg, var(--cyan), var(--blue));
+      --max-width: 1180px;
+      --header-height: 76px;
+      --radius: 18px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .28);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.68;
+      overflow-x: hidden;
+      background:
+        radial-gradient(
+          circle at 85% 8%,
+          rgba(34, 211, 238, .08),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 10% 45%,
+          rgba(59, 130, 246, .05),
+          transparent 30%
+        ),
+        var(--bg);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .18;
+      background-image:
+        radial-gradient(
+          rgba(148, 190, 220, .28) .7px,
+          transparent .7px
+        );
+      background-size: 28px 28px;
+      mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 85%
+      );
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(var(--max-width), 92%);
+      margin-inline: auto;
+    }
+
+    /* =========================================================
+       07. GENERAL COMPONENTS
+    ========================================================== */
+
+    .section {
+      padding: 100px 0;
+      border-top: 1px solid rgba(255, 255, 255, .055);
+    }
+
+    .section-header {
+      max-width: 750px;
+      margin-bottom: 45px;
+    }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 7px;
+      color: var(--cyan);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+    }
+
+    .section-header h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .section-header p {
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 11px 21px;
+      border: 0;
+      border-radius: 11px;
+      text-decoration: none;
+      font: inherit;
+      font-weight: 750;
+      cursor: pointer;
+      transition:
+        transform .22s ease,
+        border-color .22s ease,
+        background .22s ease,
+        box-shadow .22s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: #04101d;
+      background: var(--gradient);
+      box-shadow: 0 10px 30px rgba(34, 211, 238, .12);
+    }
+
+    .btn-secondary {
+      color: #fff;
+      border: 1px solid #345370;
+      background: rgba(255, 255, 255, .035);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--cyan);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(34, 211, 238, .85);
+      outline-offset: 4px;
+    }
+
+    /* =========================================================
+       08. HEADER / NAVIGATION
+       EDIT HERE: NAVIGATION AND LANGUAGE BUTTONS
+    ========================================================== */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 13, 24, .92);
+      border-bottom: 1px solid rgba(255, 255, 255, .07);
+      backdrop-filter: blur(15px);
+    }
+
+    .navbar {
+      min-height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 11px;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 850;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 auto;
+      object-fit: cover;
+      border: 2px solid rgba(34, 211, 238, .55);
+      border-radius: 50%;
+      box-shadow: 0 6px 22px rgba(0, 0, 0, .32);
+    }
+
+    .brand-name {
+      white-space: nowrap;
+    }
+
+    .brand-name span {
+      color: var(--cyan);
+    }
+
+    .navigation-area {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    #mainNav {
+      display: flex;
+      align-items: center;
+      gap: 19px;
+    }
+
+    #mainNav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 600;
+      transition: color .2s ease;
+    }
+
+    #mainNav a:hover {
+      color: var(--cyan);
+    }
+
+    .language-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      flex-shrink: 0;
+    }
+
+    .language-current,
+    .language-link {
+      min-width: 45px;
+      padding: 7px 10px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 850;
+    }
+
+    .language-current {
+      color: #04101d;
+      background: var(--cyan);
+    }
+
+    .language-link {
+      color: var(--cyan);
+      border: 1px solid rgba(34, 211, 238, .35);
+      background: rgba(34, 211, 238, .06);
+      transition: .2s ease;
+    }
+
+    .language-link:hover {
+      color: #04101d;
+      background: var(--cyan);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 9px;
+      flex-shrink: 0;
+      cursor: pointer;
+      border: 1px solid rgba(34, 211, 238, .3);
+      border-radius: 10px;
+      background: rgba(34, 211, 238, .06);
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      margin: 5px 0;
+      border-radius: 10px;
+      background: var(--cyan);
+      transition: transform .25s, opacity .25s;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* =========================================================
+       09. HERO
+    ========================================================== */
+
+    .hero {
+      min-height: calc(100vh - var(--header-height));
+      padding: 75px 0;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 14px;
+      color: var(--cyan);
+      background: rgba(34, 211, 238, .07);
+      border: 1px solid rgba(34, 211, 238, .25);
+      border-radius: 50px;
+      font-size: .8rem;
+      font-weight: 750;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(34, 197, 94, .85);
+    }
+
+    .hero h1 {
+      margin: 21px 0 10px;
+      font-size: clamp(3rem, 6vw, 5.3rem);
+      line-height: 1.04;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: transparent;
+      background: var(--gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .job-title {
+      font-size: clamp(1.25rem, 2.4vw, 1.72rem);
+      color: #dcecff;
+      font-weight: 750;
+    }
+
+    .degree {
+      max-width: 720px;
+      margin-top: 6px;
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    .description {
+      max-width: 720px;
+      margin-top: 21px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 31px;
+    }
+
+    .hero-information {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    /* =========================================================
+       10. PROFILE CARD
+    ========================================================== */
+
+    .profile-card {
+      position: relative;
+      padding: 34px;
+      overflow: hidden;
+      border: 1px solid #214869;
+      border-radius: 25px;
+      background: linear-gradient(145deg, #102b48, #081525);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .43);
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      top: -170px;
+      right: -100px;
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(34, 211, 238, .26),
+          transparent 68%
+        );
+    }
+
+    .photo-wrapper {
+      position: relative;
+      width: 165px;
+      height: 165px;
+      margin: 0 auto 23px;
+    }
+
+    .photo-wrapper::before {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: var(--gradient);
+    }
+
+    .profile-photo {
+      position: relative;
+      width: 165px;
+      height: 165px;
+      display: block;
+      object-fit: cover;
+      border: 5px solid #09182a;
+      border-radius: 50%;
+      cursor: zoom-in;
+    }
+
+    .profile-card h2 {
+      position: relative;
+      text-align: center;
+      font-size: 1.55rem;
+    }
+
+    .profile-role {
+      position: relative;
+      text-align: center;
+      color: var(--cyan);
+      font-weight: 650;
+    }
+
+    .profile-info {
+      position: relative;
+      display: grid;
+      gap: 12px;
+      margin-top: 21px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .profile-info div {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: #cbddeb;
+      font-size: .91rem;
+    }
+
+    .icon,
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(34, 211, 238, .09);
+    }
+
+    /* =========================================================
+       11. ABOUT
+    ========================================================== */
+
+    .about-section {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(11, 27, 46, .35),
+          transparent
+        );
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 24px;
+    }
+
+    .about-card {
+      padding: 31px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, #10243b, #0a192b);
+    }
+
+    .about-card h3 {
+      margin-bottom: 18px;
+      color: var(--cyan);
+    }
+
+    .about-card p {
+      margin-bottom: 15px;
+      color: var(--muted);
+    }
+
+    .about-card strong {
+      color: #e4f2ff;
+    }
+
+    .about-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .info-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #081727;
+    }
+
+    .info-card small {
+      display: block;
+      color: var(--muted);
+      font-size: .72rem;
+    }
+
+    .info-card strong {
+      font-size: .88rem;
+    }
+
+    /* =========================================================
+       12. SKILLS
+    ========================================================== */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card,
+    .project-card,
+    .experience-card,
+    .education-card {
+      position: relative;
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(
+          145deg,
+          var(--card-alt),
+          #091727
+        );
+      transition:
+        transform .28s ease,
+        border-color .28s ease,
+        box-shadow .28s ease;
+    }
+
+    .skill-card:hover,
+    .project-card:hover,
+    .education-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(34, 211, 238, .42);
+      box-shadow: var(--shadow);
+    }
+
+    .skill-icon,
+    .project-icon,
+    .education-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 1px solid rgba(34, 211, 238, .18);
+      border-radius: 13px;
+      background: rgba(34, 211, 238, .09);
+      font-size: 1.35rem;
+    }
+
+    .skill-icon {
+      margin-bottom: 17px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      margin-bottom: 17px;
+      color: var(--muted);
+      font-size: .89rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tags span {
+      padding: 4px 10px;
+      color: #bfeaf5;
+      border: 1px solid rgba(34, 211, 238, .17);
+      border-radius: 50px;
+      background: rgba(34, 211, 238, .07);
+      font-size: .7rem;
+      font-weight: 650;
+    }
+
+    /* =========================================================
+       13. PROJECTS
+    ========================================================== */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      padding: 29px;
+    }
+
+    .project-card:last-child {
+      grid-column: 1 / -1;
+    }
+
+    .project-number {
+      position: absolute;
+      top: 11px;
+      right: 22px;
+      color: rgba(255, 255, 255, .04);
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+
+    .project-location {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--cyan);
+      font-size: .76rem;
+      font-weight: 750;
+    }
+
+    .project-description {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .project-work,
+    .missions {
+      margin: 17px 0;
+      padding: 17px 19px;
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 13px;
+      background: rgba(5, 13, 24, .42);
+    }
+
+    .project-work h4 {
+      margin-bottom: 8px;
+      color: #dcecff;
+    }
+
+    .project-work ul,
+    .missions ul {
+      padding-left: 19px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .project-link {
+      display: inline-flex;
+      margin-top: 22px;
+      padding: 9px 16px;
+      color: var(--cyan);
+      border: 1px solid rgba(34, 211, 238, .25);
+      border-radius: 9px;
+      background: rgba(34, 211, 238, .07);
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 750;
+      transition: .23s ease;
+    }
+
+    .project-link:hover {
+      color: #04101d;
+      background: var(--cyan);
+    }
+
+    /* =========================================================
+       14. PROFESSIONAL EXPERIENCE
+    ========================================================== */
+
+    .experience-timeline {
+      position: relative;
+      display: grid;
+      gap: 22px;
+      padding-left: 38px;
+    }
+
+    .experience-timeline::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 8px;
+      width: 2px;
+      background:
+        linear-gradient(
+          var(--cyan),
+          var(--blue),
+          transparent
+        );
+    }
+
+    .experience-item {
+      position: relative;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      top: 29px;
+      left: -38px;
+      width: 18px;
+      height: 18px;
+      border: 3px solid var(--cyan);
+      border-radius: 50%;
+      background: var(--bg);
+    }
+
+    .experience-item.current .timeline-dot {
+      background: var(--cyan);
+    }
+
+    .experience-card {
+      padding: 28px;
+    }
+
+    .experience-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 15px;
+    }
+
+    .company {
+      color: var(--cyan);
+      font-weight: 700;
+    }
+
+    .experience-status {
+      display: inline-block;
+      margin-bottom: 5px;
+      padding: 3px 9px;
+      color: #79e6f5;
+      border-radius: 50px;
+      background: rgba(34, 211, 238, .08);
+      font-size: .65rem;
+      font-weight: 850;
+    }
+
+    .experience-date {
+      flex: 0 0 auto;
+      padding: 6px 11px;
+      color: #c7e9f2;
+      border-radius: 50px;
+      background: rgba(34, 211, 238, .07);
+      font-size: .77rem;
+    }
+
+    .experience-description {
+      color: var(--muted);
+      font-size: .91rem;
+    }
+
+    .missions ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px 28px;
+    }
+
+    .project-highlight {
+      margin-top: 15px;
+      padding: 15px;
+      border: 1px solid rgba(34, 211, 238, .16);
+      border-radius: 12px;
+      background: rgba(34, 211, 238, .055);
+    }
+
+    .project-highlight span {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--cyan);
+      font-size: .65rem;
+      font-weight: 850;
+    }
+
+    /* =========================================================
+       15. EDUCATION
+    ========================================================== */
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .education-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .education-main {
+      border-color: rgba(34, 211, 238, .3);
+    }
+
+    .education-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 19px;
+    }
+
+    .education-date {
+      padding: 5px 10px;
+      color: #bdebf4;
+      border-radius: 50px;
+      background: rgba(34, 211, 238, .07);
+      font-size: .74rem;
+    }
+
+    .diploma-status {
+      align-self: flex-start;
+      margin-bottom: 13px;
+      padding: 4px 9px;
+      color: #72e59a;
+      border: 1px solid rgba(34, 197, 94, .2);
+      border-radius: 50px;
+      background: rgba(34, 197, 94, .07);
+      font-size: .63rem;
+      font-weight: 850;
+    }
+
+    .education-card h3 {
+      margin-bottom: 5px;
+    }
+
+    .education-card h4 {
+      margin-bottom: 13px;
+      color: var(--cyan);
+      font-size: .92rem;
+    }
+
+    .school {
+      color: #d6e7f5;
+      font-weight: 650;
+    }
+
+    .education-location {
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .education-description {
+      flex-grow: 1;
+      margin: 16px 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    /* =========================================================
+       16. CONTACT
+    ========================================================== */
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      padding: 41px;
+      border: 1px solid #214765;
+      border-radius: 25px;
+      background:
+        linear-gradient(
+          135deg,
+          #102b48,
+          #071523
+        );
+    }
+
+    .contact-badge {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 5px 11px;
+      color: #73e59a;
+      border-radius: 50px;
+      background: rgba(34, 197, 94, .07);
+      font-size: .65rem;
+      font-weight: 850;
+    }
+
+    .contact-intro h3 {
+      margin-bottom: 13px;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+    }
+
+    .contact-intro p {
+      color: var(--muted);
+    }
+
+    .contact-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 21px;
+    }
+
+    .contact-skills span {
+      padding: 5px 10px;
+      color: #bdebf5;
+      border-radius: 50px;
+      background: rgba(34, 211, 238, .07);
+      font-size: .71rem;
+    }
+
+    .contact-cv {
+      margin-top: 27px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .contact-item {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 13px 15px;
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 13px;
+      background: rgba(255, 255, 255, .035);
+      text-decoration: none;
+      transition: .22s ease;
+    }
+
+    a.contact-item:hover {
+      border-color: rgba(34, 211, 238, .35);
+      background: rgba(34, 211, 238, .06);
+    }
+
+    .contact-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      flex: 0 0 auto;
+      place-items: center;
+      color: var(--cyan);
+      border-radius: 11px;
+      background: rgba(34, 211, 238, .09);
+      font-weight: 800;
+    }
+
+    .contact-details {
+      min-width: 0;
+      flex-grow: 1;
+    }
+
+    .contact-details small {
+      display: block;
+      color: var(--muted);
+      font-size: .7rem;
+    }
+
+    .contact-details strong {
+      font-size: .87rem;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-arrow {
+      color: var(--cyan);
+    }
+
+    /* =========================================================
+       17. FOOTER
+    ========================================================== */
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      background: #040b14;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-profile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-profile span {
+      color: var(--cyan);
+      font-size: .74rem;
+    }
+
+    .footer-content p {
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    /* =========================================================
+       18. LIGHTBOX
+    ========================================================== */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(5, 13, 24, .93);
+      backdrop-filter: blur(8px);
+    }
+
+    .lightbox.open {
+      display: grid;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border: 2px solid var(--cyan);
+      border-radius: 18px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .7);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      width: 48px;
+      height: 48px;
+      color: var(--cyan);
+      border: 1px solid rgba(34, 211, 238, .3);
+      border-radius: 50%;
+      background: rgba(5, 13, 24, .9);
+      cursor: pointer;
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    /* =========================================================
+       19. REVEAL ANIMATIONS
+    ========================================================== */
+
+    .js-enabled .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity .65s ease,
+        transform .65s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .js-enabled .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* =========================================================
+       20. TABLET
+    ========================================================== */
+
+    @media (max-width: 1050px) {
+      #mainNav {
+        gap: 12px;
+      }
+
+      #mainNav a {
+        font-size: .82rem;
+      }
+    }
+
+    @media (max-width: 950px) {
+      .hero,
+      .about-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card:last-child {
+        grid-column: auto;
+      }
+    }
+
+    /* =========================================================
+       21. MOBILE
+    ========================================================== */
+
+    @media (max-width: 760px) {
+      .navbar {
+        position: relative;
+        min-height: 69px;
+      }
+
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+      }
+
+      .brand-name {
+        font-size: .9rem;
+      }
+
+      .navigation-area {
+        gap: 8px;
+      }
+
+      .language-switcher {
+        order: 1;
+      }
+
+      .language-current {
+        display: none;
+      }
+
+      .language-link {
+        min-width: 52px;
+        padding: 8px;
+      }
+
+      .menu-toggle {
+        display: block;
+        order: 2;
+      }
+
+      #mainNav {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        width: 100%;
+        z-index: 1010;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3px;
+        padding: 12px;
+        border: 1px solid var(--border);
+        border-radius: 0 0 16px 16px;
+        background: #071421;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+      }
+
+      #mainNav.open {
+        display: flex;
+      }
+
+      #mainNav a {
+        width: 100%;
+        padding: 11px 13px;
+        border-radius: 8px;
+        color: #ceddeb;
+      }
+
+      #mainNav a:hover {
+        background: rgba(34, 211, 238, .06);
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        min-height: auto;
+        padding: 52px 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 13vw, 3.8rem);
+      }
+
+      .hero-buttons {
+        width: 100%;
+      }
+
+      .hero-buttons .btn {
+        flex: 1 1 100%;
+      }
+
+      .profile-card {
+        padding: 25px;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .about-info,
+      .skills-grid,
+      .projects-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-top {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .missions ul {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        padding: 23px;
+        gap: 29px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .brand-name {
+        max-width: 108px;
+        white-space: normal;
+        line-height: 1.1;
+      }
+
+      .about-card,
+      .skill-card,
+      .project-card,
+      .experience-card,
+      .education-card {
+        padding: 21px;
+      }
+
+      .experience-timeline {
+        padding-left: 30px;
+      }
+
+      .timeline-dot {
+        left: -30px;
+      }
+
+      .profile-photo,
+      .photo-wrapper {
+        width: 145px;
+        height: 145px;
+      }
+    }
+
+    /* =========================================================
+       22. ACCESSIBILITY
+    ========================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .js-enabled .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       23. HEADER
+  ========================================================== -->
+  <header>
+    <div class="container navbar">
+
+      <a
+        href="#home"
+        class="brand"
+        aria-label="Amine Kramo portfolio home"
+      >
+        <img
+          src="banner.jpg"
+          alt="Amine Kramo portfolio logo"
+          class="brand-logo zoomable"
+        >
+
+        <span class="brand-name">
+          Amine <span>Kramo</span>
+        </span>
+      </a>
+
+      <div class="navigation-area">
+
+        <nav
+          id="mainNav"
+          aria-label="Main navigation"
+        >
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- =====================================================
+             LANGUAGE SWITCHER
+
+             FR -> index.html
+             EN -> current page
+        ====================================================== -->
+        <div
+          class="language-switcher"
+          aria-label="Language selection"
+        >
+
+          <a
+            href="index.html"
+            class="language-link"
+            lang="fr"
+            hreflang="fr"
+            aria-label="Afficher la version française"
+          >
+            FR
+          </a>
+
+          <span
+            class="language-current"
+            aria-current="page"
+          >
+            EN
+          </span>
+
+        </div>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mainNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =========================================================
+         24. HOME / HERO
+         EDIT HERE: MAIN INTRODUCTION
+    ========================================================== -->
+    <section
+      class="container hero"
+      id="home"
+    >
+
+      <div class="hero-content">
+
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Systems • Networks • IT Infrastructure
+        </div>
+
+        <h1>
+          Hello, I'm<br>
+          <span>Amine Kramo</span>
+        </h1>
+
+        <p class="job-title">
+          Systems & Network Technician
+        </p>
+
+        <p class="degree">
+          Professional Bachelor's Degree in Advanced Systems
+          and Network Administration
+        </p>
+
+        <p class="description">
+          Systems, network and IT infrastructure technician with hands-on
+          experience in IT support, Windows and Linux administration,
+          networking, security, virtualization, backup solutions
+          and IP video surveillance.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            class="btn btn-primary"
+            href="CV-KRAMO-AMINE-ENG.pdf"
+            download
+          >
+            ↓ English CV
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="CV-KRAMO-AMINE.pdf"
+            download
+          >
+            ↓ French CV
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="#projects"
+          >
+            View my projects
+          </a>
+
+        </div>
+
+        <div class="hero-information">
+          <span>📍 Casablanca, Morocco</span>
+          <span>💻 Systems & Networks</span>
+          <span>🚗 Category B Driving Licence</span>
+        </div>
+
+      </div>
+
+      <!-- =====================================================
+           PROFILE CARD
+      ====================================================== -->
+      <aside class="profile-card">
+
+        <div class="photo-wrapper">
+          <img
+            src="profile.jpg"
+            alt="Professional photo of Amine Kramo"
+            class="profile-photo zoomable"
+          >
+        </div>
+
+        <h2>Amine Kramo</h2>
+
+        <p class="profile-role">
+          Systems & Network Technician
+        </p>
+
+        <div class="profile-info">
+
+          <div>
+            <span class="icon">📍</span>
+            Casablanca, Morocco
+          </div>
+
+          <div>
+            <span class="icon">🎓</span>
+            Professional Bachelor's Degree
+          </div>
+
+          <div>
+            <span class="icon">💻</span>
+            Systems & Networks
+          </div>
+
+          <div>
+            <span class="icon">🌐</span>
+            IT Infrastructure
+          </div>
+
+        </div>
+
+      </aside>
+
+    </section>
+
+    <!-- =========================================================
+         25. ABOUT
+         EDIT HERE: PROFESSIONAL BIO
+    ========================================================== -->
+    <section
+      class="section about-section"
+      id="about"
+    >
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">
+            PROFILE
+          </span>
+
+          <h2>About me</h2>
+
+          <p>
+            A technical profile focused on systems,
+            networks, IT support and infrastructure.
+          </p>
+        </div>
+
+        <div class="about-grid">
+
+          <article class="about-card">
+
+            <h3>
+              Systems & Network Technician
+            </h3>
+
+            <p>
+              I hold a
+              <strong>
+                Professional Bachelor's Degree in Advanced Systems
+                and Network Administration
+              </strong>
+              as well as a
+              <strong>
+                Specialized Technician Diploma in Digital Infrastructure,
+                Systems and Networks option
+              </strong>.
+              My academic and professional journey has enabled me to build
+              a technical profile focused on IT infrastructure.
+            </p>
+
+            <p>
+              I have developed hands-on skills in Windows and Linux
+              administration, LAN/WAN networking, IT support,
+              hardware and software maintenance, virtualization,
+              backup solutions, network security and IP video surveillance.
+            </p>
+
+            <p>
+              I work on the installation, configuration, troubleshooting,
+              maintenance and diagnosis of IT systems and equipment,
+              with a practical problem-solving approach.
+            </p>
+
+            <p>
+              My goal is to continue developing my expertise
+              in systems administration, networking, security
+              and IT infrastructure.
+            </p>
+
+          </article>
+
+          <div class="about-info">
+
+            <div class="info-card">
+              <span class="info-icon">📍</span>
+              <div>
+                <small>Location</small>
+                <strong>Casablanca, Morocco</strong>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <span class="info-icon">🎓</span>
+              <div>
+                <small>Degree</small>
+                <strong>Professional Bachelor's</strong>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <span class="info-icon">💻</span>
+              <div>
+                <small>Specialization</small>
+                <strong>Systems & Networks</strong>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <span class="info-icon">🛠️</span>
+              <div>
+                <small>Support</small>
+                <strong>Level 1 & 2</strong>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <span class="info-icon">🌐</span>
+              <div>
+                <small>Focus</small>
+                <strong>IT Infrastructure</strong>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <span class="info-icon">🚗</span>
+              <div>
+                <small>Mobility</small>
+                <strong>Category B Licence</strong>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         26. TECHNICAL SKILLS
+         EDIT HERE: ADD OR REMOVE SKILLS
+    ========================================================== -->
+    <section
+      class="section"
+      id="skills"
+    >
+      <div class="container">
+
+        <div class="section-header">
+
+          <span class="section-label">
+            EXPERTISE
+          </span>
+
+          <h2>Technical skills</h2>
+
+          <p>
+            Technologies and environments used throughout
+            my projects, education and professional experience.
+          </p>
+
+        </div>
+
+        <div class="skills-grid">
+
+          <!-- SYSTEMS -->
+          <article class="skill-card">
+
+            <div class="skill-icon">🖥️</div>
+
+            <h3>Systems Administration</h3>
+
+            <p>
+              Installation, configuration and administration
+              of Windows Server, Windows desktop and Linux systems.
+            </p>
+
+            <div class="tags">
+              <span>Windows Server 2012</span>
+              <span>Windows Server 2016</span>
+              <span>Windows Server 2019</span>
+              <span>Windows 10</span>
+              <span>Windows 11</span>
+              <span>Ubuntu Server</span>
+            </div>
+
+          </article>
+
+          <!-- MICROSOFT SERVICES -->
+          <article class="skill-card">
+
+            <div class="skill-icon">🏢</div>
+
+            <h3>Microsoft Services</h3>
+
+            <p>
+              Administration of core Microsoft Windows Server
+              domain services.
+            </p>
+
+            <div class="tags">
+              <span>Active Directory</span>
+              <span>DNS</span>
+              <span>DHCP</span>
+              <span>GPO</span>
+              <span>PowerShell</span>
+            </div>
+
+          </article>
+
+          <!-- NETWORKING -->
+          <article class="skill-card">
+
+            <div class="skill-icon">🌐</div>
+
+            <h3>Computer Networking</h3>
+
+            <p>
+              Installation, configuration and troubleshooting
+              of LAN/WAN network infrastructures.
+            </p>
+
+            <div class="tags">
+              <span>TCP/IP</span>
+              <span>LAN/WAN</span>
+              <span>VLAN</span>
+              <span>Cisco</span>
+              <span>Switching</span>
+              <span>Routing</span>
+            </div>
+
+          </article>
+
+          <!-- SECURITY -->
+          <article class="skill-card">
+
+            <div class="skill-icon">🛡️</div>
+
+            <h3>Network Security</h3>
+
+            <p>
+              Implementation of firewall solutions
+              and secure remote-access environments.
+            </p>
+
+            <div class="tags">
+              <span>pfSense</span>
+              <span>Firewall</span>
+              <span>OpenVPN</span>
+              <span>Remote Access VPN</span>
+            </div>
+
+          </article>
+
+          <!-- VIRTUALIZATION -->
+          <article class="skill-card">
+
+            <div class="skill-icon">☁️</div>
+
+            <h3>Virtualization</h3>
+
+            <p>
+              Creation and management of virtualized environments
+              for IT systems and services.
+            </p>
+
+            <div class="tags">
+              <span>VMware Workstation</span>
+              <span>VMware ESXi</span>
+              <span>Hyper-V</span>
+            </div>
+
+          </article>
+
+          <!-- BACKUP -->
+          <article class="skill-card">
+
+            <div class="skill-icon">💾</div>
+
+            <h3>Backup & Recovery</h3>
+
+            <p>
+              Configuration and monitoring of backup jobs
+              and restoration operations.
+            </p>
+
+            <div class="tags">
+              <span>Veeam Backup & Replication</span>
+              <span>Backup Jobs</span>
+              <span>Restore</span>
+              <span>Cobian Backup</span>
+            </div>
+
+          </article>
+
+          <!-- IT SUPPORT -->
+          <article class="skill-card">
+
+            <div class="skill-icon">🛠️</div>
+
+            <h3>IT Support</h3>
+
+            <p>
+              User support, diagnosis and resolution
+              of hardware, software and network incidents.
+            </p>
+
+            <div class="tags">
+              <span>GLPI</span>
+              <span>Level 1 / 2 Support</span>
+              <span>Troubleshooting</span>
+              <span>Maintenance</span>
+              <span>RDP</span>
+            </div>
+
+          </article>
+
+          <!-- MICROSOFT 365 -->
+          <article class="skill-card">
+
+            <div class="skill-icon">📧</div>
+
+            <h3>Microsoft 365</h3>
+
+            <p>
+              Use of core Microsoft professional
+              productivity and collaboration tools.
+            </p>
+
+            <div class="tags">
+              <span>Microsoft 365</span>
+              <span>Outlook</span>
+              <span>Teams</span>
+              <span>OneDrive</span>
+            </div>
+
+          </article>
+
+          <!-- CCTV -->
+          <article class="skill-card">
+
+            <div class="skill-icon">📹</div>
+
+            <h3>IP Video Surveillance</h3>
+
+            <p>
+              Installation, diagnosis and restoration
+              of CCTV and IP surveillance infrastructures.
+            </p>
+
+            <div class="tags">
+              <span>CCTV</span>
+              <span>IP Cameras</span>
+              <span>DVR / NVR</span>
+              <span>PoE Switch</span>
+              <span>TP-Link CPE510</span>
+            </div>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         27. PROJECTS
+         EDIT HERE: OPENVPN, CCTV AND VEEAM PROJECTS
+    ========================================================== -->
+    <section
+      class="section"
+      id="projects"
+    >
+      <div class="container">
+
+        <div class="section-header">
+
+          <span class="section-label">
+            TECHNICAL PROJECTS
+          </span>
+
+          <h2>Projects & field work</h2>
+
+          <p>
+            Four projects highlighting my practical experience
+in Windows Server administration, Active Directory,
+networking, security, video surveillance
+and data protection.
+          </p>
+
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- PROJECT 01 - ACTIVE DIRECTORY -->
+<article class="project-card">
+
+  <div class="project-number">
+    01
+  </div>
+
+  <div class="project-header">
+
+    <div class="project-icon">
+      🏢
+    </div>
+
+    <div>
+      <span class="project-location">
+        📍 Windows Server Lab
+      </span>
+
+      <h3>
+        Active Directory Infrastructure Lab
+      </h3>
+    </div>
+
+  </div>
+
+  <p class="project-description">
+    Deployment of a complete Microsoft infrastructure
+    integrating Active Directory Domain Services,
+    DNS, DHCP, Group Policy, File Server,
+    NTFS permissions and Backup & Recovery validation.
+  </p>
+
+  <div class="project-work">
+
+    <h4>Work completed</h4>
+
+    <ul>
+      <li>Active Directory domain deployment</li>
+      <li>User and security group management</li>
+      <li>Organizational Units configuration</li>
+      <li>DNS server configuration</li>
+      <li>DHCP scope deployment</li>
+      <li>Group Policy administration</li>
+      <li>NTFS permissions management</li>
+      <li>Backup and recovery validation</li>
+    </ul>
+
+  </div>
+
+  <div class="tags">
+    <span>Windows Server</span>
+    <span>Active Directory</span>
+    <span>DNS</span>
+    <span>DHCP</span>
+    <span>GPO</span>
+    <span>File Server</span>
+    <span>NTFS</span>
+  </div>
+
+  <a
+    href="active-directory-lab-en.html"
+    class="project-link"
+  >
+    View case study →
+  </a>
+
+</article>
+<!-- =================================================
+               PROJECT 02 - OPENVPN
+          ================================================== -->
+          <article class="project-card">
+
+            <div class="project-number">
+              02
+            </div>
+
+            <div class="project-header">
+
+              <div class="project-icon">
+                🛡️
+              </div>
+
+              <div>
+                <span class="project-location">
+                  📍 Kenitra
+                </span>
+
+                <h3>
+                  Secure Remote Access with OpenVPN & pfSense
+                </h3>
+              </div>
+
+            </div>
+
+            <p class="project-description">
+              Implementation of a secure remote-access solution
+              allowing an employee located in Spain to access
+              authorized resources on the company's network in Morocco
+              using OpenVPN and pfSense.
+            </p>
+
+            <div class="project-work">
+
+              <h4>Work completed</h4>
+
+              <ul>
+                <li>Network architecture preparation</li>
+                <li>pfSense configuration</li>
+                <li>OpenVPN server deployment</li>
+                <li>Remote-access configuration</li>
+                <li>Access control to internal resources</li>
+                <li>Connectivity testing and validation</li>
+              </ul>
+
+            </div>
+
+            <div class="tags">
+              <span>pfSense</span>
+              <span>OpenVPN</span>
+              <span>TCP/IP</span>
+              <span>LAN/WAN</span>
+              <span>Firewall</span>
+              <span>VPN</span>
+            </div>
+
+            <a
+              href="bfs-openvpn-en.html"
+              class="project-link"
+            >
+              View case study →
+            </a>
+
+          </article>
+
+          <!-- =================================================
+               PROJECT 03 - CCTV
+          ================================================== -->
+          <article class="project-card">
+
+            <div class="project-number">
+              03
+            </div>
+
+            <div class="project-header">
+
+              <div class="project-icon">
+                📹
+              </div>
+
+              <div>
+                <span class="project-location">
+                  📍 ENCG Settat
+                </span>
+
+                <h3>
+                  IP Video Surveillance Infrastructure
+                </h3>
+              </div>
+
+            </div>
+
+            <p class="project-description">
+              Technical intervention on an IP video surveillance
+              infrastructure integrating TP-Link CPE510 wireless
+              links to transport video streams to the main network
+              and NVR.
+            </p>
+
+            <div class="project-work">
+
+              <h4>Work completed</h4>
+
+              <ul>
+                <li>Equipment diagnosis</li>
+                <li>IP camera troubleshooting</li>
+                <li>Cabling inspection</li>
+                <li>TP-Link CPE510 wireless link intervention</li>
+                <li>Network connectivity verification</li>
+                <li>Testing and service restoration</li>
+              </ul>
+
+            </div>
+
+            <div class="tags">
+              <span>CCTV</span>
+              <span>IP Cameras</span>
+              <span>TP-Link CPE510</span>
+              <span>5 GHz</span>
+              <span>PoE Switch</span>
+              <span>NVR</span>
+              <span>TCP/IP</span>
+            </div>
+
+          <a href="encg-cctv-en.html" class="project-link">
+  View case study →
+</a>
+
+          </article>
+
+          <!-- =================================================
+               PROJECT 04 - VEEAM
+          ================================================== -->
+          <article class="project-card">
+
+            <div class="project-number">
+              04
+            </div>
+
+            <div class="project-header">
+
+              <div class="project-icon">
+                💾
+              </div>
+
+              <div>
+                <span class="project-location">
+                  🎓 Final Project · Maghreb Steel
+                </span>
+
+                <h3>
+                  Veeam Backup & Replication
+                </h3>
+              </div>
+
+            </div>
+
+            <p class="project-description">
+              Final academic project focused on the installation,
+              configuration and demonstration of Veeam Backup
+              & Replication in a virtualized environment.
+            </p>
+
+            <div class="project-work">
+
+              <h4>Work completed</h4>
+
+              <ul>
+                <li>Study of Veeam Backup & Replication</li>
+                <li>Installation in a virtualized environment</li>
+                <li>Solution configuration</li>
+                <li>Creation and scheduling of backup jobs</li>
+                <li>Backup job monitoring</li>
+                <li>Restore testing</li>
+              </ul>
+
+            </div>
+
+            <div class="tags">
+              <span>Veeam Backup & Replication</span>
+              <span>VMware</span>
+              <span>Virtualization</span>
+              <span>Backup Jobs</span>
+              <span>Restore</span>
+            </div>
+
+            <a
+              href="veeam-backup-en.html"
+              class="project-link"
+            >
+              View case study →
+            </a>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         28. PROFESSIONAL EXPERIENCE
+    ========================================================== -->
+    <section
+      class="section"
+      id="experience"
+    >
+      <div class="container">
+
+        <div class="section-header">
+
+          <span class="section-label">
+            CAREER
+          </span>
+
+          <h2>Professional experience</h2>
+
+          <p>
+            My experience in IT support, systems,
+            networking and IT infrastructure.
+          </p>
+
+        </div>
+
+        <div class="experience-timeline">
+
+          <!-- EXPERIENCE 01 -->
+          <article class="experience-item current">
+
+            <div class="timeline-dot"></div>
+
+            <div class="experience-card">
+
+              <div class="experience-top">
+
+                <div>
+                  <span class="experience-status">
+                    CURRENT POSITION
+                  </span>
+
+                  <h3>
+                    IT / Systems & Network Technician
+                  </h3>
+
+                  <p class="company">
+                    Maroges / RysaSoft
+                  </p>
+                </div>
+
+                <span class="experience-date">
+                  February 2025 – Present
+                </span>
+
+              </div>
+
+              <p class="experience-description">
+                IT support, systems administration, maintenance,
+                networking and on-site technical interventions.
+              </p>
+
+              <div class="missions">
+
+                <ul>
+                  <li>User support</li>
+                  <li>Incident diagnosis</li>
+                  <li>Workstation installation</li>
+                  <li>Hardware and software maintenance</li>
+                  <li>Network installation and troubleshooting</li>
+                  <li>Network equipment configuration</li>
+                  <li>Video surveillance</li>
+                  <li>On-site technical interventions</li>
+                </ul>
+
+              </div>
+
+              <div class="tags">
+                <span>IT Support</span>
+                <span>Windows</span>
+                <span>Networking</span>
+                <span>CCTV</span>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- EXPERIENCE 02 -->
+          <article class="experience-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="experience-card">
+
+              <div class="experience-top">
+
+                <div>
+                  <h3>
+                    Freelance IT Technician
+                  </h3>
+
+                  <p class="company">
+                    Derb Chalef
+                  </p>
+                </div>
+
+                <span class="experience-date">
+                  October 2024 – January 2025
+                </span>
+
+              </div>
+
+              <p class="experience-description">
+                Computer maintenance, diagnosis, operating system
+                installation and technical assistance.
+              </p>
+
+              <div
+                class="tags"
+                style="margin-top:16px;"
+              >
+                <span>Maintenance</span>
+                <span>Windows</span>
+                <span>Troubleshooting</span>
+                <span>IT Support</span>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- EXPERIENCE 03 -->
+          <article class="experience-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="experience-card">
+
+              <div class="experience-top">
+
+                <div>
+                  <h3>
+                    Final Project Intern
+                  </h3>
+
+                  <p class="company">
+                    Maghreb Steel
+                  </p>
+                </div>
+
+                <span class="experience-date">
+                  March 2024
+                </span>
+
+              </div>
+
+              <div class="project-highlight">
+
+                <span>
+                  FINAL PROJECT
+                </span>
+
+                <strong>
+                  Backup solution using Veeam Backup & Replication
+                </strong>
+
+              </div>
+
+            </div>
+          </article>
+
+          <!-- EXPERIENCE 04 -->
+          <article class="experience-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="experience-card">
+
+              <div class="experience-top">
+
+                <div>
+                  <h3>
+                    IT Intern
+                  </h3>
+
+                  <p class="company">
+                    SIRAIL Maroc
+                  </p>
+                </div>
+
+                <span class="experience-date">
+                  April 2023 – May 2023
+                </span>
+
+              </div>
+
+              <p class="experience-description">
+                Participation in IT support and
+                computer maintenance activities.
+              </p>
+
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         29. EDUCATION
+         EDIT HERE: DEGREES AND SCHOOLS
+    ========================================================== -->
+    <section
+      class="section"
+      id="education"
+    >
+      <div class="container">
+
+        <div class="section-header">
+
+          <span class="section-label">
+            EDUCATION
+          </span>
+
+          <h2>Academic background</h2>
+
+          <p>
+            An academic path focused on systems,
+            networking and IT infrastructure.
+          </p>
+
+        </div>
+
+        <div class="education-grid">
+
+          <!-- EDUCATION 01 -->
+          <article class="education-card education-main">
+
+            <div class="education-top">
+
+              <div class="education-icon">
+                🎓
+              </div>
+
+              <span class="education-date">
+                2025 – 2026
+              </span>
+
+            </div>
+
+            <span class="diploma-status">
+              ✓ DEGREE COMPLETED
+            </span>
+
+            <h3>
+              Professional Bachelor's Degree
+            </h3>
+
+            <h4>
+              Advanced Systems and Network Administration
+            </h4>
+
+            <p class="school">
+              Faculty of Sciences Aïn Chock
+            </p>
+
+            <p class="education-location">
+              📍 Casablanca, Morocco
+            </p>
+
+            <p class="education-description">
+              Specialized training in advanced systems,
+              networks and IT infrastructure administration.
+            </p>
+
+            <div class="tags">
+              <span>Systems</span>
+              <span>Networks</span>
+              <span>Administration</span>
+            </div>
+
+          </article>
+
+          <!-- EDUCATION 02 -->
+          <article class="education-card">
+
+            <div class="education-top">
+
+              <div class="education-icon">
+                💻
+              </div>
+
+              <span class="education-date">
+                2022 – 2024
+              </span>
+
+            </div>
+
+            <span class="diploma-status">
+              ✓ DIPLOMA COMPLETED
+            </span>
+
+            <h3>
+              Specialized Technician Diploma
+            </h3>
+
+            <h4>
+              Digital Infrastructure: Systems and Networks
+            </h4>
+
+            <p class="school">
+              CFP Hassania
+            </p>
+
+            <p class="education-location">
+              📍 Casablanca, Morocco
+            </p>
+
+            <p class="education-description">
+              Technical training focused on systems,
+              networking, digital infrastructure
+              and IT support.
+            </p>
+
+            <div class="tags">
+              <span>Windows</span>
+              <span>Linux</span>
+              <span>Networks</span>
+            </div>
+
+          </article>
+
+          <!-- EDUCATION 03 -->
+          <article class="education-card">
+
+            <div class="education-top">
+
+              <div class="education-icon">
+                📘
+              </div>
+
+              <span class="education-date">
+                2020 – 2021
+              </span>
+
+            </div>
+
+            <span class="diploma-status">
+              ✓ DIPLOMA COMPLETED
+            </span>
+
+            <h3>
+              Scientific Baccalaureate
+            </h3>
+
+            <h4>
+              Physical Sciences
+            </h4>
+
+            <p class="school">
+              Lycée Oued Eddahab
+            </p>
+
+            <p class="education-location">
+              📍 Casablanca, Morocco
+            </p>
+
+            <p class="education-description">
+              Scientific education forming the foundation
+              for my studies in information technology.
+            </p>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         30. CONTACT
+         EDIT HERE: CONTACT INFORMATION
+    ========================================================== -->
+    <section
+      class="section"
+      id="contact"
+    >
+      <div class="container">
+
+        <div class="section-header">
+
+          <span class="section-label">
+            CONTACT
+          </span>
+
+          <h2>Let's connect</h2>
+
+          <p>
+            For a professional opportunity, collaboration
+            or IT project, feel free to contact me directly.
+          </p>
+
+        </div>
+
+        <div class="contact-box">
+
+          <div class="contact-intro">
+
+            <span class="contact-badge">
+              ● AVAILABLE TO CONNECT
+            </span>
+
+            <h3>
+              Let's discuss your IT needs
+            </h3>
+
+            <p>
+              I am available to discuss professional opportunities
+              related to systems, networks, IT infrastructure,
+              technical support, backup solutions
+              and video surveillance.
+            </p>
+
+            <div class="contact-skills">
+              <span>Systems</span>
+              <span>Networks</span>
+              <span>IT Support</span>
+              <span>Infrastructure</span>
+              <span>pfSense</span>
+              <span>Veeam</span>
+              <span>CCTV</span>
+            </div>
+
+            <a
+              href="CV-KRAMO-AMINE-ENG.pdf"
+              class="btn btn-primary contact-cv"
+              download
+            >
+              ↓ Download my CV
+            </a>
+
+          </div>
+
+          <div class="contact-list">
+
+            <!-- EMAIL -->
+            <a
+              href="mailto:aminekramo@gmail.com"
+              class="contact-item"
+            >
+              <span class="contact-icon">
+                ✉️
+              </span>
+
+              <span class="contact-details">
+                <small>Email</small>
+                <strong>
+                  aminekramo@gmail.com
+                </strong>
+              </span>
+
+              <span class="contact-arrow">
+                →
+              </span>
+            </a>
+
+            <!-- PHONE -->
+            <a
+              href="tel:+212648037074"
+              class="contact-item"
+            >
+              <span class="contact-icon">
+                ☎️
+              </span>
+
+              <span class="contact-details">
+                <small>Phone</small>
+                <strong>
+                  +212 648 037 074
+                </strong>
+              </span>
+
+              <span class="contact-arrow">
+                →
+              </span>
+            </a>
+
+            <!-- WHATSAPP -->
+            <a
+              href="https://wa.me/212648037074"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-item"
+            >
+              <span class="contact-icon">
+                💬
+              </span>
+
+              <span class="contact-details">
+                <small>WhatsApp</small>
+                <strong>
+                  Send a message
+                </strong>
+              </span>
+
+              <span class="contact-arrow">
+                →
+              </span>
+            </a>
+
+            <!-- LINKEDIN -->
+            <a
+              href="https://www.linkedin.com/in/aminekramo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-item"
+            >
+              <span class="contact-icon">
+                in
+              </span>
+
+              <span class="contact-details">
+                <small>LinkedIn</small>
+                <strong>
+                  linkedin.com/in/aminekramo
+                </strong>
+              </span>
+
+              <span class="contact-arrow">
+                →
+              </span>
+            </a>
+
+            <!-- GITHUB -->
+            <a
+              href="https://github.com/kramoamine"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-item"
+            >
+              <span class="contact-icon">
+                &lt;/&gt;
+              </span>
+
+              <span class="contact-details">
+                <small>GitHub</small>
+                <strong>
+                  github.com/kramoamine
+                </strong>
+              </span>
+
+              <span class="contact-arrow">
+                →
+              </span>
+            </a>
+
+            <!-- LOCATION -->
+            <div class="contact-item">
+
+              <span class="contact-icon">
+                📍
+              </span>
+
+              <span class="contact-details">
+                <small>Location</small>
+                <strong>
+                  Casablanca, Morocco
+                </strong>
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       31. FOOTER
+  ========================================================== -->
+  <footer>
+
+    <div class="container footer-content">
+
+      <div class="footer-profile">
+        <strong>
+          Amine Kramo
+        </strong>
+
+        <span>
+          Systems & Network Technician
+        </span>
+      </div>
+
+      <p>
+        © <span id="currentYear">2026</span>
+        Amine Kramo · Professional Portfolio
+      </p>
+
+    </div>
+
+  </footer>
+
+  <!-- =========================================================
+       32. IMAGE LIGHTBOX
+  ========================================================== -->
+  <div
+    id="imageLightbox"
+    class="lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image preview"
+  >
+
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+      type="button"
+      aria-label="Close image"
+    >
+      ×
+    </button>
+
+    <img
+      id="lightboxImg"
+      class="lightbox-img"
+      src=""
+      alt="Enlarged image"
+    >
+
+  </div>
+
+  <!-- =========================================================
+       33. JAVASCRIPT
+       MOBILE MENU + LIGHTBOX + ANIMATIONS + ANALYTICS
+  ========================================================== -->
+  <script>
+    document.documentElement.classList.add("js-enabled");
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================== */
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    function closeMenu() {
+      if (!menuToggle || !mainNav) {
+        return;
+      }
+
+      menuToggle.classList.remove("active");
+      mainNav.classList.remove("open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        "Open menu"
+      );
+    }
+
+    if (menuToggle && mainNav) {
+
+      menuToggle.addEventListener(
+        "click",
+        function () {
+
+          const isOpen =
+            menuToggle.classList.toggle("active");
+
+          mainNav.classList.toggle(
+            "open",
+            isOpen
+          );
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+          );
+
+          menuToggle.setAttribute(
+            "aria-label",
+            isOpen
+              ? "Close menu"
+              : "Open menu"
+          );
+
+        }
+      );
+
+      mainNav
+        .querySelectorAll("a")
+        .forEach(function (link) {
+
+          link.addEventListener(
+            "click",
+            closeMenu
+          );
+
+        });
+
+    }
+
+    /* =========================================================
+       LIGHTBOX
+    ========================================================== */
+
+    const lightbox =
+      document.getElementById("imageLightbox");
+
+    const lightboxImg =
+      document.getElementById("lightboxImg");
+
+    const lightboxClose =
+      document.getElementById("lightboxClose");
+
+    const zoomableImages =
+      document.querySelectorAll(".zoomable");
+
+    function openLightbox(image) {
+
+      if (!lightbox || !lightboxImg) {
+        return;
+      }
+
+      lightboxImg.src =
+        image.currentSrc || image.src;
+
+      lightboxImg.alt =
+        image.alt || "Enlarged image";
+
+      lightbox.classList.add("open");
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.style.overflow =
+        "hidden";
+
+      if (lightboxClose) {
+        lightboxClose.focus();
+      }
+
+    }
+
+    function closeLightbox() {
+
+      if (!lightbox) {
+        return;
+      }
+
+      lightbox.classList.remove("open");
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.style.overflow = "";
+
+      if (lightboxImg) {
+        lightboxImg.src = "";
+      }
+
+    }
+
+    zoomableImages.forEach(
+      function (image) {
+
+        image.setAttribute(
+          "tabindex",
+          "0"
+        );
+
+        image.setAttribute(
+          "role",
+          "button"
+        );
+
+        image.addEventListener(
+          "click",
+          function (event) {
+
+            if (image.closest("a")) {
+              event.preventDefault();
+            }
+
+            openLightbox(image);
+
+          }
+        );
+
+        image.addEventListener(
+          "keydown",
+          function (event) {
+
+            if (
+              event.key === "Enter" ||
+              event.key === " "
+            ) {
+              event.preventDefault();
+              openLightbox(image);
+            }
+
+          }
+        );
+
+      }
+    );
+
+    if (lightboxClose) {
+      lightboxClose.addEventListener(
+        "click",
+        closeLightbox
+      );
+    }
+
+    if (lightbox) {
+
+      lightbox.addEventListener(
+        "click",
+        function (event) {
+
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+
+        }
+      );
+
+    }
+
+    /* =========================================================
+       ESC KEY
+    ========================================================== */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (event.key === "Escape") {
+          closeLightbox();
+          closeMenu();
+        }
+
+      }
+    );
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================== */
+
+    const revealTargets =
+      document.querySelectorAll(
+        ".section-header, " +
+        ".about-card, " +
+        ".info-card, " +
+        ".skill-card, " +
+        ".project-card, " +
+        ".experience-item, " +
+        ".education-card, " +
+        ".contact-box"
+      );
+
+    const reducedMotion =
+      window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+    if (
+      "IntersectionObserver" in window &&
+      !reducedMotion
+    ) {
+
+      revealTargets.forEach(
+        function (element) {
+
+          element.classList.add(
+            "reveal"
+          );
+
+        }
+      );
+
+      const observer =
+        new IntersectionObserver(
+
+          function (
+            entries,
+            currentObserver
+          ) {
+
+            entries.forEach(
+              function (entry) {
+
+                if (
+                  entry.isIntersecting
+                ) {
+
+                  entry.target
+                    .classList
+                    .add("is-visible");
+
+                  currentObserver
+                    .unobserve(
+                      entry.target
+                    );
+
+                }
+
+              }
+            );
+
+          },
+
+          {
+            threshold: 0.10,
+            rootMargin:
+              "0px 0px -30px 0px"
+          }
+
+        );
+
+      revealTargets.forEach(
+        function (element) {
+
+          observer.observe(
+            element
+          );
+
+        }
+      );
+
+    }
+
+    /* =========================================================
+       AUTOMATIC FOOTER YEAR
+    ========================================================== */
+
+    const yearElement =
+      document.getElementById(
+        "currentYear"
+      );
+
+    if (yearElement) {
+
+      yearElement.textContent =
+        new Date().getFullYear();
+
+    }
+
+    /* =========================================================
+       GOOGLE ANALYTICS
+       TRACK CV DOWNLOADS
+    ========================================================== */
+
+    document
+      .querySelectorAll(
+        'a[href$=".pdf"]'
+      )
+      .forEach(
+        function (link) {
+
+          link.addEventListener(
+            "click",
+            function () {
+
+              if (
+                typeof gtag === "function"
+              ) {
+
+                gtag(
+                  "event",
+                  "cv_download",
+                  {
+                    file_name:
+                      link.getAttribute(
+                        "href"
+                      ),
+                    page_language:
+                      "en"
+                  }
+                );
+
+              }
+
+            }
+          );
+
+        }
+      );
+
+    /* =========================================================
+       GOOGLE ANALYTICS
+       TRACK PROJECT VIEWS
+    ========================================================== */
+
+    document
+      .querySelectorAll(
+        ".project-link"
+      )
+      .forEach(
+        function (link) {
+
+          link.addEventListener(
+            "click",
+            function () {
+
+              if (
+                typeof gtag === "function"
+              ) {
+
+                gtag(
+                  "event",
+                  "project_view",
+                  {
+                    project_url:
+                      link.getAttribute(
+                        "href"
+                      ),
+                    page_language:
+                      "en"
+                  }
+                );
+
+              }
+
+            }
+          );
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>
