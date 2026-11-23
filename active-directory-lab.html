@@ -4,8 +4,16 @@
 <head>
   <!-- =========================================================
        ACTIVE DIRECTORY INFRASTRUCTURE LAB
-       Portfolio technique - Amine Kramo
-       SEO + Social Sharing + Structured Data
+       Version française
+       Amine Kramo
+
+       Optimisations :
+       - SEO
+       - Lighthouse
+       - Performance
+       - Accessibilité
+       - Responsive Design
+       - Partage social
   ========================================================== -->
 
   <meta charset="UTF-8">
@@ -15,18 +23,11 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <meta
-    name="theme-color"
-    content="#050d18"
-  >
-
-  <meta
-    name="color-scheme"
-    content="dark"
-  >
+  <meta name="theme-color" content="#050d18">
+  <meta name="color-scheme" content="dark">
 
   <!-- =========================================================
-       PRIMARY SEO
+       SEO PRINCIPAL
   ========================================================== -->
 
   <title>Active Directory Infrastructure Lab | Windows Server 2019 | Amine Kramo</title>
@@ -36,10 +37,7 @@
     content="Découvrez l'Active Directory Infrastructure Lab d'Amine Kramo : déploiement Windows Server 2019 avec AD DS, DNS, DHCP, GPO, File Server, permissions NTFS et Windows Server Backup."
   >
 
-  <meta
-    name="author"
-    content="Amine Kramo"
-  >
+  <meta name="author" content="Amine Kramo">
 
   <meta
     name="robots"
@@ -47,7 +45,7 @@
   >
 
   <!-- =========================================================
-       CANONICAL URL
+       CANONICAL
   ========================================================== -->
 
   <link
@@ -56,7 +54,7 @@
   >
 
   <!-- =========================================================
-       LANGUAGE VERSIONS
+       VERSIONS FR / EN
   ========================================================== -->
 
   <link
@@ -88,18 +86,24 @@
   >
 
   <!-- =========================================================
+       PRELOAD DE L'IMAGE PRINCIPALE / LCP
+  ========================================================== -->
+
+  <link
+    rel="preload"
+    as="image"
+    href="AD-Infrastructure-Architecture.webp"
+    type="image/webp"
+    fetchpriority="high"
+  >
+
+  <!-- =========================================================
        OPEN GRAPH
   ========================================================== -->
 
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:locale"
-    content="fr_FR"
-  >
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
 
   <meta
     property="og:site_name"
@@ -131,10 +135,7 @@
     content="https://kramoamine.github.io/AD-Infrastructure-Architecture.png"
   >
 
-  <meta
-    property="og:image:type"
-    content="image/png"
-  >
+  <meta property="og:image:type" content="image/png">
 
   <meta
     property="og:image:alt"
@@ -142,7 +143,7 @@
   >
 
   <!-- =========================================================
-       TWITTER / X CARD
+       TWITTER / X
   ========================================================== -->
 
   <meta
@@ -157,7 +158,7 @@
 
   <meta
     name="twitter:description"
-    content="Windows Server 2019, Active Directory, DNS, DHCP, Group Policy, NTFS, File Server et Windows Server Backup."
+    content="Laboratoire Windows Server 2019 avec Active Directory, DNS, DHCP, GPO, permissions NTFS, File Server et Windows Server Backup."
   >
 
   <meta
@@ -171,7 +172,7 @@
   >
 
   <!-- =========================================================
-       STRUCTURED DATA - PROJECT
+       DONNÉES STRUCTURÉES
   ========================================================== -->
 
   <script type="application/ld+json">
@@ -180,7 +181,7 @@
     "@type": "CreativeWork",
     "name": "Active Directory Infrastructure Lab",
     "headline": "Active Directory Infrastructure Lab - Windows Server 2019",
-    "description": "Projet pratique de conception et de déploiement d'une infrastructure Microsoft Windows Server 2019 intégrant Active Directory Domain Services, DNS, DHCP, Group Policy, File Server, permissions NTFS et Windows Server Backup.",
+    "description": "Projet pratique de conception, déploiement et validation d'une infrastructure Microsoft Windows Server 2019 intégrant Active Directory Domain Services, DNS, DHCP, Group Policy, File Server, permissions NTFS et Windows Server Backup.",
     "url": "https://kramoamine.github.io/active-directory-lab.html",
     "image": "https://kramoamine.github.io/AD-Infrastructure-Architecture.png",
     "inLanguage": "fr",
@@ -209,14 +210,14 @@
       "PowerShell",
       "VMware",
       "Windows 11",
-      "Systems Administration",
-      "Network Administration"
+      "Administration Systèmes",
+      "Administration Réseau"
     ]
   }
   </script>
 
   <!-- =========================================================
-       STRUCTURED DATA - BREADCRUMBS
+       FIL D'ARIANE
   ========================================================== -->
 
   <script type="application/ld+json">
@@ -253,17 +254,14 @@
   <style>
     :root {
       --bg: #050d18;
-      --bg-alt: #071422;
       --card: #0b1b2e;
       --card-alt: #10243b;
       --border: #173a59;
-      --border-light: rgba(34, 211, 238, .26);
       --text: #edf7ff;
       --muted: #9fb3c8;
       --cyan: #22d3ee;
       --blue: #3b82f6;
       --green: #22c55e;
-      --yellow: #facc15;
       --gradient: linear-gradient(120deg, var(--cyan), var(--blue));
       --max-width: 1180px;
       --radius: 18px;
@@ -287,6 +285,7 @@
       color: var(--text);
       font-family: "Segoe UI", Arial, sans-serif;
       line-height: 1.68;
+
       background:
         radial-gradient(
           circle at 85% 8%,
@@ -308,21 +307,30 @@
       z-index: -1;
       pointer-events: none;
       opacity: .15;
+
       background-image:
         radial-gradient(
           rgba(148, 190, 220, .28) .7px,
           transparent .7px
         );
-      background-size: 28px 28px;
-      mask-image: linear-gradient(to bottom, black, transparent 90%);
-    }
 
-    a {
-      color: inherit;
+      background-size: 28px 28px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 90%
+        );
     }
 
     img {
       max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
     }
 
     button,
@@ -332,7 +340,7 @@
 
     a:focus-visible,
     button:focus-visible,
-    .zoomable:focus-visible {
+    img[data-zoom]:focus-visible {
       outline: 3px solid var(--cyan);
       outline-offset: 4px;
     }
@@ -343,6 +351,46 @@
     }
 
     /* =========================================================
+       ACCESSIBILITÉ
+    ========================================================== */
+
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 10000;
+
+      padding: 11px 17px;
+
+      color: #04101d;
+      background: var(--cyan);
+
+      border-radius: 8px;
+
+      text-decoration: none;
+      font-weight: 800;
+
+      transform: translateY(-180%);
+      transition: transform .2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    /* =========================================================
        HEADER
     ========================================================== */
 
@@ -350,24 +398,34 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, .07);
-      background: rgba(5, 13, 24, .92);
+
+      border-bottom:
+        1px solid rgba(255, 255, 255, .07);
+
+      background:
+        rgba(5, 13, 24, .92);
+
       backdrop-filter: blur(16px);
     }
 
     .navbar {
       min-height: 74px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 20px;
     }
 
     .brand {
       display: flex;
       align-items: center;
+
       gap: 11px;
+
       color: #fff;
+
       text-decoration: none;
       font-weight: 850;
     }
@@ -375,8 +433,12 @@
     .brand-logo {
       width: 46px;
       height: 46px;
+
       object-fit: cover;
-      border: 2px solid rgba(34, 211, 238, .55);
+
+      border:
+        2px solid rgba(34, 211, 238, .55);
+
       border-radius: 50%;
     }
 
@@ -391,19 +453,35 @@
     }
 
     .nav-link {
+      min-height: 44px;
+
+      display: inline-flex;
+      align-items: center;
+
       padding: 9px 15px;
+
       color: var(--cyan);
-      border: 1px solid rgba(34, 211, 238, .3);
+
+      border:
+        1px solid rgba(34, 211, 238, .3);
+
       border-radius: 9px;
+
       text-decoration: none;
+
       font-size: .82rem;
       font-weight: 750;
-      transition: .2s ease;
+
+      transition:
+        color .2s ease,
+        background .2s ease,
+        transform .2s ease;
     }
 
     .nav-link:hover {
       color: #04101d;
       background: var(--cyan);
+      transform: translateY(-2px);
     }
 
     /* =========================================================
@@ -418,13 +496,20 @@
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+
       padding: 7px 14px;
       margin-bottom: 21px;
+
       color: var(--cyan);
-      border: 1px solid rgba(34, 211, 238, .25);
+
+      border:
+        1px solid rgba(34, 211, 238, .25);
+
       border-radius: 50px;
-      background: rgba(34, 211, 238, .07);
+
+      background:
+        rgba(34, 211, 238, .07);
+
       font-size: .78rem;
       font-weight: 800;
       letter-spacing: .06em;
@@ -432,8 +517,11 @@
 
     .hero h1 {
       max-width: 950px;
-      margin: 0 auto;
-      font-size: clamp(2.6rem, 6vw, 5rem);
+      margin: auto;
+
+      font-size:
+        clamp(2.6rem, 6vw, 5rem);
+
       line-height: 1.03;
       letter-spacing: -2px;
     }
@@ -447,15 +535,21 @@
 
     .hero-subtitle {
       margin-top: 15px;
+
       color: var(--cyan);
-      font-size: clamp(1rem, 2vw, 1.3rem);
+
+      font-size:
+        clamp(1rem, 2vw, 1.3rem);
+
       font-weight: 700;
     }
 
     .hero-description {
       max-width: 850px;
       margin: 21px auto 0;
+
       color: var(--muted);
+
       font-size: 1.02rem;
     }
 
@@ -463,20 +557,29 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+
       gap: 12px;
+
       margin-top: 29px;
     }
 
     .btn {
+      min-height: 48px;
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 47px;
+
       padding: 10px 19px;
+
       border-radius: 10px;
+
       text-decoration: none;
       font-weight: 750;
-      transition: transform .2s ease;
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
     }
 
     .btn:hover {
@@ -490,12 +593,15 @@
 
     .btn-secondary {
       color: #fff;
+
       border: 1px solid #345370;
-      background: rgba(255, 255, 255, .035);
+
+      background:
+        rgba(255, 255, 255, .035);
     }
 
     /* =========================================================
-       ARCHITECTURE COVER
+       ARCHITECTURE
     ========================================================== */
 
     .architecture {
@@ -504,40 +610,54 @@
 
     .architecture-card {
       padding: 12px;
+
       overflow: hidden;
-      border: 1px solid rgba(34, 211, 238, .3);
+
+      border:
+        1px solid rgba(34, 211, 238, .3);
+
       border-radius: 22px;
+
       background:
         linear-gradient(
           145deg,
           rgba(16, 43, 72, .85),
           rgba(7, 21, 35, .95)
         );
+
       box-shadow: var(--shadow);
     }
 
+    .architecture-card picture,
     .architecture-card img {
-      width: 100%;
-      height: auto;
       display: block;
+      width: 100%;
+    }
+
+    .architecture-card img {
+      height: auto;
       border-radius: 14px;
       cursor: zoom-in;
     }
 
     .architecture-caption {
       padding: 16px 10px 7px;
+
       color: var(--muted);
+
       text-align: center;
       font-size: .86rem;
     }
 
     /* =========================================================
-       GENERAL SECTIONS
+       SECTIONS
     ========================================================== */
 
     .section {
       padding: 85px 0;
-      border-top: 1px solid rgba(255, 255, 255, .055);
+
+      border-top:
+        1px solid rgba(255, 255, 255, .055);
     }
 
     .section-header {
@@ -547,8 +667,11 @@
 
     .section-label {
       display: inline-block;
+
       margin-bottom: 7px;
+
       color: var(--cyan);
+
       font-size: .72rem;
       font-weight: 850;
       letter-spacing: .17em;
@@ -556,7 +679,10 @@
 
     .section-header h2 {
       margin-bottom: 11px;
-      font-size: clamp(1.9rem, 4vw, 2.8rem);
+
+      font-size:
+        clamp(1.9rem, 4vw, 2.8rem);
+
       line-height: 1.15;
     }
 
@@ -565,47 +691,72 @@
       color: var(--muted);
     }
 
-    .content-card {
+    .content-card,
+    .case-info {
       padding: 28px;
+
       border: 1px solid var(--border);
+
       border-radius: var(--radius);
-      background: linear-gradient(145deg, var(--card-alt), #091727);
+
+      background:
+        linear-gradient(
+          145deg,
+          var(--card-alt),
+          #091727
+        );
     }
 
     /* =========================================================
-       LAB INFORMATION
+       INFORMATIONS DU LAB
     ========================================================== */
 
     .lab-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
       gap: 13px;
+
       margin-top: 25px;
     }
 
     .lab-item {
+      min-width: 0;
+
       padding: 18px;
+
       border: 1px solid var(--border);
       border-radius: 13px;
+
       background: #081727;
+    }
+
+    .lab-item.highlight {
+      border-color:
+        rgba(34, 211, 238, .3);
+
+      background:
+        rgba(34, 211, 238, .06);
     }
 
     .lab-item small {
       display: block;
+
       margin-bottom: 3px;
+
       color: var(--muted);
+
       font-size: .7rem;
     }
 
     .lab-item strong {
       color: #e4f2ff;
-      font-size: .9rem;
-      overflow-wrap: anywhere;
-    }
 
-    .lab-item.highlight {
-      border-color: rgba(34, 211, 238, .3);
-      background: rgba(34, 211, 238, .06);
+      font-size: .9rem;
+
+      overflow-wrap: anywhere;
     }
 
     /* =========================================================
@@ -615,36 +766,42 @@
     .tags {
       display: flex;
       flex-wrap: wrap;
+
       gap: 8px;
+
       margin-top: 20px;
     }
 
     .tags span {
       padding: 5px 11px;
+
       color: #bfeaf5;
-      border: 1px solid rgba(34, 211, 238, .18);
+
+      border:
+        1px solid rgba(34, 211, 238, .18);
+
       border-radius: 50px;
-      background: rgba(34, 211, 238, .07);
+
+      background:
+        rgba(34, 211, 238, .07);
+
       font-size: .72rem;
       font-weight: 650;
     }
 
     /* =========================================================
-       CASE STUDIES
+       CASE STUDY
     ========================================================== */
 
     .case-grid {
       display: grid;
-      grid-template-columns: .75fr 1.25fr;
-      gap: 28px;
-      align-items: start;
-    }
 
-    .case-info {
-      padding: 27px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: linear-gradient(145deg, var(--card-alt), #091727);
+      grid-template-columns:
+        .75fr 1.25fr;
+
+      gap: 28px;
+
+      align-items: start;
     }
 
     .case-info h3 {
@@ -667,7 +824,7 @@
     }
 
     /* =========================================================
-       SCREENSHOTS
+       CAPTURES
     ========================================================== */
 
     .screenshots {
@@ -676,14 +833,20 @@
     }
 
     .screenshots.two {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
     }
 
     .screenshot-card {
+      margin: 0;
+
       overflow: hidden;
+
       border: 1px solid var(--border);
       border-radius: 16px;
+
       background: #081727;
+
       transition:
         transform .25s ease,
         border-color .25s ease,
@@ -692,16 +855,27 @@
 
     .screenshot-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(34, 211, 238, .4);
+
+      border-color:
+        rgba(34, 211, 238, .4);
+
       box-shadow: var(--shadow);
     }
 
+    .screenshot-card picture,
     .screenshot-card img {
       width: 100%;
-      min-height: 210px;
       display: block;
+    }
+
+    .screenshot-card img {
+      height: auto;
+      min-height: 210px;
+
       object-fit: cover;
+
       cursor: zoom-in;
+
       background: #02070d;
     }
 
@@ -709,9 +883,9 @@
       padding: 15px 17px 18px;
     }
 
-    .screenshot-content h4 {
+    .screenshot-content h3 {
       margin-bottom: 5px;
-      color: #e4f2ff;
+      font-size: 1rem;
     }
 
     .screenshot-content p {
@@ -720,23 +894,37 @@
     }
 
     /* =========================================================
-       RESOURCES / GPO
+       RESSOURCES
     ========================================================== */
 
     .resource-list {
       display: grid;
+
       gap: 9px;
+
       margin-top: 20px;
     }
 
     .resource {
       padding: 11px 13px;
+
       color: #cbe8f6;
-      border: 1px solid rgba(34, 211, 238, .13);
+
+      border:
+        1px solid rgba(34, 211, 238, .13);
+
       border-radius: 9px;
-      background: rgba(34, 211, 238, .05);
-      font-family: Consolas, monospace;
+
+      background:
+        rgba(34, 211, 238, .05);
+
+      font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
       font-size: .8rem;
+
       overflow-wrap: anywhere;
     }
 
@@ -746,10 +934,16 @@
 
     .success-card {
       margin-top: 18px;
+
       padding: 16px;
-      border: 1px solid rgba(34, 197, 94, .25);
+
+      border:
+        1px solid rgba(34, 197, 94, .25);
+
       border-radius: 12px;
-      background: rgba(34, 197, 94, .06);
+
+      background:
+        rgba(34, 197, 94, .06);
     }
 
     .success-card strong {
@@ -757,27 +951,41 @@
     }
 
     /* =========================================================
-       RESULTS
+       RESULTATS
     ========================================================== */
 
     .results-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
       gap: 14px;
     }
 
     .result-card {
       padding: 22px 17px;
+
       text-align: center;
+
       border: 1px solid var(--border);
       border-radius: 15px;
-      background: linear-gradient(145deg, #10243b, #091727);
+
+      background:
+        linear-gradient(
+          145deg,
+          #10243b,
+          #091727
+        );
     }
 
     .result-number {
       display: block;
+
       margin-bottom: 7px;
+
       color: var(--cyan);
+
       font-size: 1.8rem;
       font-weight: 900;
     }
@@ -788,26 +996,34 @@
     }
 
     /* =========================================================
-       SKILLS
+       COMPETENCES
     ========================================================== */
 
     .skills-list {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
       gap: 12px;
     }
 
     .skill-result {
       display: flex;
+
       gap: 11px;
+
       padding: 16px;
+
       border: 1px solid var(--border);
       border-radius: 12px;
+
       background: #081727;
-      color: #d5e5f2;
     }
 
     .skill-check {
+      flex: 0 0 auto;
+
       color: var(--green);
       font-weight: 900;
     }
@@ -818,19 +1034,25 @@
 
     footer {
       padding: 30px 0;
-      border-top: 1px solid rgba(255, 255, 255, .07);
+
+      border-top:
+        1px solid rgba(255, 255, 255, .07);
+
       background: #040b14;
     }
 
     .footer-content {
       display: flex;
+
       justify-content: space-between;
       align-items: center;
+
       gap: 17px;
     }
 
-    .footer-content strong {
-      display: block;
+    .footer-profile {
+      display: flex;
+      flex-direction: column;
     }
 
     .footer-content span,
@@ -843,46 +1065,160 @@
        LIGHTBOX
     ========================================================== */
 
-    .lightbox {
+    #lightbox {
       position: fixed;
       inset: 0;
+
       z-index: 9999;
+
       display: none;
-      place-items: center;
-      padding: 25px;
-      background: rgba(3, 9, 17, .96);
-      backdrop-filter: blur(8px);
+
+      padding:
+        max(56px, env(safe-area-inset-top))
+        max(16px, env(safe-area-inset-right))
+        max(24px, env(safe-area-inset-bottom))
+        max(16px, env(safe-area-inset-left));
+
+      overflow: auto;
+
+      background:
+        rgba(2, 8, 16, .96);
+
+      -webkit-overflow-scrolling: touch;
+
+      overscroll-behavior: contain;
     }
 
-    .lightbox.open {
-      display: grid;
+    #lightbox.open {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .lightbox-img {
-      max-width: 94vw;
-      max-height: 88vh;
+    #lightbox.animate {
+      animation:
+        lightboxFade .18s ease;
+    }
+
+    @keyframes lightboxFade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .lightbox-dialog {
+      width: 100%;
+      min-height: 100%;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    #lightboxImg {
+      display: block;
+
+      width: auto;
+      height: auto;
+
+      max-width: min(100%, 1600px);
+
+      max-height:
+        calc(100vh - 145px);
+
+      margin: auto;
+
       object-fit: contain;
-      border: 2px solid var(--cyan);
-      border-radius: 14px;
-      box-shadow: 0 25px 80px rgba(0, 0, 0, .75);
+
+      border-radius: 12px;
+
+      background: #fff;
+
+      cursor: zoom-in;
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, .65);
+
+      user-select: none;
+
+      -webkit-user-drag: none;
+    }
+
+    #lightboxImg.zoomed {
+      max-width: none;
+      max-height: none;
+
+      cursor: zoom-out;
+    }
+
+    .lightbox-caption {
+      width: min(900px, 100%);
+
+      margin: 14px auto 0;
+
+      color: #d2e3f0;
+
+      text-align: center;
+
+      font-size: .9rem;
+      line-height: 1.55;
     }
 
     .lightbox-close {
-      position: absolute;
-      top: 18px;
-      right: 24px;
-      width: 48px;
-      height: 48px;
-      color: var(--cyan);
-      border: 1px solid rgba(34, 211, 238, .35);
+      position: fixed;
+
+      top:
+        max(12px, env(safe-area-inset-top));
+
+      right:
+        max(14px, env(safe-area-inset-right));
+
+      z-index: 10001;
+
+      width: 44px;
+      height: 44px;
+
+      display: grid;
+      place-items: center;
+
+      padding: 0;
+
+      border:
+        1px solid rgba(255, 255, 255, .28);
+
       border-radius: 50%;
-      background: #071421;
+
+      color: #fff;
+
+      background:
+        rgba(7, 20, 33, .92);
+
       cursor: pointer;
-      font-size: 2rem;
+
+      font: inherit;
+      font-size: 1.25rem;
+      line-height: 1;
+
+      transition:
+        color .2s ease,
+        background .2s ease,
+        border-color .2s ease;
     }
 
-    .zoomable {
-      cursor: zoom-in;
+    .lightbox-close:hover {
+      color: #04101d;
+      background: var(--cyan);
+      border-color: var(--cyan);
+    }
+
+    body.lb-lock {
+      overflow: hidden;
     }
 
     /* =========================================================
@@ -892,7 +1228,8 @@
     @media (max-width: 1000px) {
       .lab-grid,
       .results-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
       }
 
       .case-grid {
@@ -902,7 +1239,7 @@
 
     @media (max-width: 750px) {
       .hero {
-        padding-top: 55px;
+        padding: 55px 0 50px;
       }
 
       .hero h1 {
@@ -938,16 +1275,37 @@
       }
     }
 
-    @media (max-width: 430px) {
+    @media (max-width: 520px) {
+      .nav-actions {
+        gap: 6px;
+      }
+
+      .nav-link {
+        font-size: .75rem;
+      }
+
+      .contact-nav {
+        display: none;
+      }
+
       .content-card,
       .case-info {
         padding: 20px;
       }
 
-      .nav-actions .nav-link:first-child {
-        display: none;
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
       }
     }
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================== */
 
     @media (prefers-reduced-motion: reduce) {
       html {
@@ -957,38 +1315,78 @@
       *,
       *::before,
       *::after {
-        transition-duration: .01ms !important;
+        scroll-behavior:
+          auto !important;
+
+        animation-duration:
+          .01ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          .01ms !important;
+      }
+
+      #lightbox.animate {
+        animation: none;
       }
     }
   </style>
+
 </head>
 
 <body>
+
+  <!-- =========================================================
+       SKIP LINK
+  ========================================================== -->
+
+  <a
+    href="#contenu-principal"
+    class="skip-link"
+  >
+    Aller au contenu principal
+  </a>
 
   <!-- =========================================================
        HEADER
   ========================================================== -->
 
   <header>
+
     <div class="container navbar">
 
-      <a href="index.html" class="brand">
+      <a
+        href="index.html"
+        class="brand"
+        aria-label="Accueil du portfolio d'Amine Kramo"
+      >
+
         <img
           src="banner.jpg"
-          alt="Portfolio professionnel d'Amine Kramo"
+          alt=""
           class="brand-logo"
           width="46"
           height="46"
+          decoding="async"
         >
 
         <span class="brand-text">
           Amine <span>Kramo</span>
         </span>
+
       </a>
 
-      <div class="nav-actions">
+      <nav
+        class="nav-actions"
+        aria-label="Navigation du projet"
+      >
 
-        <a href="index.html#realisations" class="nav-link">
+        <a
+          href="index.html#realisations"
+          class="nav-link"
+        >
           ← Retour aux projets
         </a>
 
@@ -1002,29 +1400,42 @@
           EN
         </a>
 
-        <a href="index.html#contact" class="nav-link">
+        <a
+          href="index.html#contact"
+          class="nav-link contact-nav"
+        >
           Contact
         </a>
 
-      </div>
+      </nav>
 
     </div>
+
   </header>
 
-  <main>
+  <!-- =========================================================
+       MAIN
+  ========================================================== -->
 
-    <!-- =========================================================
-         HERO
-    ========================================================== -->
+  <main
+    id="contenu-principal"
+    tabindex="-1"
+  >
 
-    <section class="hero">
+    <!-- HERO -->
+
+    <section
+      class="hero"
+      aria-labelledby="titre-projet"
+    >
+
       <div class="container">
 
         <span class="hero-badge">
           MICROSOFT INFRASTRUCTURE LAB
         </span>
 
-        <h1>
+        <h1 id="titre-projet">
           Active Directory
           <span>Infrastructure Lab</span>
         </h1>
@@ -1042,55 +1453,90 @@
 
         <div class="hero-actions">
 
-          <a href="#architecture" class="btn btn-primary">
+          <a
+            href="#architecture"
+            class="btn btn-primary"
+          >
             Voir l'architecture
           </a>
 
-          <a href="#active-directory" class="btn btn-secondary">
+          <a
+            href="#active-directory"
+            class="btn btn-secondary"
+          >
             Explorer le projet
           </a>
 
         </div>
 
       </div>
+
     </section>
 
     <!-- =========================================================
          ARCHITECTURE
     ========================================================== -->
 
-    <section class="architecture" id="architecture">
+    <section
+      class="architecture"
+      id="architecture"
+      aria-labelledby="titre-architecture"
+    >
+
       <div class="container">
 
-        <div class="architecture-card">
+        <h2
+          id="titre-architecture"
+          class="sr-only"
+        >
+          Architecture du laboratoire Active Directory
+        </h2>
 
-          <img
-            src="AD-Infrastructure-Architecture.png"
-            alt="Architecture Active Directory Windows Server 2019 du domaine amine-lab.local avec DC01, CLIENT01, DNS, DHCP, GPO, File Server et Windows Server Backup"
-            class="zoomable"
-            width="1536"
-            height="1024"
-            fetchpriority="high"
-            decoding="async"
-          >
+        <figure class="architecture-card">
 
-          <p class="architecture-caption">
+          <picture>
+
+            <source
+              srcset="AD-Infrastructure-Architecture.webp"
+              type="image/webp"
+            >
+
+            <img
+              src="AD-Infrastructure-Architecture.png"
+              alt="Architecture Windows Server 2019 Active Directory du domaine amine-lab.local avec DC01, CLIENT01, DNS, DHCP, Group Policy, File Server et Windows Server Backup"
+              width="1536"
+              height="1024"
+              fetchpriority="high"
+              decoding="async"
+              data-zoom
+            >
+
+          </picture>
+
+          <figcaption class="architecture-caption">
+
             Architecture générale du laboratoire :
             domaine <strong>amine-lab.local</strong>,
             contrôleur de domaine <strong>DC01</strong>
             et poste client <strong>CLIENT01</strong>.
-          </p>
 
-        </div>
+          </figcaption>
+
+        </figure>
 
       </div>
+
     </section>
 
     <!-- =========================================================
-         LAB ENVIRONMENT
+         ENVIRONNEMENT
     ========================================================== -->
 
-    <section class="section">
+    <section
+      class="section"
+      aria-labelledby="titre-environnement"
+    >
+
       <div class="container">
 
         <div class="section-header">
@@ -1099,7 +1545,9 @@
             ENVIRONNEMENT
           </span>
 
-          <h2>Configuration du laboratoire</h2>
+          <h2 id="titre-environnement">
+            Configuration du laboratoire
+          </h2>
 
           <p>
             Environnement virtualisé utilisé pour le déploiement
@@ -1177,13 +1625,19 @@
         </div>
 
       </div>
+
     </section>
 
     <!-- =========================================================
          ACTIVE DIRECTORY
     ========================================================== -->
 
-    <section class="section" id="active-directory">
+    <section
+      class="section"
+      id="active-directory"
+      aria-labelledby="titre-ad"
+    >
+
       <div class="container">
 
         <div class="section-header">
@@ -1192,7 +1646,9 @@
             01 · ACTIVE DIRECTORY
           </span>
 
-          <h2>Active Directory Domain Services</h2>
+          <h2 id="titre-ad">
+            Active Directory Domain Services
+          </h2>
 
           <p>
             Déploiement d'un environnement de domaine centralisé
@@ -1225,76 +1681,109 @@
             <div class="tags">
               <span>AD DS</span>
               <span>OU</span>
-              <span>Users</span>
-              <span>Security Groups</span>
+              <span>Utilisateurs</span>
+              <span>Groupes de sécurité</span>
             </div>
 
           </article>
 
           <div class="screenshots">
 
-            <div class="screenshot-card">
+            <figure class="screenshot-card">
 
-              <img
-                src="AD-Organizational-Units.png"
-                alt="Organisation des unités organisationnelles dans Active Directory"
-                class="zoomable"
-                loading="lazy"
-                decoding="async"
-              >
+              <picture>
 
-              <div class="screenshot-content">
-                <h4>Organizational Units</h4>
+                <source
+                  srcset="AD-Organizational-Units.webp"
+                  type="image/webp"
+                >
+
+                <img
+                  src="AD-Organizational-Units.png"
+                  alt="Unités organisationnelles Active Directory configurées dans le domaine amine-lab.local"
+                  loading="lazy"
+                  decoding="async"
+                  data-zoom
+                >
+
+              </picture>
+
+              <figcaption class="screenshot-content">
+
+                <h3>Organizational Units</h3>
 
                 <p>
                   Organisation logique des ressources du domaine
                   à travers les unités organisationnelles.
                 </p>
-              </div>
 
-            </div>
+              </figcaption>
+
+            </figure>
 
             <div class="screenshots two">
 
-              <div class="screenshot-card">
+              <figure class="screenshot-card">
 
-                <img
-                  src="AD-Users-Accounts.png"
-                  alt="Comptes utilisateurs configurés dans Active Directory"
-                  class="zoomable"
-                  loading="lazy"
-                  decoding="async"
-                >
+                <picture>
 
-                <div class="screenshot-content">
-                  <h4>User Accounts</h4>
+                  <source
+                    srcset="AD-Users-Accounts.webp"
+                    type="image/webp"
+                  >
+
+                  <img
+                    src="AD-Users-Accounts.png"
+                    alt="Comptes utilisateurs Active Directory configurés dans le laboratoire"
+                    loading="lazy"
+                    decoding="async"
+                    data-zoom
+                  >
+
+                </picture>
+
+                <figcaption class="screenshot-content">
+
+                  <h3>Comptes utilisateurs</h3>
 
                   <p>
                     Création et administration des comptes utilisateurs.
                   </p>
-                </div>
 
-              </div>
+                </figcaption>
 
-              <div class="screenshot-card">
+              </figure>
 
-                <img
-                  src="AD-Security-Groups.png"
-                  alt="Groupes de sécurité GG_IT, GG_RH et GG_FINANCE dans Active Directory"
-                  class="zoomable"
-                  loading="lazy"
-                  decoding="async"
-                >
+              <figure class="screenshot-card">
 
-                <div class="screenshot-content">
-                  <h4>Security Groups</h4>
+                <picture>
+
+                  <source
+                    srcset="AD-Security-Groups.webp"
+                    type="image/webp"
+                  >
+
+                  <img
+                    src="AD-Security-Groups.png"
+                    alt="Groupes de sécurité Active Directory GG_IT, GG_RH et GG_FINANCE"
+                    loading="lazy"
+                    decoding="async"
+                    data-zoom
+                  >
+
+                </picture>
+
+                <figcaption class="screenshot-content">
+
+                  <h3>Groupes de sécurité</h3>
 
                   <p>
                     Gestion des groupes GG_IT, GG_RH et GG_FINANCE.
                   </p>
-                </div>
 
-              </div>
+                </figcaption>
+
+              </figure>
 
             </div>
 
@@ -1303,13 +1792,18 @@
         </div>
 
       </div>
+
     </section>
 
     <!-- =========================================================
          DNS
     ========================================================== -->
 
-    <section class="section">
+    <section
+      class="section"
+      aria-labelledby="titre-dns"
+    >
+
       <div class="container">
 
         <div class="section-header">
@@ -1318,11 +1812,13 @@
             02 · DNS
           </span>
 
-          <h2>Domain Name System</h2>
+          <h2 id="titre-dns">
+            Domain Name System
+          </h2>
 
           <p>
-            Configuration du service DNS pour assurer la résolution
-            de noms et le fonctionnement du domaine Active Directory.
+            Configuration du service DNS pour assurer
+            la résolution des noms et le fonctionnement du domaine.
           </p>
 
         </div>
@@ -1352,58 +1848,85 @@
 
           <div class="screenshots two">
 
-            <div class="screenshot-card">
+            <figure class="screenshot-card">
 
-              <img
-                src="DNS-Forward-Lookup-Zone.png"
-                alt="Zone de recherche directe DNS du domaine amine-lab.local"
-                class="zoomable"
-                loading="lazy"
-                decoding="async"
-              >
+              <picture>
 
-              <div class="screenshot-content">
-                <h4>Forward Lookup Zone</h4>
+                <source
+                  srcset="DNS-Forward-Lookup-Zone.webp"
+                  type="image/webp"
+                >
+
+                <img
+                  src="DNS-Forward-Lookup-Zone.png"
+                  alt="Zone de recherche directe DNS du domaine amine-lab.local"
+                  loading="lazy"
+                  decoding="async"
+                  data-zoom
+                >
+
+              </picture>
+
+              <figcaption class="screenshot-content">
+
+                <h3>Forward Lookup Zone</h3>
 
                 <p>
                   Configuration de la zone DNS du domaine amine-lab.local.
                 </p>
-              </div>
 
-            </div>
+              </figcaption>
 
-            <div class="screenshot-card">
+            </figure>
 
-              <img
-                src="DNS-Client-Validation.png"
-                alt="Validation de la résolution DNS depuis CLIENT01"
-                class="zoomable"
-                loading="lazy"
-                decoding="async"
-              >
+            <figure class="screenshot-card">
 
-              <div class="screenshot-content">
-                <h4>Client Validation</h4>
+              <picture>
+
+                <source
+                  srcset="DNS-Client-Validation.webp"
+                  type="image/webp"
+                >
+
+                <img
+                  src="DNS-Client-Validation.png"
+                  alt="Validation de la résolution DNS depuis le poste Windows 11 CLIENT01"
+                  loading="lazy"
+                  decoding="async"
+                  data-zoom
+                >
+
+              </picture>
+
+              <figcaption class="screenshot-content">
+
+                <h3>Validation client</h3>
 
                 <p>
                   Test de résolution DNS depuis CLIENT01.
                 </p>
-              </div>
 
-            </div>
+              </figcaption>
+
+            </figure>
 
           </div>
 
         </div>
 
       </div>
+
     </section>
 
     <!-- =========================================================
          DHCP
     ========================================================== -->
 
-    <section class="section">
+    <section
+      class="section"
+      aria-labelledby="titre-dhcp"
+    >
+
       <div class="container">
 
         <div class="section-header">
@@ -1412,7 +1935,9 @@
             03 · DHCP
           </span>
 
-          <h2>Dynamic Host Configuration Protocol</h2>
+          <h2 id="titre-dhcp">
+            Dynamic Host Configuration Protocol
+          </h2>
 
           <p>
             Automatisation de la configuration réseau des clients
@@ -1425,11 +1950,11 @@
 
           <article class="case-info">
 
-            <h3>DHCP Server</h3>
+            <h3>Serveur DHCP</h3>
 
             <ul>
               <li>Installation du rôle DHCP</li>
-              <li>Création et activation du Scope</li>
+              <li>Création et activation de l'étendue</li>
               <li>Plage : 192.168.11.100 – 192.168.11.180</li>
               <li>Attribution automatique des paramètres IP</li>
               <li>Validation sur CLIENT01</li>
@@ -1446,58 +1971,85 @@
 
           <div class="screenshots two">
 
-            <div class="screenshot-card">
+            <figure class="screenshot-card">
 
-              <img
-                src="DHCP-Scope-Configuration.png"
-                alt="Configuration de l'étendue DHCP 192.168.11.100 à 192.168.11.180"
-                class="zoomable"
-                loading="lazy"
-                decoding="async"
-              >
+              <picture>
 
-              <div class="screenshot-content">
-                <h4>Scope Configuration</h4>
+                <source
+                  srcset="DHCP-Scope-Configuration.webp"
+                  type="image/webp"
+                >
+
+                <img
+                  src="DHCP-Scope-Configuration.png"
+                  alt="Étendue DHCP IPv4 configurée de 192.168.11.100 à 192.168.11.180"
+                  loading="lazy"
+                  decoding="async"
+                  data-zoom
+                >
+
+              </picture>
+
+              <figcaption class="screenshot-content">
+
+                <h3>Configuration de l'étendue</h3>
 
                 <p>
                   Création et activation de l'étendue DHCP IPv4.
                 </p>
-              </div>
 
-            </div>
+              </figcaption>
 
-            <div class="screenshot-card">
+            </figure>
 
-              <img
-                src="DHCP-Client-IP-Configuration.png"
-                alt="Validation de la configuration IP DHCP du poste CLIENT01"
-                class="zoomable"
-                loading="lazy"
-                decoding="async"
-              >
+            <figure class="screenshot-card">
 
-              <div class="screenshot-content">
-                <h4>Client IP Configuration</h4>
+              <picture>
+
+                <source
+                  srcset="DHCP-Client-IP-Configuration.webp"
+                  type="image/webp"
+                >
+
+                <img
+                  src="DHCP-Client-IP-Configuration.png"
+                  alt="Configuration réseau DHCP validée sur CLIENT01"
+                  loading="lazy"
+                  decoding="async"
+                  data-zoom
+                >
+
+              </picture>
+
+              <figcaption class="screenshot-content">
+
+                <h3>Configuration IP du client</h3>
 
                 <p>
                   Validation de l'attribution DHCP sur CLIENT01.
                 </p>
-              </div>
 
-            </div>
+              </figcaption>
+
+            </figure>
 
           </div>
 
         </div>
 
       </div>
+
     </section>
 
     <!-- =========================================================
          GROUP POLICY
     ========================================================== -->
 
-    <section class="section">
+    <section
+      class="section"
+      aria-labelledby="titre-gpo"
+    >
+
       <div class="container">
 
         <div class="section-header">
@@ -1506,11 +2058,13 @@
             04 · GROUP POLICY
           </span>
 
-          <h2>Group Policy Management</h2>
+          <h2 id="titre-gpo">
+            Group Policy Management
+          </h2>
 
           <p>
-            Administration centralisée des paramètres utilisateurs
-            et déploiement des mappings vers les ressources partagées.
+            Administration centralisée des paramètres et
+            déploiement automatique des lecteurs réseau.
           </p>
 
         </div>
@@ -1540,42 +2094,58 @@
             <div class="tags">
               <span>GPO</span>
               <span>Drive Mapping</span>
-              <span>Centralized Management</span>
+              <span>Administration centralisée</span>
             </div>
 
           </article>
 
-          <div class="screenshot-card">
+          <figure class="screenshot-card">
 
-            <img
-              src="GPO-List.png"
-              alt="Liste des stratégies de groupe GPO configurées dans Active Directory"
-              class="zoomable"
-              loading="lazy"
-              decoding="async"
-            >
+            <picture>
 
-            <div class="screenshot-content">
-              <h4>Group Policy Objects</h4>
+              <source
+                srcset="GPO-List.webp"
+                type="image/webp"
+              >
+
+              <img
+                src="GPO-List.png"
+                alt="Liste des Group Policy Objects configurés pour IT, RH et FINANCE"
+                loading="lazy"
+                decoding="async"
+                data-zoom
+              >
+
+            </picture>
+
+            <figcaption class="screenshot-content">
+
+              <h3>Group Policy Objects</h3>
 
               <p>
                 Liste et administration des stratégies configurées
                 dans l'environnement Active Directory.
               </p>
-            </div>
 
-          </div>
+            </figcaption>
+
+          </figure>
 
         </div>
 
       </div>
+
     </section>
 
     <!-- =========================================================
          FILE SERVER
     ========================================================== -->
 
-    <section class="section">
+    <section
+      class="section"
+      aria-labelledby="titre-file-server"
+    >
+
       <div class="container">
 
         <div class="section-header">
@@ -1584,7 +2154,9 @@
             05 · FILE SERVER
           </span>
 
-          <h2>File Server & NTFS Permissions</h2>
+          <h2 id="titre-file-server">
+            File Server & NTFS Permissions
+          </h2>
 
           <p>
             Création de ressources partagées et contrôle
@@ -1619,42 +2191,58 @@
               <span>File Server</span>
               <span>NTFS</span>
               <span>Permissions</span>
-              <span>Security Groups</span>
+              <span>Groupes de sécurité</span>
             </div>
 
           </article>
 
-          <div class="screenshot-card">
+          <figure class="screenshot-card">
 
-            <img
-              src="FileServer-NTFS-Permissions.png"
-              alt="Configuration des permissions NTFS des dossiers partagés IT, RH et FINANCE"
-              class="zoomable"
-              loading="lazy"
-              decoding="async"
-            >
+            <picture>
 
-            <div class="screenshot-content">
-              <h4>NTFS Permissions</h4>
+              <source
+                srcset="FileServer-NTFS-Permissions.webp"
+                type="image/webp"
+              >
+
+              <img
+                src="FileServer-NTFS-Permissions.png"
+                alt="Permissions NTFS configurées sur les dossiers partagés IT, RH et FINANCE"
+                loading="lazy"
+                decoding="async"
+                data-zoom
+              >
+
+            </picture>
+
+            <figcaption class="screenshot-content">
+
+              <h3>Permissions NTFS</h3>
 
               <p>
                 Configuration et validation des autorisations
                 sur les ressources IT, RH et FINANCE.
               </p>
-            </div>
 
-          </div>
+            </figcaption>
+
+          </figure>
 
         </div>
 
       </div>
+
     </section>
 
     <!-- =========================================================
-         BACKUP & RECOVERY
+         BACKUP
     ========================================================== -->
 
-    <section class="section">
+    <section
+      class="section"
+      aria-labelledby="titre-backup"
+    >
+
       <div class="container">
 
         <div class="section-header">
@@ -1663,11 +2251,13 @@
             06 · BACKUP & RECOVERY
           </span>
 
-          <h2>Windows Server Backup</h2>
+          <h2 id="titre-backup">
+            Windows Server Backup
+          </h2>
 
           <p>
-            Protection des composants essentiels de l'infrastructure
-            Active Directory grâce à une sauvegarde System State validée.
+            Protection des composants essentiels d'Active Directory
+            grâce à une sauvegarde System State validée.
           </p>
 
         </div>
@@ -1687,7 +2277,9 @@
             </ul>
 
             <div class="success-card">
-              <strong>✓ SYSTEM STATE BACKUP : SUCCESS</strong>
+              <strong>
+                ✓ SYSTEM STATE BACKUP : SUCCESS
+              </strong>
             </div>
 
             <div class="tags">
@@ -1699,37 +2291,54 @@
 
           </article>
 
-          <div class="screenshot-card">
+          <figure class="screenshot-card">
 
-            <img
-              src="Backup-Recovery-Validation.png"
-              alt="Validation réussie du System State Backup avec Windows Server Backup"
-              class="zoomable"
-              loading="lazy"
-              decoding="async"
-            >
+            <picture>
 
-            <div class="screenshot-content">
-              <h4>Backup Validation</h4>
+              <source
+                srcset="Backup-Recovery-Validation.webp"
+                type="image/webp"
+              >
+
+              <img
+                src="Backup-Recovery-Validation.png"
+                alt="Validation réussie de la sauvegarde System State avec Windows Server Backup"
+                loading="lazy"
+                decoding="async"
+                data-zoom
+              >
+
+            </picture>
+
+            <figcaption class="screenshot-content">
+
+              <h3>Validation de la sauvegarde</h3>
 
               <p>
                 Validation du System State Backup réalisé
                 avec Windows Server Backup.
               </p>
-            </div>
 
-          </div>
+            </figcaption>
+
+          </figure>
 
         </div>
 
       </div>
+
     </section>
 
     <!-- =========================================================
-         RESULTS
+         RESULTATS
     ========================================================== -->
 
-    <section class="section" id="results">
+    <section
+      class="section"
+      id="results"
+      aria-labelledby="titre-resultats"
+    >
+
       <div class="container">
 
         <div class="section-header">
@@ -1738,11 +2347,13 @@
             RÉSULTATS
           </span>
 
-          <h2>Résultats du projet</h2>
+          <h2 id="titre-resultats">
+            Résultats du projet
+          </h2>
 
           <p>
             Les principaux composants de l'infrastructure
-            ont été configurés puis vérifiés dans le laboratoire.
+            ont été configurés puis vérifiés avec succès.
           </p>
 
         </div>
@@ -1750,55 +2361,60 @@
         <div class="results-grid">
 
           <article class="result-card">
-            <span class="result-number">8</span>
-            <p>Organizational Units</p>
+            <span class="result-number" aria-hidden="true">8</span>
+            <p>8 unités organisationnelles</p>
           </article>
 
           <article class="result-card">
-            <span class="result-number">6</span>
-            <p>Comptes utilisateurs</p>
+            <span class="result-number" aria-hidden="true">6</span>
+            <p>6 comptes utilisateurs</p>
           </article>
 
           <article class="result-card">
-            <span class="result-number">3</span>
-            <p>Groupes de sécurité</p>
+            <span class="result-number" aria-hidden="true">3</span>
+            <p>3 groupes de sécurité</p>
           </article>
 
           <article class="result-card">
-            <span class="result-number">✓</span>
+            <span class="result-number" aria-hidden="true">✓</span>
             <p>DNS A & SRV validés</p>
           </article>
 
           <article class="result-card">
-            <span class="result-number">✓</span>
-            <p>DHCP Scope activé</p>
+            <span class="result-number" aria-hidden="true">✓</span>
+            <p>Étendue DHCP activée</p>
           </article>
 
           <article class="result-card">
-            <span class="result-number">3</span>
-            <p>Ressources partagées validées</p>
+            <span class="result-number" aria-hidden="true">3</span>
+            <p>3 ressources partagées validées</p>
           </article>
 
           <article class="result-card">
-            <span class="result-number">3</span>
-            <p>GPO Drive Mapping</p>
+            <span class="result-number" aria-hidden="true">3</span>
+            <p>3 GPO Drive Mapping</p>
           </article>
 
           <article class="result-card">
-            <span class="result-number">✓</span>
+            <span class="result-number" aria-hidden="true">✓</span>
             <p>System State Backup réussi</p>
           </article>
 
         </div>
 
       </div>
+
     </section>
 
     <!-- =========================================================
          TECHNOLOGIES
     ========================================================== -->
 
-    <section class="section">
+    <section
+      class="section"
+      aria-labelledby="titre-technologies"
+    >
+
       <div class="container">
 
         <div class="section-header">
@@ -1807,7 +2423,9 @@
             STACK TECHNIQUE
           </span>
 
-          <h2>Technologies utilisées</h2>
+          <h2 id="titre-technologies">
+            Technologies utilisées
+          </h2>
 
         </div>
 
@@ -1825,19 +2443,24 @@
             <span>PowerShell</span>
             <span>Windows 11</span>
             <span>VMware</span>
-            <span>Virtualization</span>
+            <span>Virtualisation</span>
           </div>
 
         </div>
 
       </div>
+
     </section>
 
     <!-- =========================================================
-         SKILLS
+         COMPETENCES
     ========================================================== -->
 
-    <section class="section">
+    <section
+      class="section"
+      aria-labelledby="titre-competences"
+    >
+
       <div class="container">
 
         <div class="section-header">
@@ -1846,77 +2469,91 @@
             COMPÉTENCES
           </span>
 
-          <h2>Compétences développées</h2>
+          <h2 id="titre-competences">
+            Compétences développées
+          </h2>
 
         </div>
 
         <div class="skills-list">
 
           <div class="skill-result">
-            <span class="skill-check">✓</span>
+            <span class="skill-check" aria-hidden="true">✓</span>
             Administration Windows Server
           </div>
 
           <div class="skill-result">
-            <span class="skill-check">✓</span>
+            <span class="skill-check" aria-hidden="true">✓</span>
             Administration Active Directory
           </div>
 
           <div class="skill-result">
-            <span class="skill-check">✓</span>
+            <span class="skill-check" aria-hidden="true">✓</span>
             Gestion des utilisateurs et groupes
           </div>
 
           <div class="skill-result">
-            <span class="skill-check">✓</span>
+            <span class="skill-check" aria-hidden="true">✓</span>
             Configuration DNS et DHCP
           </div>
 
           <div class="skill-result">
-            <span class="skill-check">✓</span>
+            <span class="skill-check" aria-hidden="true">✓</span>
             Administration des GPO
           </div>
 
           <div class="skill-result">
-            <span class="skill-check">✓</span>
+            <span class="skill-check" aria-hidden="true">✓</span>
             Gestion des permissions NTFS
           </div>
 
           <div class="skill-result">
-            <span class="skill-check">✓</span>
+            <span class="skill-check" aria-hidden="true">✓</span>
             Administration d'un File Server
           </div>
 
           <div class="skill-result">
-            <span class="skill-check">✓</span>
+            <span class="skill-check" aria-hidden="true">✓</span>
             Sauvegarde System State
           </div>
 
         </div>
 
       </div>
+
     </section>
 
     <!-- =========================================================
-         FINAL CTA
+         CTA
     ========================================================== -->
 
-    <section class="section">
+    <section
+      class="section"
+      aria-labelledby="titre-portfolio"
+    >
+
       <div class="container">
 
-        <div class="content-card" style="text-align:center;">
+        <div
+          class="content-card"
+          style="text-align:center;"
+        >
 
           <span class="section-label">
             PORTFOLIO
           </span>
 
-          <h2 style="margin-bottom:12px;">
+          <h2
+            id="titre-portfolio"
+            style="margin-bottom:12px;"
+          >
             Découvrir mes autres projets
           </h2>
 
           <p>
             Retrouvez mes projets OpenVPN & pfSense,
-            infrastructure CCTV et Veeam Backup & Replication.
+            infrastructure CCTV et
+            Veeam Backup & Replication.
           </p>
 
           <div class="hero-actions">
@@ -1940,6 +2577,7 @@
         </div>
 
       </div>
+
     </section>
 
   </main>
@@ -1949,49 +2587,71 @@
   ========================================================== -->
 
   <footer>
+
     <div class="container footer-content">
 
-      <div>
-        <strong>Amine Kramo</strong>
-        <span>Technicien Systèmes & Réseaux</span>
+      <div class="footer-profile">
+
+        <strong>
+          Amine Kramo
+        </strong>
+
+        <span>
+          Technicien Systèmes & Réseaux
+        </span>
+
       </div>
 
       <p>
-        © <span id="currentYear">2026</span>
+        ©
+        <span id="currentYear">2026</span>
         Amine Kramo · Active Directory Infrastructure Lab
       </p>
 
     </div>
+
   </footer>
 
   <!-- =========================================================
-       LIGHTBOX
+       LIGHTBOX ACCESSIBLE
   ========================================================== -->
 
   <div
-    id="imageLightbox"
-    class="lightbox"
-    aria-hidden="true"
+    id="lightbox"
     role="dialog"
     aria-modal="true"
-    aria-label="Agrandissement de la capture"
+    aria-hidden="true"
+    aria-labelledby="lightboxCaption"
   >
 
-    <button
-      type="button"
-      id="lightboxClose"
-      class="lightbox-close"
-      aria-label="Fermer l'image"
+    <div
+      class="lightbox-dialog"
+      role="document"
     >
-      ×
-    </button>
 
-    <img
-      id="lightboxImg"
-      class="lightbox-img"
-      src=""
-      alt="Capture agrandie"
-    >
+      <button
+        type="button"
+        id="lightboxClose"
+        class="lightbox-close"
+        aria-label="Fermer l'aperçu de l'image"
+      >
+        ×
+      </button>
+
+      <img
+        id="lightboxImg"
+        src=""
+        alt=""
+        decoding="async"
+        draggable="false"
+      >
+
+      <p
+        id="lightboxCaption"
+        class="lightbox-caption"
+      ></p>
+
+    </div>
 
   </div>
 
@@ -2000,142 +2660,334 @@
   ========================================================== -->
 
   <script>
-    const lightbox =
-      document.getElementById("imageLightbox");
+    (function () {
+      "use strict";
 
-    const lightboxImg =
-      document.getElementById("lightboxImg");
+      var overlay =
+        document.getElementById("lightbox");
 
-    const lightboxClose =
-      document.getElementById("lightboxClose");
+      var image =
+        document.getElementById("lightboxImg");
 
-    const zoomableImages =
-      document.querySelectorAll(".zoomable");
+      var caption =
+        document.getElementById("lightboxCaption");
 
-    let lastFocusedImage = null;
+      var closeButton =
+        document.getElementById("lightboxClose");
 
-    function openLightbox(image) {
-      if (!lightbox || !lightboxImg) {
-        return;
+      var targets =
+        document.querySelectorAll(
+          "img[data-zoom]"
+        );
+
+      var yearElement =
+        document.getElementById("currentYear");
+
+      var lastFocus = null;
+      var previouslyLocked = false;
+
+      var motionQuery =
+        window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        );
+
+      /* =========================================================
+         OUVRIR
+      ========================================================== */
+
+      function openLightbox(source) {
+
+        if (
+          !source ||
+          !overlay ||
+          !image
+        ) {
+          return;
+        }
+
+        lastFocus =
+          document.activeElement;
+
+        image.classList.remove(
+          "zoomed"
+        );
+
+        /*
+          currentSrc récupère automatiquement
+          l'image WebP choisie par le navigateur.
+        */
+
+        image.src =
+          source.currentSrc ||
+          source.src;
+
+        var description =
+          source.getAttribute("alt") ||
+          "Capture du projet";
+
+        image.alt = "";
+
+        caption.textContent =
+          description;
+
+        image.setAttribute(
+          "aria-label",
+          "Afficher l'image en taille réelle"
+        );
+
+        overlay.classList.add(
+          "open"
+        );
+
+        if (!motionQuery.matches) {
+          overlay.classList.add(
+            "animate"
+          );
+        }
+
+        overlay.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+        previouslyLocked =
+          document.body.classList.contains(
+            "lb-lock"
+          );
+
+        document.body.classList.add(
+          "lb-lock"
+        );
+
+        overlay.scrollTop = 0;
+        overlay.scrollLeft = 0;
+
+        closeButton.focus({
+          preventScroll: true
+        });
       }
 
-      lastFocusedImage = image;
+      /* =========================================================
+         FERMER
+      ========================================================== */
 
-      lightboxImg.src =
-        image.currentSrc || image.src;
+      function closeLightbox() {
 
-      lightboxImg.alt =
-        image.alt || "Capture agrandie";
+        if (
+          !overlay ||
+          !overlay.classList.contains("open")
+        ) {
+          return;
+        }
 
-      lightbox.classList.add("open");
+        overlay.classList.remove(
+          "open",
+          "animate"
+        );
 
-      lightbox.setAttribute(
-        "aria-hidden",
-        "false"
-      );
+        overlay.setAttribute(
+          "aria-hidden",
+          "true"
+        );
 
-      document.body.style.overflow =
-        "hidden";
+        image.classList.remove(
+          "zoomed"
+        );
 
-      if (lightboxClose) {
-        lightboxClose.focus();
+        image.removeAttribute(
+          "src"
+        );
+
+        caption.textContent = "";
+
+        if (!previouslyLocked) {
+          document.body.classList.remove(
+            "lb-lock"
+          );
+        }
+
+        if (
+          lastFocus &&
+          typeof lastFocus.focus === "function"
+        ) {
+          lastFocus.focus({
+            preventScroll: true
+          });
+        }
+
+        lastFocus = null;
       }
-    }
 
-    function closeLightbox() {
-      if (!lightbox) {
-        return;
+      /* =========================================================
+         ZOOM
+      ========================================================== */
+
+      if (image) {
+
+        image.addEventListener(
+          "click",
+          function (event) {
+
+            event.stopPropagation();
+
+            image.classList.toggle(
+              "zoomed"
+            );
+
+            image.setAttribute(
+              "aria-label",
+              image.classList.contains("zoomed")
+                ? "Réduire l'image"
+                : "Afficher l'image en taille réelle"
+            );
+
+          }
+        );
+
       }
 
-      lightbox.classList.remove("open");
+      /* =========================================================
+         IMAGES CLIQUABLES
+      ========================================================== */
 
-      lightbox.setAttribute(
-        "aria-hidden",
-        "true"
-      );
+      targets.forEach(
+        function (target) {
 
-      document.body.style.overflow = "";
+          target.setAttribute(
+            "tabindex",
+            "0"
+          );
 
-      if (lightboxImg) {
-        lightboxImg.src = "";
-      }
+          target.setAttribute(
+            "role",
+            "button"
+          );
 
-      if (lastFocusedImage) {
-        lastFocusedImage.focus();
-      }
-    }
+          target.setAttribute(
+            "aria-label",
+            "Agrandir l'image : " +
+            (
+              target.getAttribute("alt") ||
+              "Capture du projet"
+            )
+          );
 
-    zoomableImages.forEach(function (image) {
-      image.setAttribute(
-        "tabindex",
-        "0"
-      );
+          target.addEventListener(
+            "click",
+            function () {
+              openLightbox(target);
+            }
+          );
 
-      image.setAttribute(
-        "role",
-        "button"
-      );
+          target.addEventListener(
+            "keydown",
+            function (event) {
 
-      image.addEventListener(
-        "click",
-        function () {
-          openLightbox(image);
+              if (
+                event.key === "Enter" ||
+                event.key === " "
+              ) {
+
+                event.preventDefault();
+
+                openLightbox(target);
+
+              }
+
+            }
+          );
+
         }
       );
 
-      image.addEventListener(
+      /* =========================================================
+         BOUTON FERMER
+      ========================================================== */
+
+      if (closeButton) {
+
+        closeButton.addEventListener(
+          "click",
+          closeLightbox
+        );
+
+      }
+
+      /* =========================================================
+         CLIC ARRIERE-PLAN
+      ========================================================== */
+
+      if (overlay) {
+
+        overlay.addEventListener(
+          "click",
+          function (event) {
+
+            if (
+              event.target === overlay ||
+              event.target.classList.contains(
+                "lightbox-dialog"
+              )
+            ) {
+              closeLightbox();
+            }
+
+          }
+        );
+
+      }
+
+      /* =========================================================
+         CLAVIER
+      ========================================================== */
+
+      document.addEventListener(
         "keydown",
         function (event) {
+
           if (
-            event.key === "Enter" ||
-            event.key === " "
+            !overlay ||
+            !overlay.classList.contains("open")
           ) {
+            return;
+          }
+
+          if (event.key === "Escape") {
+
             event.preventDefault();
-            openLightbox(image);
-          }
-        }
-      );
-    });
 
-    if (lightboxClose) {
-      lightboxClose.addEventListener(
-        "click",
-        closeLightbox
-      );
-    }
-
-    if (lightbox) {
-      lightbox.addEventListener(
-        "click",
-        function (event) {
-          if (event.target === lightbox) {
             closeLightbox();
+
+            return;
           }
+
+          if (event.key === "Tab") {
+
+            event.preventDefault();
+
+            closeButton.focus();
+
+          }
+
         }
       );
-    }
 
-    document.addEventListener(
-      "keydown",
-      function (event) {
-        if (
-          event.key === "Escape" &&
-          lightbox &&
-          lightbox.classList.contains("open")
-        ) {
-          closeLightbox();
-        }
+      /* =========================================================
+         ANNEE
+      ========================================================== */
+
+      if (yearElement) {
+
+        yearElement.textContent =
+          String(
+            new Date().getFullYear()
+          );
+
       }
-    );
 
-    const yearElement =
-      document.getElementById("currentYear");
-
-    if (yearElement) {
-      yearElement.textContent =
-        new Date().getFullYear();
-    }
+    })();
   </script>
 
 </body>
+
 </html>
